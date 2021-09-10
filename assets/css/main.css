@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -127,26 +128,30 @@ body {
   background-position: center;
 }
 
-#app .zm-sidebar .zm-sidebar-wrapper .zm-navbar-main .navbar-item {
+#app .zm-sidebar .zm-sidebar-wrapper .zm-navbar-main {
+  margin-bottom: 15px;
+}
+
+#app .zm-sidebar .zm-sidebar-wrapper .navbar-item {
   border-left: 3px solid transparent;
   -webkit-transition: background-color 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
   transition: background-color 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-#app .zm-sidebar .zm-sidebar-wrapper .zm-navbar-main .navbar-item.is-active, #app .zm-sidebar .zm-sidebar-wrapper .zm-navbar-main .navbar-item:hover {
+#app .zm-sidebar .zm-sidebar-wrapper .navbar-item.is-active, #app .zm-sidebar .zm-sidebar-wrapper .navbar-item:hover {
   border-left: 3px solid var(--purple-primary);
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-#app .zm-sidebar .zm-sidebar-wrapper .zm-navbar-main .navbar-item.is-active .navbar-link, #app .zm-sidebar .zm-sidebar-wrapper .zm-navbar-main .navbar-item:hover .navbar-link {
+#app .zm-sidebar .zm-sidebar-wrapper .navbar-item.is-active .navbar-link, #app .zm-sidebar .zm-sidebar-wrapper .navbar-item:hover .navbar-link {
   color: white !important;
 }
 
-#app .zm-sidebar .zm-sidebar-wrapper .zm-navbar-main .navbar-item.live-label span {
+#app .zm-sidebar .zm-sidebar-wrapper .navbar-item.live-label span {
   position: relative;
 }
 
-#app .zm-sidebar .zm-sidebar-wrapper .zm-navbar-main .navbar-item.live-label span::after {
+#app .zm-sidebar .zm-sidebar-wrapper .navbar-item.live-label span::after {
   content: "Live";
   display: block;
   position: absolute;
@@ -165,7 +170,7 @@ body {
   border-radius: 3px;
 }
 
-#app .zm-sidebar .zm-sidebar-wrapper .zm-navbar-main .navbar-link {
+#app .zm-sidebar .zm-sidebar-wrapper .navbar-item .navbar-link {
   display: block;
   padding: 7px 25px;
   min-height: 38px;
@@ -183,7 +188,7 @@ body {
           align-items: center;
 }
 
-#app .zm-sidebar .zm-sidebar-wrapper .zm-navbar-main .zm-navbar-icon {
+#app .zm-sidebar .zm-sidebar-wrapper .navbar-item .zm-navbar-icon {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -199,17 +204,156 @@ body {
   font-size: 22px;
 }
 
-#app .zm-sidebar .zm-sidebar-wrapper .zm-navbar-main .zm-navbar-title {
+#app .zm-sidebar .zm-sidebar-wrapper .navbar-item .zm-navbar-title {
   white-space: nowrap;
 }
 
-#app .zm-sidebar .zm-sidebar-wrapper .zm-navbar-main .zm-navbar-divider {
+#app .zm-sidebar .zm-sidebar-wrapper .zm-navbar-divider {
   width: 100%;
   height: 1px;
   background-color: rgba(255, 255, 255, 0.1);
   -webkit-clip-path: inset(0 25px);
           clip-path: inset(0 25px);
-  margin: 15px 0;
+  margin-bottom: 15px;
+}
+
+#app .zm-sidebar .zm-sidebar-wrapper .zm-banner {
+  width: 200px;
+  height: 105px;
+  margin: 10px 20px;
+  padding: 15px 8px;
+  border-radius: 8px;
+  background: -webkit-gradient(linear, left top, right bottom, from(#5a4be7), to(#c86dd7));
+  background: linear-gradient(to right bottom, #5a4be7, #c86dd7);
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#app .zm-sidebar .zm-sidebar-wrapper .zm-banner span {
+  text-align: center;
+  font-size: 12px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: white;
+}
+
+#app .zm-sidebar .zm-sidebar-wrapper .zm-banner .zm-banner-btn {
+  padding: 6px 36px;
+  border: 1px;
+  color: #333;
+  border-radius: 25px;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 600;
+  background: -webkit-gradient(linear, left top, right bottom, from(yellow), to(#ffdb00));
+  background: linear-gradient(to right bottom, yellow, #ffdb00);
+  overflow: hidden;
+}
+
+#app .zm-sidebar .zm-sidebar-wrapper .zm-banner .zm-banner-btn:hover {
+  opacity: 0.9;
+}
+
+#app .zm-sidebar .zm-sidebar-wrapper .zm-navbar-library {
+  margin-bottom: 15px;
+  padding-top: 15px;
+}
+
+#app .zm-sidebar .zm-sidebar-wrapper .zm-navbar-library:hover .zm-navbar-edit {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+#app .zm-sidebar .zm-sidebar-wrapper .zm-navbar-library .zm-navbar-header {
+  padding: 0 28px 8px 28px;
+  line-height: 26px;
+  text-transform: uppercase;
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#app .zm-sidebar .zm-sidebar-wrapper .zm-navbar-library .zm-navbar-header .zm-navbar-edit {
+  position: relative;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+
+#app .zm-sidebar .zm-sidebar-wrapper .zm-navbar-library .zm-navbar-header .zm-navbar-edit:hover::after {
+  content: "Chỉnh Sửa";
+  display: inline-block;
+  white-space: nowrap;
+  padding: 0 10px;
+  border-radius: 3px;
+  position: absolute;
+  font-size: 10px;
+  color: white;
+  text-transform: capitalize;
+  background-color: #333;
+  bottom: calc(100% + 12px);
+}
+
+#app .zm-sidebar .zm-sidebar-wrapper .zm-navbar-library .zm-navbar-header .zm-navbar-edit:hover::before {
+  content: "";
+  width: 16px;
+  height: 12px;
+  position: absolute;
+  bottom: calc(100%);
+  background-color: #333;
+  -webkit-clip-path: polygon(0 0, 100% 0, 50% 50%);
+          clip-path: polygon(0 0, 100% 0, 50% 50%);
+}
+
+#app .zm-sidebar .zm-sidebar-wrapper .zm-navbar-library .zm-navbar-header .zm-navbar-edit:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+}
+
+#app .zm-sidebar .zm-sidebar-wrapper .zm-navbar-library .zm-navbar-header .zm-navbar-edit .zm-navbar-pen {
+  font-size: 13px;
+}
+
+#app .zm-sidebar .zm-sidebar-wrapper .zm-navbar-library .navbar-link {
+  padding: 8px 25px;
+  font-weight: 400;
+}
+
+#app .zm-sidebar .zm-sidebar-wrapper .zm-navbar-library .zm-navbar-img {
+  margin-right: 10px;
 }
 
 #app .zm-sidebar .zm-sidebar-wrapper .zm-add-playlist {
