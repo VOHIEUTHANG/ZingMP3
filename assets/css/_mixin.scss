@@ -6,3 +6,8 @@
   justify-content: $jc;
   align-items: $al;
 }
+@mixin hover-opacity($deg: 0.8) {
+  &:hover {
+    opacity: $deg;
+  }
+}

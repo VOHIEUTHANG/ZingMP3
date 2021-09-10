@@ -1,5 +1,5 @@
-@import "variables";
-@import "mixin";
+@import "./variables";
+@import "./mixin";
 
 //Some Reset CSS============================================================
 html {
@@ -98,7 +98,7 @@ body {
           width: 120px;
           transition: opacity 0.1s linear;
           &:hover {
-            opacity: 0.8;
+            opacity: 0.9;
           }
         }
         .zm-branch-logo {
@@ -120,6 +120,31 @@ body {
           &:hover {
             border-left: 3px solid var(--purple-primary);
             background-color: $alpha-bg;
+            & .navbar-link {
+              color: white !important;
+            }
+          }
+          &.live-label {
+            & span {
+              position: relative;
+              &::after {
+                content: "Live";
+                display: block;
+                position: absolute;
+                top: 50%;
+                left: 110%;
+                transform: translateY(-50%);
+                width: 34px;
+                height: 16px;
+                text-transform: uppercase;
+                font-size: 10px;
+                line-height: 16px;
+                text-align: center;
+                color: white;
+                background-color: red;
+                border-radius: 3px;
+              }
+            }
           }
         }
 
@@ -133,10 +158,35 @@ body {
           @include flex-center(flex-start, center);
         }
         .zm-navbar-icon {
+          @include flex-center();
+          margin-right: 10px;
+          // display: inline-block;
+          width: 24px;
+          height: 24px;
+          font-size: 22px;
         }
         .zm-navbar-title {
           white-space: nowrap;
         }
+      }
+
+      .zm-add-playlist {
+        position: absolute;
+        height: 54px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        @include flex-center(flex-start, center);
+        border-top: 1px solid $border-primary;
+        padding: 0 28px;
+      }
+      .zm-add-pl-link {
+        color: white;
+        font-weight: 700;
+        @include hover-opacity();
+      }
+      .zm-add-pl-icon {
+        margin-right: 10px;
       }
     }
   }

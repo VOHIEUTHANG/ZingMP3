@@ -115,7 +115,7 @@ body {
 }
 
 #app .zm-sidebar .zm-sidebar-wrapper .zm-branch .zm-branch-link:hover {
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 #app .zm-sidebar .zm-sidebar-wrapper .zm-branch .zm-branch-logo {
@@ -138,6 +138,33 @@ body {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
+#app .zm-sidebar .zm-sidebar-wrapper .zm-navbar-main .navbar-item.is-active .navbar-link, #app .zm-sidebar .zm-sidebar-wrapper .zm-navbar-main .navbar-item:hover .navbar-link {
+  color: white !important;
+}
+
+#app .zm-sidebar .zm-sidebar-wrapper .zm-navbar-main .navbar-item.live-label span {
+  position: relative;
+}
+
+#app .zm-sidebar .zm-sidebar-wrapper .zm-navbar-main .navbar-item.live-label span::after {
+  content: "Live";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 110%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 34px;
+  height: 16px;
+  text-transform: uppercase;
+  font-size: 10px;
+  line-height: 16px;
+  text-align: center;
+  color: white;
+  background-color: red;
+  border-radius: 3px;
+}
+
 #app .zm-sidebar .zm-sidebar-wrapper .zm-navbar-main .navbar-link {
   display: block;
   padding: 7px 25px;
@@ -156,8 +183,56 @@ body {
           align-items: center;
 }
 
+#app .zm-sidebar .zm-sidebar-wrapper .zm-navbar-main .zm-navbar-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 10px;
+  width: 24px;
+  height: 24px;
+  font-size: 22px;
+}
+
 #app .zm-sidebar .zm-sidebar-wrapper .zm-navbar-main .zm-navbar-title {
   white-space: nowrap;
+}
+
+#app .zm-sidebar .zm-sidebar-wrapper .zm-add-playlist {
+  position: absolute;
+  height: 54px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0 28px;
+}
+
+#app .zm-sidebar .zm-sidebar-wrapper .zm-add-pl-link {
+  color: white;
+  font-weight: 700;
+}
+
+#app .zm-sidebar .zm-sidebar-wrapper .zm-add-pl-link:hover {
+  opacity: 0.8;
+}
+
+#app .zm-sidebar .zm-sidebar-wrapper .zm-add-pl-icon {
+  margin-right: 10px;
 }
 
 #app .zm-header {
