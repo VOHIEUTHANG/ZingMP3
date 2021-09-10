@@ -1,12 +1,52 @@
-* {
+html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+input,
+textarea,
+select,
+button {
+  outline: none;
+}
+
+input {
+  line-height: normal;
+}
+
+label,
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
 }
 
 body {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+  line-height: 1.5;
+  font-size: 14px;
+  font-weight: 400;
 }
 
 :root {
@@ -14,11 +54,21 @@ body {
   --background-sidebar: #231b2e;
   --background-controller: #120c1c;
   --text-color: white;
+  --layout-bg: #170f23;
+  --primary-bg: #432275;
+  --sidebar-popup-bg: #2a213a;
+  --alpha-layout-bg: rgba(41, 21, 71, 0.8);
+  --queue-player-popup-bg: #120822;
+  --blur-queue-bg: rgba(30, 21, 47, 0.9019607843137255);
+  --purple-primary: #7200a1;
+  --link-text-hover: #c662ef;
+  --chart-bg-img-alpha: rgba(32, 19, 53, 0.9);
 }
 
 #root {
   height: 100%;
   position: relative;
+  color: white;
 }
 
 #app {
@@ -31,9 +81,83 @@ body {
 }
 
 #app .zm-sidebar {
+  position: relative;
   width: 240px;
   height: calc(100vh - 90px);
+  padding: 70px 0 54px 0;
   background-color: var(--background-sidebar);
+}
+
+#app .zm-sidebar .zm-sidebar-wrapper .zm-branch {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  padding: 0 25px 0 28px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#app .zm-sidebar .zm-sidebar-wrapper .zm-branch .zm-branch-link {
+  display: block;
+  height: 40px;
+  width: 120px;
+  -webkit-transition: opacity 0.1s linear;
+  transition: opacity 0.1s linear;
+}
+
+#app .zm-sidebar .zm-sidebar-wrapper .zm-branch .zm-branch-link:hover {
+  opacity: 0.8;
+}
+
+#app .zm-sidebar .zm-sidebar-wrapper .zm-branch .zm-branch-logo {
+  height: 100%;
+  width: 100%;
+  background-image: url("https://zmp3-static.zadn.vn/skins/zmp3-v6.1/images/backgrounds/logo-dark.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+#app .zm-sidebar .zm-sidebar-wrapper .zm-navbar-main .navbar-item {
+  border-left: 3px solid transparent;
+  -webkit-transition: background-color 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: background-color 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+#app .zm-sidebar .zm-sidebar-wrapper .zm-navbar-main .navbar-item.is-active, #app .zm-sidebar .zm-sidebar-wrapper .zm-navbar-main .navbar-item:hover {
+  border-left: 3px solid var(--purple-primary);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+#app .zm-sidebar .zm-sidebar-wrapper .zm-navbar-main .navbar-link {
+  display: block;
+  padding: 7px 25px;
+  min-height: 38px;
+  color: #dadada;
+  font-size: 13px;
+  font-weight: 700;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#app .zm-sidebar .zm-sidebar-wrapper .zm-navbar-main .zm-navbar-title {
+  white-space: nowrap;
 }
 
 #app .zm-header {

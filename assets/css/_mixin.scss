@@ -1,3 +1,8 @@
 @mixin height-calculator($controller-height: $controller-height) {
   height: calc(100vh - #{$controller-height});
 }
+@mixin flex-center($jc: center, $al: center) {
+  display: flex;
+  justify-content: $jc;
+  align-items: $al;
+}
