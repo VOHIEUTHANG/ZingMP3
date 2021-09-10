@@ -130,10 +130,8 @@ body {
               &::after {
                 content: "Live";
                 display: block;
-                position: absolute;
-                top: 50%;
-                left: 110%;
-                transform: translateY(-50%);
+                @include abs-center(top);
+                left: calc(100% + 10px);
                 width: 34px;
                 height: 16px;
                 text-transform: uppercase;
@@ -147,7 +145,6 @@ body {
             }
           }
         }
-
         .navbar-link {
           display: block;
           padding: 7px 25px;
@@ -168,6 +165,13 @@ body {
         .zm-navbar-title {
           white-space: nowrap;
         }
+        .zm-navbar-divider {
+          width: 100%;
+          height: 1px;
+          background-color: $alpha-bg;
+          clip-path: inset(0 25px);
+          margin: 15px 0;
+        }
       }
 
       .zm-add-playlist {
@@ -179,14 +183,14 @@ body {
         @include flex-center(flex-start, center);
         border-top: 1px solid $border-primary;
         padding: 0 28px;
-      }
-      .zm-add-pl-link {
-        color: white;
-        font-weight: 700;
-        @include hover-opacity();
-      }
-      .zm-add-pl-icon {
-        margin-right: 10px;
+        .zm-add-pl-link {
+          color: white;
+          font-weight: 700;
+          @include hover-opacity();
+        }
+        .zm-add-pl-icon {
+          margin-right: 10px;
+        }
       }
     }
   }
