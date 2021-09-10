@@ -1,0 +1,81 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+:root {
+  --background-main: #170f23;
+  --background-sidebar: #231b2e;
+  --background-controller: #120c1c;
+  --text-color: white;
+}
+
+#root {
+  height: 100%;
+  position: relative;
+}
+
+#app {
+  font-family: "Inter", sans-serif;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#app .zm-sidebar {
+  width: 240px;
+  height: calc(100vh - 90px);
+  background-color: var(--background-sidebar);
+}
+
+#app .zm-header {
+  position: fixed;
+  top: 0;
+  left: 240px;
+  right: 320px;
+  height: 70px;
+  min-width: 600px;
+  padding: 0 30px;
+  background-color: var(--background-main);
+  border: 1px solid aquamarine;
+  z-index: 99;
+}
+
+#app .zm-mainpage {
+  background: var(--background-main);
+  height: calc(100vh - 90px);
+  margin-right: 320px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+#app .player-queue {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 90px;
+  width: 320px;
+  background-color: var(--background-main);
+  border: 1px solid aquamarine;
+}
+
+#app .player-controls {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  background-color: var(--background-controller);
+  height: 90px;
+  border: 1px solid aquamarine;
+}
+/*# sourceMappingURL=main.css.map */

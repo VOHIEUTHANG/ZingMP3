@@ -1,0 +1,79 @@
+@import "variables";
+@import "mixin";
+* {
+  box-sizing: border-box;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+//==================== Theme Color ====================
+:root {
+  --background-main: #170f23;
+  --background-sidebar: #231b2e;
+  --background-controller: #120c1c;
+  --text-color: white;
+}
+//============================================================
+
+#root {
+  height: 100%;
+  position: relative;
+}
+#app {
+  font-family: $font-stack;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  .zm-sidebar {
+    width: $sidebar-width;
+    @include height-calculator;
+    // height: calc(100vh - #{$controller-height});
+    background-color: var(--background-sidebar);
+  }
+  .zm-header {
+    position: fixed;
+    top: 0;
+    left: $sidebar-width;
+    right: $queue-width;
+    height: $header-height;
+    min-width: 600px;
+    padding: 0 30px;
+    background-color: var(--background-main);
+    border: 1px solid aquamarine;
+    z-index: 99;
+  }
+  .zm-mainpage {
+    background: var(--background-main);
+    @include height-calculator;
+    margin-right: $queue-width;
+    flex-grow: 1;
+  }
+  .zm-main {
+  }
+  .zm-section {
+    // position: relative;
+    // width: 100%;
+    // height: 0;
+  }
+  .player-queue {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: $controller-height;
+    width: $queue-width;
+    background-color: var(--background-main);
+    border: 1px solid aquamarine;
+  }
+  .player-controls {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    background-color: var(--background-controller);
+    height: $controller-height;
+    border: 1px solid aquamarine;
+  }
+}
