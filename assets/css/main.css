@@ -605,8 +605,6 @@ body {
 
 #app .zm-header .level .level-right .setting-item i {
   font-size: 16px;
-  max-width: 20px;
-  max-height: 20px;
   overflow: hidden;
 }
 
@@ -647,15 +645,86 @@ body {
   top: calc(100% + 10px);
   background-color: var(--primary-bg);
   border-radius: 8px;
-  overflow: hidden;
 }
 
 #app .zm-header .level .level-right .setting-item .zm-setting .menu-set-list {
   padding: 10px 0;
 }
 
+#app .zm-header .level .level-right .setting-item .zm-setting .menu-set-list .menu-set-item {
+  position: relative;
+}
+
+#app .zm-header .level .level-right .setting-item .zm-setting .menu-set-list .menu-set-item.has-sub-nav:hover .menu-sub {
+  visibility: visible;
+  opacity: 1;
+}
+
+#app .zm-header .level .level-right .setting-item .zm-setting .menu-set-list .menu-set-item.has-sub-nav .menu-sub {
+  position: absolute;
+  top: -50%;
+  right: 100%;
+  min-width: 260px;
+  padding: 10px 0;
+  background-color: var(--primary-bg);
+  border-radius: 6px;
+  -webkit-box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.2);
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+}
+
+#app .zm-header .level .level-right .setting-item .zm-setting .menu-set-list .menu-set-item.has-sub-nav .menu-sub .sub-wrapper:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+#app .zm-header .level .level-right .setting-item .zm-setting .menu-set-list .menu-set-item.has-sub-nav .menu-sub .title {
+  padding: 4px 12px 2px 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+#app .zm-header .level .level-right .setting-item .zm-setting .menu-set-list .menu-set-item.has-sub-nav .menu-sub .des {
+  padding: 0 40px 6px 12px;
+  font-size: 12px;
+  color: #999;
+}
+
 #app .zm-header .level .level-right .setting-item .zm-setting .menu-set-list .menu-set-item:nth-child(2) span {
   margin-left: 6px !important;
+}
+
+#app .zm-header .level .level-right .setting-item .zm-setting .menu-set-list .menu-set-item:nth-child(3).has-sub-nav .menu-sub {
+  top: 0;
+}
+
+#app .zm-header .level .level-right .setting-item .zm-setting .menu-set-list .menu-set-item:nth-child(3).has-sub-nav .menu-sub .sub-wrapper {
+  padding: 12px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#app .zm-header .level .level-right .setting-item .zm-setting .menu-set-list .menu-set-item:nth-child(3).has-sub-nav .menu-sub i {
+  font-size: 20px;
+  margin-left: 10px;
+  display: none;
+}
+
+#app .zm-header .level .level-right .setting-item .zm-setting .menu-set-list .menu-set-item:nth-child(3).has-sub-nav .menu-sub.on i.fa-toggle-on {
+  display: block;
+}
+
+#app .zm-header .level .level-right .setting-item .zm-setting .menu-set-list .menu-set-item:nth-child(3).has-sub-nav .menu-sub.off i.fa-toggle-off {
+  display: block;
 }
 
 #app .zm-header .level .level-right .setting-item .zm-setting .menu-set-list .menu-set-item .menu-set-icon {
