@@ -41,6 +41,13 @@ img {
   max-width: 100%;
 }
 
+button,
+input {
+  font-family: inherit;
+  background-color: transparent;
+  border: 0;
+}
+
 body {
   width: 100vw;
   height: 100vh;
@@ -48,15 +55,17 @@ body {
   line-height: 1.5;
   font-size: 14px;
   font-weight: 400;
+  color: var(--text-primary);
 }
 
 :root {
   --background-main: #170f23;
   --background-sidebar: #231b2e;
   --background-controller: #120c1c;
-  --text-color: white;
-  --layout-bg: #170f23;
+  --text-primary: #fff;
+  --search-text: #eee;
   --primary-bg: #432275;
+  --layout-bg: #170f23;
   --sidebar-popup-bg: #2a213a;
   --alpha-layout-bg: rgba(41, 21, 71, 0.8);
   --queue-player-popup-bg: #120822;
@@ -362,6 +371,7 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
+  background-color: var(--background-sidebar);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -397,8 +407,310 @@ body {
   min-width: 600px;
   padding: 0 30px;
   background-color: var(--background-main);
-  border: 1px solid aquamarine;
   z-index: 99;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#app .zm-header .level {
+  height: 40px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#app .zm-header .level .level-left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  margin-right: 10px;
+}
+
+#app .zm-header .level .level-left .zm-btn-back.disable i,
+#app .zm-header .level .level-left .zm-btn-forward.disable i {
+  opacity: 0.4 !important;
+}
+
+#app .zm-header .level .level-left .zm-btn-back.disable,
+#app .zm-header .level .level-left .zm-btn-forward.disable {
+  cursor: default;
+}
+
+#app .zm-header .level .level-left .zm-icon-back,
+#app .zm-header .level .level-left .zm-icon-forward {
+  width: 24px;
+  margin-right: 20px;
+  font-size: 20px;
+  color: white;
+  -webkit-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+}
+
+#app .zm-header .level .level-left .zm-icon-back:hover,
+#app .zm-header .level .level-left .zm-icon-forward:hover {
+  opacity: 0.8;
+}
+
+#app .zm-header .level .level-left .search {
+  position: relative;
+  width: 100%;
+  max-width: 540px;
+}
+
+#app .zm-header .level .level-left .search-container {
+  position: relative;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.1);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 20px;
+}
+
+#app .zm-header .level .level-left .search-icon {
+  font-size: 20px;
+  cursor: pointer;
+  margin: 10px;
+  color: #ccc;
+}
+
+#app .zm-header .level .level-left .search-input-wrapper {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+#app .zm-header .level .level-left .search-input {
+  width: 95%;
+  font-size: 14px;
+  color: var(--search-text);
+  background-clip: padding-box;
+  height: 34px;
+  padding: 5px 0;
+  line-height: 34px;
+}
+
+#app .zm-header .level .level-right {
+  -webkit-box-flex: 1;
+      -ms-flex: auto 0 0px;
+          flex: auto 0 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#app .zm-header .level .level-right .setting-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: transparent !important;
+}
+
+#app .zm-header .level .level-right .setting-item {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  position: relative;
+  margin-right: 10px;
+}
+
+#app .zm-header .level .level-right .setting-item:hover .setting-instruction {
+  visibility: visible;
+  opacity: 1;
+}
+
+#app .zm-header .level .level-right .setting-item .setting-instruction {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  z-index: 10;
+  font-size: 12px;
+  top: calc(100% + 10px);
+  white-space: nowrap;
+  background-color: #333;
+  border-radius: 6px;
+  padding: 2px 8px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: default;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+}
+
+#app .zm-header .level .level-right .setting-item .setting-instruction::after {
+  content: "";
+  width: 16px;
+  height: 6px;
+  background-color: #333;
+  -webkit-clip-path: polygon(0 100%, 100% 100%, 50% 0);
+          clip-path: polygon(0 100%, 100% 100%, 50% 0);
+  bottom: 100%;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+#app .zm-header .level .level-right .setting-item .zm-setting-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#app .zm-header .level .level-right .setting-item i {
+  font-size: 16px;
+  max-width: 20px;
+  max-height: 20px;
+  overflow: hidden;
+}
+
+#app .zm-header .level .level-right .setting-item:last-child {
+  margin-right: 0 !important;
+  -webkit-transition: opacity 0.1s linear;
+  transition: opacity 0.1s linear;
+}
+
+#app .zm-header .level .level-right .setting-item:last-child:hover {
+  opacity: 0.8;
+}
+
+#app .zm-header .level .level-right .setting-item .zm-theme .zm-theme-icon {
+  font-size: 14px;
+}
+
+#app .zm-header .level .level-right .setting-item .zm-profile {
+  width: 100%;
+  height: 100%;
+}
+
+#app .zm-header .level .level-right .setting-item .zm-profile-avatar {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-image: url("https://images.wallpaperscraft.com/image/single/guitar_guitarist_musical_instrument_126078_300x168.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#app .zm-header .level .level-right .setting-item .zm-setting .zm-setting-menu {
+  position: absolute;
+  width: 240px;
+  right: 0;
+  top: calc(100% + 10px);
+  background-color: var(--primary-bg);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+#app .zm-header .level .level-right .setting-item .zm-setting .menu-set-list {
+  padding: 10px 0;
+}
+
+#app .zm-header .level .level-right .setting-item .zm-setting .menu-set-list .menu-set-item:nth-child(2) span {
+  margin-left: 6px !important;
+}
+
+#app .zm-header .level .level-right .setting-item .zm-setting .menu-set-list .menu-set-item .menu-set-icon {
+  font-size: 20px;
+}
+
+#app .zm-header .level .level-right .setting-item .zm-setting .menu-set-list .menu-set-item .menu-set-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #dadada;
+  padding: 12px 20px 12px 17px;
+  -webkit-transition: background-color 0.1s linear;
+  transition: background-color 0.1s linear;
+}
+
+#app .zm-header .level .level-right .setting-item .zm-setting .menu-set-list .menu-set-item .menu-set-link span {
+  margin-right: auto;
+  margin-left: 10px;
+}
+
+#app .zm-header .level .level-right .setting-item .zm-setting .menu-set-list .menu-set-item .menu-set-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+#app .zm-header .level .level-right .setting-item .zm-setting .menu-set-list .menu-set-item .menu-set-link .menu-set-icon-hq {
+  width: 24px;
+  font-size: 12px;
+  padding: 2px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+#app .zm-header .level .level-right .setting-item .zm-setting .set-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#app .zm-header .level .level-right .setting-item .zm-setting .set-footer .menu-set-item .menu-set-link {
+  padding: 10px 20px 10px 16px !important;
+}
+
+#app .zm-header .level .level-right .setting-item .zm-setting .set-footer .menu-set-item .menu-set-link span {
+  margin-left: 0 !important;
+}
+
+#app .zm-header .level .level-right .setting-item .zm-setting .set-footer .menu-set-item .menu-set-icon {
+  font-size: 15px !important;
 }
 
 #app .zm-mainpage {

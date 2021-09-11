@@ -20,6 +20,7 @@ select,
 button {
   outline: none;
 }
+
 input {
   line-height: normal;
 }
@@ -34,6 +35,14 @@ img {
   display: block;
   max-width: 100%;
 }
+// ========== SOME RESET CSS FOR THIS PROJECT ==========
+button,
+input {
+  font-family: inherit;
+  background-color: transparent;
+  border: 0;
+}
+
 //============================================================
 
 body {
@@ -43,16 +52,18 @@ body {
   line-height: 1.5;
   font-size: 14px;
   font-weight: 400;
+  color: var(--text-primary);
 }
 //==================== Theme Color ====================
 :root {
   --background-main: #170f23;
   --background-sidebar: #231b2e;
   --background-controller: #120c1c;
-  --text-color: white;
+  --text-primary: #fff;
+  --search-text: #eee;
+  --primary-bg: #432275;
 
   --layout-bg: #170f23;
-  --primary-bg: #432275;
   --sidebar-popup-bg: #2a213a;
   --alpha-layout-bg: rgba(41, 21, 71, 0.8);
   --queue-player-popup-bg: #120822;
@@ -80,7 +91,8 @@ body {
     padding: 70px 0 54px 0;
     // height: calc(100vh - #{$controller-height});
     background-color: var(--background-sidebar);
-
+    //SIDEBAR
+    //============================================================
     .zm-sidebar-wrapper {
       .zm-branch {
         position: absolute;
@@ -278,6 +290,7 @@ body {
         bottom: 0;
         left: 0;
         right: 0;
+        background-color: var(--background-sidebar);
         @include flex-center(flex-start, center);
         border-top: 1px solid $border-primary;
         padding: 0 28px;
@@ -292,6 +305,8 @@ body {
       }
     }
   }
+  // HEADER
+  //============================================================
   .zm-header {
     position: fixed;
     top: 0;
@@ -301,9 +316,216 @@ body {
     min-width: 600px;
     padding: 0 30px;
     background-color: var(--background-main);
-    border: 1px solid aquamarine;
     z-index: 99;
+    @include flex-center;
+    .level {
+      height: 40px;
+      width: 100%;
+      @include flex-center(space-between, center);
+      .level-left {
+        display: flex;
+        flex-grow: 1;
+        margin-right: 10px;
+        .zm-btn-back,
+        .zm-btn-forward {
+          &.disable i {
+            opacity: 0.4 !important;
+          }
+          &.disable {
+            cursor: default;
+          }
+        }
+        .zm-icon-back,
+        .zm-icon-forward {
+          width: 24px;
+          margin-right: 20px;
+          font-size: 20px;
+          color: white;
+          transition: all 0.1s linear;
+          @include hover-opacity(0.8);
+        }
+
+        .search {
+          position: relative;
+          width: 100%;
+          max-width: 540px;
+        }
+        .search-container {
+          position: relative;
+          height: 40px;
+          background-color: $alpha-bg;
+          @include flex-center(flex-start, center);
+          border-radius: 20px;
+        }
+        .search-icon {
+          font-size: 20px;
+          cursor: pointer;
+          margin: 10px;
+          color: #ccc;
+        }
+        .search-input-wrapper {
+          // position: absolute;
+          // top: 0;
+          // left: 38px;
+          // right: 10px;
+          // bottom: 0;
+          flex-grow: 1;
+        }
+        .search-input {
+          width: 95%;
+          font-size: 14px;
+          color: var(--search-text);
+          background-clip: padding-box;
+          height: 34px;
+          padding: 5px 0;
+          line-height: 34px;
+        }
+      }
+      .level-right {
+        flex: auto 0 0;
+        @include flex-center;
+        .setting-list {
+          display: flex;
+          background-color: transparent !important;
+        }
+        .setting-item {
+          position: relative;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          background-color: $alpha-bg;
+          cursor: pointer;
+          position: relative;
+          margin-right: 10px;
+          &:hover .setting-instruction {
+            visibility: visible;
+            opacity: 1;
+          }
+          .setting-instruction {
+            @include abs-center(left);
+            z-index: 10;
+            font-size: 12px;
+            top: calc(100% + 10px);
+            white-space: nowrap;
+            background-color: #333;
+            border-radius: 6px;
+            padding: 2px 8px;
+            user-select: none;
+            cursor: default;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out;
+            &::after {
+              content: "";
+              width: 16px;
+              height: 6px;
+              background-color: #333;
+              clip-path: polygon(0 100%, 100% 100%, 50% 0);
+              bottom: 100%;
+              @include abs-center(left);
+            }
+          }
+          .zm-setting-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            @include flex-center;
+          }
+          i {
+            font-size: 16px;
+            max-width: 20px;
+            max-height: 20px;
+            overflow: hidden;
+          }
+          &:last-child {
+            margin-right: 0 !important;
+            transition: opacity 0.1s linear;
+            @include hover-opacity;
+          }
+          .zm-theme {
+            .zm-theme-icon {
+              // color: color;
+              font-size: 14px;
+            }
+          }
+          .zm-profile {
+            width: 100%;
+            height: 100%;
+          }
+          .zm-profile-avatar {
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background-image: url("https://images.wallpaperscraft.com/image/single/guitar_guitarist_musical_instrument_126078_300x168.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+          }
+          .zm-setting {
+            & .zm-setting-menu {
+              position: absolute;
+              width: 240px;
+              right: 0;
+              top: calc(100% + 10px);
+              background-color: var(--primary-bg);
+              border-radius: 8px;
+              overflow: hidden;
+            }
+            .menu-set-list {
+              padding: 10px 0;
+              .menu-set-item {
+                &:nth-child(2) span {
+                  margin-left: 6px !important;
+                }
+                .menu-set-icon {
+                  font-size: 20px;
+                }
+                .menu-set-link {
+                  @include flex-center(flex-start, center);
+                  color: $navigation-text;
+                  padding: 12px 20px 12px 17px;
+                  transition: background-color 0.1s linear;
+                  span {
+                    margin-right: auto;
+                    margin-left: 10px;
+                  }
+                  &:hover {
+                    background-color: $alpha-bg;
+                    color: white;
+                  }
+                  .menu-set-icon-hq {
+                    width: 24px;
+                    font-size: 12px;
+                    padding: 2px;
+                    text-align: center;
+                    background-color: $alpha-bg;
+                    border-radius: 4px;
+                  }
+                }
+              }
+            }
+            .set-footer {
+              border-top: 1px solid $border-primary;
+              .menu-set-item {
+                .menu-set-link {
+                  padding: 10px 20px 10px 16px !important;
+                  span {
+                    margin-left: 0 !important;
+                  }
+                }
+                .menu-set-icon {
+                  font-size: 15px !important;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
+  //MAIN PAGE
+  //============================================================
   .zm-mainpage {
     background: var(--background-main);
     @include height-calculator;
@@ -312,6 +534,8 @@ body {
   }
   .zm-main {
   }
+  //SUB SECTION
+  //============================================================
   .zm-section {
     // position: relative;
     // width: 100%;

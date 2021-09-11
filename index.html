@@ -28,6 +28,7 @@
   <body>
     <div id="root">
       <div id="app">
+        <!-- ========== SIDEBAR ==========  -->
         <aside class="zm-sidebar">
           <div class="zm-sidebar-wrapper">
             <!-- ========== Logo ========== -->
@@ -170,10 +171,132 @@
             </div>
           </div>
         </aside>
-        <header class="zm-header"></header>
+        <!-- ========== HEADER ==========  -->
+        <header class="zm-header">
+          <div class="level">
+            <div class="level-left">
+              <button class="zm-btn-back disable">
+                <i class="zm-icon-back fas fa-chevron-left"></i>
+              </button>
+              <button class="zm-btn-forward">
+                <i class="zm-icon-forward fas fa-chevron-right"></i>
+              </button>
+
+              <form action="" class="search">
+                <div class="search-container">
+                  <i class="search-icon fas fa-search"></i>
+                  <div class="search-input-wrapper">
+                    <input
+                      type="text"
+                      class="search-input"
+                      placeholder="Nhập tên bài hát, nghệ sĩ hoặc MV..."
+                      autocomplete="off"
+                    />
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="level-right">
+              <ul class="setting-list">
+                <li class="setting-item">
+                  <div class="setting-instruction">Chủ đề</div>
+                  <div class="zm-theme zm-setting-wrapper">
+                    <i class="zm-theme-icon fas fa-tshirt"> </i>
+                    <div class="overlay">
+                      <div class="choose-theme"></div>
+                    </div>
+                  </div>
+                </li>
+                <li class="setting-item">
+                  <div class="setting-instruction">Tải lên</div>
+                  <input
+                    type="file"
+                    name=""
+                    id="upload-file"
+                    style="display: none"
+                  />
+                  <label
+                    for="upload-file"
+                    class="zm-upload-song zm-setting-wrapper"
+                  >
+                    <i class="zm-upload-icon fas fa-upload"></i>
+                  </label>
+                </li>
+                <li class="setting-item">
+                  <div class="setting-instruction">Cài đặt</div>
+                  <div class="zm-setting zm-setting-wrapper">
+                    <i class="zm-setting-icon fas fa-cog"></i>
+                    <div class="zm-setting-menu">
+                      <ul class="menu-set-list">
+                        <li class="menu-set-item">
+                          <a href="" class="menu-set-link">
+                            <i class="menu-set-icon fas fa-ban"></i>
+                            <span>Danh sách nhạc</span>
+                          </a>
+                        </li>
+                        <li class="menu-set-item">
+                          <a href="" class="menu-set-link">
+                            <div class="menu-set-icon-hq">HQ</div>
+                            <span>Chất lượng nhạc</span>
+                            <i class="menu-set-icon fas fa-angle-right"></i>
+                          </a>
+                        </li>
+                        <li class="menu-set-item">
+                          <a href="" class="menu-set-link">
+                            <i class="menu-set-icon far fa-play-circle"></i>
+                            <span>Trình phát nhạc</span>
+                            <i class="menu-set-icon fas fa-angle-right"></i>
+                          </a>
+                        </li>
+                      </ul>
+                      <footer class="set-footer">
+                        <ul class="menu-set-list">
+                          <li class="menu-set-item">
+                            <a href="" class="menu-set-link">Giới Thiệu</a>
+                          </li>
+                          <li class="menu-set-item">
+                            <a href="" class="menu-set-link">
+                              <span>Góp ý</span>
+                              <i class="menu-set-icon far fa-paper-plane"></i>
+                            </a>
+                          </li>
+                          <li class="menu-set-item">
+                            <a href="" class="menu-set-link">
+                              <span>Liên hệ</span>
+                              <i class="menu-set-icon far fa-paper-plane"></i>
+                            </a>
+                          </li>
+                          <li class="menu-set-item">
+                            <a href="" class="menu-set-link">
+                              <span>Quảng cáo</span>
+                              <i class="menu-set-icon far fa-paper-plane"></i>
+                            </a>
+                          </li>
+                          <li class="menu-set-item">
+                            <a href="" class="menu-set-link">
+                              <span>Thỏa thuận sử dụng</span>
+                              <i class="menu-set-icon far fa-paper-plane"></i>
+                            </a>
+                          </li>
+                        </ul>
+                      </footer>
+                    </div>
+                  </div>
+                </li>
+                <li class="setting-item">
+                  <div class="zm-profile zm-setting-wrapper">
+                    <div class="zm-profile-avatar"></div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </header>
+        <!-- ========== MAIN PAGE ==========  -->
         <div class="zm-mainpage">
           <main class="zm-main"></main>
         </div>
+        <!-- ========== SUB SECTION  ==========  -->
         <div class="zm-section">
           <div class="player-queue"></div>
           <div class="player-controls"></div>
