@@ -397,6 +397,181 @@ body {
           cursor: pointer;
           position: relative;
           margin-right: 10px;
+
+          &:first-child {
+            .theme-modal-overlay {
+              position: fixed;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              z-index: 100;
+              background-color: $dark-alpha-50;
+              .theme-modal {
+                position: absolute;
+                max-width: 900px;
+                max-height: 100%;
+                height: 50vh;
+                min-height: 596px;
+                background-color: var(--primary-bg);
+                border-radius: 8px;
+                @include abs-center;
+                //set color css
+                font-size: 12px;
+                font-weight: 500;
+                line-height: 1.36;
+                color: var(--text-primary);
+                overflow: hidden;
+                text-overflow: ellipsis;
+                .theme-content {
+                  cursor: default;
+                  .theme-close-btn {
+                    position: absolute;
+                    top: 15px;
+                    right: 20px;
+                    width: 34px;
+                    height: 34px;
+                    color: white;
+                    transition: color 0.1s linear;
+                    cursor: pointer;
+                    &:hover {
+                      color: $red-close;
+                    }
+                    @include hover-opacity(0.9);
+                    @include flex-center;
+                    i {
+                      font-size: 30px;
+                    }
+                  }
+                  width: 70vw;
+                  max-width: 900px;
+                  padding-bottom: 20px;
+                  .main-title {
+                    text-align: center;
+                    font-size: 24px;
+                    padding: 20px 30px;
+                    font-weight: 700;
+                    letter-spacing: 1px;
+                    text-transform: uppercase;
+                  }
+                  .main-content {
+                    max-height: 50vh;
+                    min-height: 500px;
+                    padding: 0 30px;
+                    overflow-y: scroll;
+                    .title {
+                      font-size: 18px;
+                      margin-bottom: 10px;
+                      text-transform: capitalize;
+                      font-weight: 600;
+                      letter-spacing: 1px;
+                    }
+                    .container {
+                      .card-list {
+                        display: flex;
+                        flex-wrap: wrap;
+                        margin: 0 -7px;
+                        .card-item {
+                          padding-left: 7px;
+                          padding-right: 7px;
+                          margin-bottom: 20px;
+                          .card-name {
+                            font-size: 12px;
+                            font-weight: 500;
+                            width: 124px;
+                            text-transform: capitalize;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            margin: 5px 0;
+                          }
+                          .card-background {
+                            cursor: pointer;
+                            position: relative;
+                            width: 124px;
+                            height: 82px;
+                            overflow: hidden;
+                            // background-image: url("https://zmp3-static.zadn.vn/skins/zmp3-v6.1/images/theme/zma.jpg");
+                            // background-repeat: no-repeat;
+                            // background-size: cover;
+                            // background-position: center;
+                            border-radius: 6px;
+                            img {
+                              width: 100%;
+                              height: 100%;
+                              object-fit: cover;
+                              transition: transform 0.2s linear;
+                            }
+                            &:hover .card-btn {
+                              visibility: visible;
+                              opacity: 1;
+                            }
+                            &:hover img {
+                              filter: grayscale(50%);
+                              transform: scale(110%);
+                            }
+                            &.is-active {
+                              border: 1px solid aqua;
+                              img {
+                                filter: grayscale(0%);
+                              }
+                              & .check-icon {
+                                display: block;
+                              }
+                              &:hover {
+                                .card-btn {
+                                  display: none;
+                                }
+                              }
+                            }
+                            .card-btn {
+                              @include abs-center(left);
+                              white-space: nowrap;
+                              text-transform: uppercase;
+                              width: 100px;
+                              font-size: 9px;
+                              color: white;
+                              text-align: center;
+                              background-color: rgba(0, 0, 0, 0.8);
+                              border: 1px solid hsla(0, 0%, 100%, 0.5);
+                              border-radius: 20px;
+                              padding: 5px 0;
+                              @include hover-visibility();
+                              transition: all 0.2s linear;
+                              &.is-active {
+                                background-color: var(--purple-primary);
+                                border-color: var(--purple-primary);
+                              }
+                              &:hover {
+                                @include hover-opacity(0.8);
+                              }
+                            }
+
+                            .card-btn-preview {
+                              bottom: 15%;
+                            }
+                            .card-btn-apply {
+                              top: 15%;
+                            }
+                            .check-icon {
+                              position: absolute;
+                              bottom: 10px;
+                              right: 10px;
+                              background-color: white;
+                              border-radius: 50%;
+                              color: var(--purple-primary);
+                              font-size: 18px;
+                              display: none;
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
           &:hover .setting-instruction {
             visibility: visible;
             opacity: 1;
@@ -455,13 +630,14 @@ body {
             width: 100%;
             height: 100%;
             border-radius: 50%;
-            background-image: url("https://images.wallpaperscraft.com/image/single/guitar_guitarist_musical_instrument_126078_300x168.jpg");
+            background-image: url("https://www.anphatpc.com.vn/media/news/0812_wp3850825-4k-pc-wallpapers.jpg");
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
           }
           .zm-setting {
             & .zm-setting-menu {
+              display: none;
               position: absolute;
               width: 240px;
               right: 0;

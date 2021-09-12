@@ -27,3 +27,7 @@
     transform: translateY(-50%);
   }
 }
+@mixin hover-visibility() {
+  visibility: hidden;
+  opacity: 0;
+}
