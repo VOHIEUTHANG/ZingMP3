@@ -400,6 +400,7 @@ body {
 
           &:first-child {
             .theme-modal-overlay {
+              display: none;
               position: fixed;
               top: 0;
               left: 0;
@@ -491,10 +492,6 @@ body {
                             width: 124px;
                             height: 82px;
                             overflow: hidden;
-                            // background-image: url("https://zmp3-static.zadn.vn/skins/zmp3-v6.1/images/theme/zma.jpg");
-                            // background-repeat: no-repeat;
-                            // background-size: cover;
-                            // background-position: center;
                             border-radius: 6px;
                             img {
                               width: 100%;
@@ -636,6 +633,9 @@ body {
             background-position: center;
           }
           .zm-setting {
+            &.active .zm-setting-menu {
+              display: block;
+            }
             & .zm-setting-menu {
               display: none;
               position: absolute;
@@ -658,7 +658,7 @@ body {
                   }
                   .menu-sub {
                     position: absolute;
-                    top: -50%;
+                    top: 0;
                     right: 100%;
                     min-width: 260px;
                     padding: 10px 0;
@@ -689,7 +689,6 @@ body {
                 &:nth-child(3) {
                   &.has-sub-nav {
                     .menu-sub {
-                      top: 0;
                       .sub-wrapper {
                         padding: 12px 0;
                         @include flex-center(space-evenly, center);

@@ -547,6 +547,7 @@ body {
 }
 
 #app .zm-header .level .level-right .setting-item:first-child .theme-modal-overlay {
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -857,6 +858,10 @@ body {
   background-position: center;
 }
 
+#app .zm-header .level .level-right .setting-item .zm-setting.active .zm-setting-menu {
+  display: block;
+}
+
 #app .zm-header .level .level-right .setting-item .zm-setting .zm-setting-menu {
   display: none;
   position: absolute;
@@ -882,7 +887,7 @@ body {
 
 #app .zm-header .level .level-right .setting-item .zm-setting .menu-set-list .menu-set-item.has-sub-nav .menu-sub {
   position: absolute;
-  top: -50%;
+  top: 0;
   right: 100%;
   min-width: 260px;
   padding: 10px 0;
@@ -914,10 +919,6 @@ body {
 
 #app .zm-header .level .level-right .setting-item .zm-setting .menu-set-list .menu-set-item:nth-child(2) span {
   margin-left: 6px !important;
-}
-
-#app .zm-header .level .level-right .setting-item .zm-setting .menu-set-list .menu-set-item:nth-child(3).has-sub-nav .menu-sub {
-  top: 0;
 }
 
 #app .zm-header .level .level-right .setting-item .zm-setting .menu-set-list .menu-set-item:nth-child(3).has-sub-nav .menu-sub .sub-wrapper {
