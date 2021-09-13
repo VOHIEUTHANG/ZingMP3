@@ -107,7 +107,8 @@ const galleryHandle = (function () {
                     }
                     this.showSlide();
                 }
-                if (currentIndex >= 3) {
+                console.log(currentIndex);
+                if (currentIndex >= galleryCount - 3) {
                     if (!nextBtn.classList.contains('disable')) {
                         nextBtn.classList.add("disable");
                     }
@@ -132,7 +133,7 @@ const galleryHandle = (function () {
             }
         },
         run: function () {
-            this.autoRun();
+            // this.autoRun();
             this.next();
             this.prev();
 
