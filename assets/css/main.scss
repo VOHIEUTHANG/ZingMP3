@@ -567,8 +567,12 @@ body {
                   }
                 }
               }
+              &:hover + .setting-instruction {
+                opacity: 0;
+              }
             }
           }
+
           &:hover .setting-instruction {
             visibility: visible;
             opacity: 1;
@@ -636,7 +640,7 @@ body {
             &.active .zm-setting-menu {
               display: block;
             }
-            & .zm-setting-menu {
+            .zm-setting-menu {
               display: none;
               position: absolute;
               width: 240px;
@@ -644,6 +648,9 @@ body {
               top: calc(100% + 10px);
               background-color: var(--primary-bg);
               border-radius: 8px;
+              &:hover + .setting-instruction {
+                opacity: 0;
+              }
             }
             .menu-set-list {
               padding: 10px 0;

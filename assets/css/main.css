@@ -766,6 +766,10 @@ body {
   display: none;
 }
 
+#app .zm-header .level .level-right .setting-item:first-child .theme-modal-overlay:hover + .setting-instruction {
+  opacity: 0;
+}
+
 #app .zm-header .level .level-right .setting-item:hover .setting-instruction {
   visibility: visible;
   opacity: 1;
@@ -870,6 +874,10 @@ body {
   top: calc(100% + 10px);
   background-color: var(--primary-bg);
   border-radius: 8px;
+}
+
+#app .zm-header .level .level-right .setting-item .zm-setting .zm-setting-menu:hover + .setting-instruction {
+  opacity: 0;
 }
 
 #app .zm-header .level .level-right .setting-item .zm-setting .menu-set-list {
