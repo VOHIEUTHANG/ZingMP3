@@ -1012,6 +1012,17 @@ body {
           flex-grow: 1;
 }
 
+#app .zm-main {
+  width: 100%;
+  overflow: hidden scroll;
+  padding: 0 4vw;
+}
+
+#app .zm-main .main-container {
+  margin-top: 70px;
+  min-height: 100vh;
+}
+
 #app .player-queue {
   position: absolute;
   top: 0;

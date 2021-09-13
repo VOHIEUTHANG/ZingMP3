@@ -763,6 +763,13 @@ body {
     flex-grow: 1;
   }
   .zm-main {
+    width: 100%;
+    overflow: hidden scroll;
+    padding: $main-padding;
+    .main-container {
+      margin-top: $header-height;
+      min-height: 100vh;
+    }
   }
   //SUB SECTION
   //============================================================

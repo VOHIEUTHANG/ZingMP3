@@ -31,7 +31,9 @@ const headerController = (function () {
         },
         settingSection: function () {
             app.addEventListener('click', function () {
-                settingBtn.classList.remove('active');
+                if (settingBtn.classList.contains('active')) {
+                    settingBtn.classList.remove('active');
+                }
             });
 
             settingBtn.onclick = function (e) {
