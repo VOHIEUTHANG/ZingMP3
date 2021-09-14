@@ -7,6 +7,7 @@ html {
 * {
   margin: 0;
   padding: 0;
+  text-rendering: optimizeLegibility;
 }
 
 *,
@@ -1025,7 +1026,7 @@ body {
 }
 
 #app .zm-main {
-  height: 1000px;
+  height: 2000px;
   width: 100%;
   overflow: hidden scroll;
   padding: 0 4vw;
@@ -1234,6 +1235,22 @@ body {
   -webkit-box-flex: 0;
       -ms-flex-positive: 0;
           flex-grow: 0;
+  -ms-flex-item-align: stretch;
+      -ms-grid-row-align: stretch;
+      align-self: stretch;
+}
+
+#app .zm-main .main-container .playlist-section .container .zm-carousel-wrapper .zm-carousel .zm-carousel-list .zm-carousel-item.live-stream .main-title {
+  text-align: center !important;
+}
+
+#app .zm-main .main-container .playlist-section .container .zm-carousel-wrapper .zm-carousel .zm-carousel-list .zm-carousel-item.live-stream .frames {
+  border-radius: 50% !important;
+}
+
+#app .zm-main .main-container .playlist-section .container .zm-carousel-wrapper .zm-carousel .zm-carousel-list .zm-carousel-item.live-stream .heart,
+#app .zm-main .main-container .playlist-section .container .zm-carousel-wrapper .zm-carousel .zm-carousel-list .zm-carousel-item.live-stream .more {
+  display: none !important;
 }
 
 #app .zm-main .main-container .playlist-section .container .zm-carousel-wrapper .zm-carousel .zm-carousel-list .zm-carousel-item .zm-card .frames {
@@ -1249,8 +1266,8 @@ body {
 }
 
 #app .zm-main .main-container .playlist-section .container .zm-carousel-wrapper .zm-carousel .zm-carousel-list .zm-carousel-item .main-link:hover .zm-card-img img {
-  -webkit-transform: scale(110%);
-          transform: scale(110%);
+  -webkit-transform: scale(106%);
+          transform: scale(106%);
 }
 
 #app .zm-main .main-container .playlist-section .container .zm-carousel-wrapper .zm-carousel .zm-carousel-list .zm-carousel-item .main-link:hover .zm-card-hover-detail {
@@ -1260,10 +1277,10 @@ body {
 }
 
 #app .zm-main .main-container .playlist-section .container .zm-carousel-wrapper .zm-carousel .zm-carousel-list .zm-carousel-item .main-link .zm-card-img img {
-  -webkit-transition: -webkit-transform 0.4s linear;
-  transition: -webkit-transform 0.4s linear;
-  transition: transform 0.4s linear;
-  transition: transform 0.4s linear, -webkit-transform 0.4s linear;
+  -webkit-transition: -webkit-transform 0.3s linear;
+  transition: -webkit-transform 0.3s linear;
+  transition: transform 0.3s linear;
+  transition: transform 0.3s linear, -webkit-transform 0.3s linear;
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -1329,7 +1346,7 @@ body {
   margin-top: 8px;
 }
 
-#app .zm-main .main-container .playlist-section .container .zm-carousel-wrapper .zm-carousel .zm-carousel-list .zm-carousel-item .playlist-wrapper .zm-card .zm-card-content a {
+#app .zm-main .main-container .playlist-section .container .zm-carousel-wrapper .zm-carousel .zm-carousel-list .zm-carousel-item .playlist-wrapper .zm-card .zm-card-content .main-title {
   display: block;
   font-size: 15px;
   font-weight: 700;
@@ -1343,21 +1360,43 @@ body {
   text-align: left;
 }
 
-#app .zm-main .main-container .playlist-section .container .zm-carousel-wrapper .zm-carousel .zm-carousel-list .zm-carousel-item .playlist-wrapper .zm-card .zm-card-content a:hover {
+#app .zm-main .main-container .playlist-section .container .zm-carousel-wrapper .zm-carousel .zm-carousel-list .zm-carousel-item .playlist-wrapper .zm-card .zm-card-content .main-title:hover {
   color: var(--link-text-hover);
 }
 
-#app .zm-main .main-container .playlist-section .container .zm-carousel-wrapper .zm-carousel .zm-carousel-list .zm-carousel-item .playlist-wrapper .zm-card .zm-card-content .sub-title {
+#app .zm-main .main-container .playlist-section .container .zm-carousel-wrapper .zm-carousel .zm-carousel-list .zm-carousel-item .playlist-wrapper .zm-card .zm-card-content .main-title.center {
+  text-align: center;
+}
+
+#app .zm-main .main-container .playlist-section .container .zm-carousel-wrapper .zm-carousel .zm-carousel-list .zm-carousel-item .playlist-wrapper .zm-card .zm-card-content .sub-title-wrapper {
   font-size: 13px;
   font-weight: 400;
-  text-transform: capitalize;
   line-height: 1.33;
   color: rgba(255, 255, 255, 0.5);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+#app .zm-main .main-container .playlist-section .container .zm-carousel-wrapper .zm-carousel .zm-carousel-list .zm-carousel-item .playlist-wrapper .zm-card .zm-card-content .sub-title {
+  display: inline-block;
+  text-transform: capitalize;
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
 }
 
 #app .zm-main .main-container .playlist-section .container .zm-carousel-wrapper .zm-carousel .zm-carousel-list .zm-carousel-item .playlist-wrapper .zm-card .zm-card-content .sub-title:hover {
   color: var(--link-text-hover);
   text-decoration: underline;
+}
+
+#app .zm-main .main-container .playlist-section .container .zm-carousel-wrapper .zm-carousel .zm-carousel-list .zm-carousel-item .playlist-wrapper .zm-card .zm-card-content .sub-title:hover i {
+  text-decoration: underline;
+}
+
+#app .zm-main .main-container .playlist-section .container .zm-carousel-wrapper .zm-carousel .zm-carousel-list .zm-carousel-item .playlist-wrapper .zm-card .zm-card-content .sub-title i {
+  font-size: 9px;
 }
 
 #app .zm-main .main-container .playlist-section .container .zm-carousel-wrapper .zm-btn {

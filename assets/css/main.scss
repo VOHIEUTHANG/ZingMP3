@@ -8,6 +8,7 @@ html {
 * {
   margin: 0;
   padding: 0;
+  text-rendering: optimizeLegibility;
 }
 *,
 *:before,
@@ -774,7 +775,7 @@ body {
     flex-grow: 1;
   }
   .zm-main {
-    height: 1000px;
+    height: 2000px;
     width: 100%;
     overflow: hidden scroll;
     padding: $main-padding;
@@ -913,11 +914,24 @@ body {
                 flex-wrap: nowrap;
                 overflow: scroll hidden;
                 .zm-carousel-item {
+                  &.live-stream {
+                    & .main-title {
+                      text-align: center !important;
+                    }
+                    & .frames {
+                      border-radius: 50% !important;
+                    }
+                    & .heart,
+                    .more {
+                      display: none !important;
+                    }
+                  }
                   width: 20%;
                   position: relative;
                   padding: 0 15px;
                   flex-shrink: 0;
                   flex-grow: 0;
+                  align-self: stretch;
                   .zm-card {
                     .frames {
                       border-radius: 4px;
@@ -932,7 +946,7 @@ body {
                     &:hover {
                       & .zm-card-img {
                         img {
-                          transform: scale(110%);
+                          transform: scale(106%);
                         }
                       }
                       & .zm-card-hover-detail {
@@ -941,7 +955,7 @@ body {
                     }
                     .zm-card-img {
                       img {
-                        transition: transform 0.4s linear;
+                        transition: transform 0.3s linear;
                         width: 100%;
                         height: 100%;
                         object-fit: cover;
@@ -986,7 +1000,7 @@ body {
                     .zm-card {
                       .zm-card-content {
                         margin-top: 8px;
-                        a {
+                        .main-title {
                           display: block;
                           font-size: 15px;
                           font-weight: 700;
@@ -1003,16 +1017,34 @@ body {
                           &:hover {
                             color: var(--link-text-hover);
                           }
+                          &.center {
+                            text-align: center;
+                          }
                         }
-                        .sub-title {
+                        .sub-title-wrapper {
                           font-size: 13px;
                           font-weight: 400;
-                          text-transform: capitalize;
                           line-height: 1.33;
                           color: $text-secondary;
+                          white-space: nowrap;
+                          text-overflow: ellipsis;
+                          overflow: hidden;
+                        }
+                        .sub-title {
+                          display: inline-block;
+                          text-transform: capitalize;
+                          font-size: inherit;
+                          font-weight: inherit;
+                          color: inherit;
                           &:hover {
                             color: var(--link-text-hover);
                             text-decoration: underline;
+                            & i {
+                              text-decoration: underline;
+                            }
+                          }
+                          i {
+                            font-size: 9px;
                           }
                         }
                       }
