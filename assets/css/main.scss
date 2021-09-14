@@ -771,18 +771,19 @@ body {
   .zm-mainpage {
     background: var(--background-main);
     @include height-calculator;
-    margin-right: $queue-width;
+    margin-right: $queue-width - 17px;
     flex-grow: 1;
+    overflow: hidden;
   }
   .zm-main {
-    height: 2000px;
+    height: 100%;
+    max-height: 100%;
     width: 100%;
     overflow: hidden scroll;
     padding: $main-padding;
     .main-container {
       margin-top: $header-height + 20px;
       min-height: 100vh;
-      margin-right: -17px;
       .gallery {
         &:hover .gallery-btn {
           visibility: visible;
@@ -918,7 +919,8 @@ body {
                     & .main-title {
                       text-align: center !important;
                     }
-                    & .frames {
+                    & .main-link {
+                      overflow: hidden;
                       border-radius: 50% !important;
                     }
                     & .heart,
@@ -934,8 +936,15 @@ body {
                   align-self: stretch;
                   .zm-card {
                     .frames {
+                      position: relative;
                       border-radius: 4px;
                       overflow: hidden;
+                      svg {
+                        position: absolute;
+                        top: 68%;
+                        right: 4%;
+                        z-index: 20;
+                      }
                     }
                   }
                   .main-link {

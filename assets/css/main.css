@@ -1019,14 +1019,16 @@ body {
 #app .zm-mainpage {
   background: var(--background-main);
   height: calc(100vh - 90px);
-  margin-right: 320px;
+  margin-right: 303px;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+  overflow: hidden;
 }
 
 #app .zm-main {
-  height: 2000px;
+  height: 100%;
+  max-height: 100%;
   width: 100%;
   overflow: hidden scroll;
   padding: 0 4vw;
@@ -1035,7 +1037,6 @@ body {
 #app .zm-main .main-container {
   margin-top: 90px;
   min-height: 100vh;
-  margin-right: -17px;
 }
 
 #app .zm-main .main-container .gallery {
@@ -1244,7 +1245,8 @@ body {
   text-align: center !important;
 }
 
-#app .zm-main .main-container .playlist-section .container .zm-carousel-wrapper .zm-carousel .zm-carousel-list .zm-carousel-item.live-stream .frames {
+#app .zm-main .main-container .playlist-section .container .zm-carousel-wrapper .zm-carousel .zm-carousel-list .zm-carousel-item.live-stream .main-link {
+  overflow: hidden;
   border-radius: 50% !important;
 }
 
@@ -1254,8 +1256,16 @@ body {
 }
 
 #app .zm-main .main-container .playlist-section .container .zm-carousel-wrapper .zm-carousel .zm-carousel-list .zm-carousel-item .zm-card .frames {
+  position: relative;
   border-radius: 4px;
   overflow: hidden;
+}
+
+#app .zm-main .main-container .playlist-section .container .zm-carousel-wrapper .zm-carousel .zm-carousel-list .zm-carousel-item .zm-card .frames svg {
+  position: absolute;
+  top: 68%;
+  right: 4%;
+  z-index: 20;
 }
 
 #app .zm-main .main-container .playlist-section .container .zm-carousel-wrapper .zm-carousel .zm-carousel-list .zm-carousel-item .main-link {
