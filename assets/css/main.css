@@ -1380,6 +1380,7 @@ body {
       -ms-user-select: none;
           user-select: none;
   cursor: pointer;
+  color: var(--text-primary);
 }
 
 #app .zm-main .main-container .playlist-section .container .zm-carousel-wrapper .zm-btn i {
