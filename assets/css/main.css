@@ -1039,7 +1039,6 @@ body {
 
 #app .zm-main .main-container .gallery {
   position: relative;
-  width: 100%;
   margin: 0 -15px;
   overflow: hidden;
 }
