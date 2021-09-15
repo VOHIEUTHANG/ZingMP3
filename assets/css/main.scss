@@ -901,7 +901,8 @@ body {
               i {
                 position: relative;
                 font-size: 18px;
-                top: 2px;
+                top: 1px;
+                font-weight: 700;
                 padding: 0 4px;
               }
             }
@@ -910,10 +911,11 @@ body {
             position: relative;
             .zm-carousel {
               margin: 0 -15px;
+              overflow: hidden;
               .zm-carousel-list {
                 @include flex-center(flex-start, center);
                 flex-wrap: nowrap;
-                overflow: scroll hidden;
+                transition: transform 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
                 .zm-carousel-item {
                   &.live-stream {
                     & .main-title {

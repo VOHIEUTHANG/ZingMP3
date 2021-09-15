@@ -1200,7 +1200,8 @@ body {
 #app .zm-main .main-container .playlist-section .container .title a i {
   position: relative;
   font-size: 18px;
-  top: 2px;
+  top: 1px;
+  font-weight: 700;
   padding: 0 4px;
 }
 
@@ -1210,6 +1211,7 @@ body {
 
 #app .zm-main .main-container .playlist-section .container .zm-carousel-wrapper .zm-carousel {
   margin: 0 -15px;
+  overflow: hidden;
 }
 
 #app .zm-main .main-container .playlist-section .container .zm-carousel-wrapper .zm-carousel .zm-carousel-list {
@@ -1224,7 +1226,10 @@ body {
           align-items: center;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
-  overflow: scroll hidden;
+  -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: -webkit-transform 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: transform 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: transform 0.4s cubic-bezier(0.075, 0.82, 0.165, 1), -webkit-transform 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 #app .zm-main .main-container .playlist-section .container .zm-carousel-wrapper .zm-carousel .zm-carousel-list .zm-carousel-item {

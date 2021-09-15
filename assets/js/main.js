@@ -60,10 +60,16 @@ headerController.run();
 const galleryHandle = (function () {
     const nextBtn = $('.gallery-btn.next');
     const prevBtn = $('.gallery-btn.previous');
+
+    //calculate width
+    const gallery = $('.gallery');
+    const galleryItem = $('.gallery-item');
+    const itemsCount = Math.floor(gallery.offsetWidth / galleryItem.offsetWidth);
+
     const galleryContainer = $('.gallery-container');
     const galleryItems = $$('.gallery-item');
     const galleryCount = galleryItems.length;
-    const transformUnit = -100 / 3;
+    const transformUnit = -100 / itemsCount;
     let intervalID;
     let currentIndex = 0;
     let nextStep = true;
@@ -164,3 +170,111 @@ galleryHandle.run();
 
 // END GALLERY
 //----------------------------------------------------------------
+
+//START CAROUSEL
+const carouselLists = $$('.zm-carousel-list');
+carouselLists.forEach(function (item, index) {
+    item.setAttribute('data-type', index);
+});
+const carouselsNextBtn = $$('.zm-btn.zm-next');
+carouselsNextBtn.forEach(function (item, index) {
+    item.setAttribute('data-type', index);
+})
+const carouselsPrevBtn = $$('.zm-btn.zm-prev');
+carouselsPrevBtn.forEach(function (item, index) {
+    item.setAttribute('data-type', index);
+})
+const carouselHandle = function (dataType = 0) {
+    const nextBtn = carouselsNextBtn[dataType];
+    const prevBtn = carouselsPrevBtn[dataType];
+    const carouselItem = $('.zm-carousel-item');
+    const carouselList = carouselLists[dataType];
+    const carouselItems = carouselList.querySelectorAll('.zm-carousel-item');
+
+    const itemsCount = carouselItems.length;
+    const itemCount = Math.floor(carouselList.offsetWidth / carouselItem.offsetWidth);
+
+    const transformUnit = -100 / itemCount;
+    let currentIndex = 0;
+
+    prevBtn.classList.add('disable');
+    nextBtn.classList.remove('disable');
+
+    let countTimes = Math.floor(itemsCount / itemCount);
+    const surplus = itemsCount % itemCount;
+    if (surplus === 0) {
+        countTimes -= 1;
+    }
+    const saveCountTimes = countTimes;
+
+
+    return {
+        showSlide: function () {
+            const transformWidth = currentIndex * transformUnit;
+            carouselList.style.transform = `translateX(${transformWidth}%)`;
+        },
+        checkDisable: function () {
+            if (countTimes === saveCountTimes) {
+                if (!prevBtn.classList.contains('disable')) {
+                    prevBtn.classList.add('disable');
+                }
+                if (nextBtn.classList.contains('disable')) {
+                    nextBtn.classList.remove('disable');
+                }
+            } else if (countTimes === 0) {
+                if (!nextBtn.classList.contains('disable')) {
+                    nextBtn.classList.add('disable');
+                }
+                if (prevBtn.classList.contains('disable')) {
+                    prevBtn.classList.remove('disable');
+                }
+            }
+            if (countTimes > 0 && countTimes < saveCountTimes) {
+                if (nextBtn.classList.contains('disable')) {
+                    nextBtn.classList.remove('disable');
+                }
+                if (prevBtn.classList.contains('disable')) {
+                    prevBtn.classList.remove('disable');
+                }
+            }
+        },
+        nextBtn: function () {
+            nextBtn.onclick = () => {
+                if (countTimes > 0) {
+                    if (surplus != 0 && countTimes - 1 === 0) {
+                        currentIndex += surplus;
+                    } else {
+                        currentIndex += itemCount;
+                    }
+                    this.showSlide();
+                    countTimes -= 1;
+                    this.checkDisable();
+                }
+            }
+        },
+        prevBtn: function () {
+            prevBtn.onclick = () => {
+                if (countTimes < saveCountTimes) {
+                    if (surplus != 0 && countTimes === 0) {
+                        currentIndex -= surplus;
+                    } else {
+                        currentIndex -= itemCount;
+                    }
+                    this.showSlide();
+                    countTimes += 1;
+                    this.checkDisable();
+                }
+            }
+
+        },
+        run: function () {
+            this.nextBtn();
+            this.prevBtn();
+
+        }
+    }
+};
+carouselHandle(0).run();
+carouselHandle(1).run();
+// END CAROUSEL
+// ------------------------------------------------------------------
