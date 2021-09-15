@@ -64,12 +64,14 @@ const galleryHandle = (function () {
     //calculate width
     const gallery = $('.gallery');
     const galleryItem = $('.gallery-item');
-    const itemsCount = Math.floor(gallery.offsetWidth / galleryItem.offsetWidth);
+    let itemsCount = gallery.offsetWidth / galleryItem.offsetWidth;
+    itemsCount = itemsCount.toFixed(0);
 
     const galleryContainer = $('.gallery-container');
     const galleryItems = $$('.gallery-item');
     const galleryCount = galleryItems.length;
     const transformUnit = -100 / itemsCount;
+
     let intervalID;
     let currentIndex = 0;
     let nextStep = true;
@@ -192,7 +194,9 @@ const carouselHandle = function (dataType = 0) {
     const carouselItems = carouselList.querySelectorAll('.zm-carousel-item');
 
     const itemsCount = carouselItems.length;
-    const itemCount = Math.floor(carouselList.offsetWidth / carouselItem.offsetWidth);
+    let itemCount = carouselList.offsetWidth / carouselItem.offsetWidth;
+    itemCount = itemCount.toFixed(0);
+
 
     const transformUnit = -100 / itemCount;
     let currentIndex = 0;

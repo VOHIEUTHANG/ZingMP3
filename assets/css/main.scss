@@ -78,6 +78,14 @@ body {
   --background-main: #1d375a;
 }
 //============================================================
+// Skeleton Loading
+// .skeleton-loading {
+//   animation: skeleton 1s cubic-bezier(0.075, 0.82, 0.165, 1) infinite alternate;
+// }
+// @keyframes skeleton {
+
+// }
+//============================================================
 
 #root {
   height: 100%;
@@ -810,6 +818,7 @@ body {
               height: 100%;
               border-radius: 8px;
               overflow: hidden;
+
               a {
                 display: block;
                 width: 100%;
