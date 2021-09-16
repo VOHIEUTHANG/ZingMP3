@@ -31,6 +31,7 @@ button {
 }
 a {
   text-decoration: none;
+  color: inherit;
 }
 img {
   display: block;
@@ -64,13 +65,16 @@ body {
   --search-text: #eee;
   --primary-bg: #432275;
   --link-text-hover: #c662ef;
+  --navigation-text: #dadada;
+  --tab-active-bg: hsla(0, 0%, 100%, 0.3);
+  --text-item-hover: #fff;
+  --purple-primary: #7200a1;
 
   --layout-bg: #170f23;
   --sidebar-popup-bg: #2a213a;
   --alpha-layout-bg: rgba(41, 21, 71, 0.8);
   --queue-player-popup-bg: #120822;
   --blur-queue-bg: rgba(30, 21, 47, 0.9019607843137255);
-  --purple-primary: #7200a1;
   --chart-bg-img-alpha: rgba(32, 19, 53, 0.9);
 }
 
@@ -1154,7 +1158,6 @@ body {
   .zm-section {
     // position: relative;
     // width: 100%;
-    // height: 0;
   }
   .player-queue {
     position: absolute;
@@ -1163,7 +1166,161 @@ body {
     bottom: $controller-height;
     width: $queue-width;
     background-color: var(--background-main);
-    border: 1px solid aquamarine;
+    color: var(--navigation-text);
+    font-weight: 500;
+    font-size: 12px;
+    border-left: 1px solid $border-primary;
+
+    .player-queue-header {
+      position: relative;
+      z-index: 100;
+      padding: 14px 0;
+      .tabs-bar {
+        padding: 0 8px;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 42px;
+        .level-left {
+          display: flex;
+          flex: 1 1;
+          background-color: $alpha-bg;
+          border-radius: 30px;
+          padding: 3px;
+          .level-item {
+            @include flex-center;
+            border-radius: 30px;
+            cursor: pointer;
+            padding: 5px 0;
+            color: inherit;
+            flex: 1;
+            &.active {
+              background-color: var(--tab-active-bg);
+              color: var(--text-item-hover);
+            }
+            &:hover {
+              color: var(--text-item-hover);
+            }
+          }
+        }
+        .level-right {
+          display: flex;
+          .level-item {
+            @include flex-center;
+            margin-left: 5px;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: $alpha-bg;
+            cursor: pointer;
+            &.clock {
+              background: var(--purple-primary);
+            }
+            i {
+              font-size: 16px;
+            }
+            &:hover {
+              color: var(--text-item-hover);
+            }
+          }
+        }
+      }
+    }
+    .player-body {
+      padding: 0 8px 15px;
+      width: 100%;
+      min-height: 100%;
+      .list-songs {
+        display: flex;
+        .song-item {
+          width: 100%;
+          .media {
+            background-color: var(--purple-primary);
+            padding: 8px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            .media-left {
+              display: flex;
+              flex: 1 1;
+              .song-thumb {
+                width: 40px;
+                height: 40px;
+                margin-right: 10px;
+                flex-shrink: 0;
+                img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  border-radius: 4px;
+                }
+                position: relative;
+                .icon-wrapper {
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  right: 0;
+                  bottom: 0;
+                  @include flex-center;
+                  .active-icon {
+                    position: absolute;
+                    display: block;
+                    width: 22px;
+                    height: 22px;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    background-image: url("https://zmp3-static.zadn.vn/skins/zmp3-v6.1/images/icons/icon-playing.gif");
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                  }
+                  .play-icon {
+                  }
+                }
+              }
+              .card-info {
+                .song-name {
+                  overflow: hidden;
+                  white-space: nowrap;
+                  text-overflow: ellipsis;
+                  line-height: 1.3;
+                  font-weight: 500;
+                  font-size: 14px;
+                  color: white;
+                }
+                .song-singer {
+                }
+              }
+            }
+            .media-right {
+              @include flex-center;
+              margin-left: 10px;
+              width: 60px;
+              height: 26px;
+              .icon {
+                width: 26px;
+                height: 100%;
+                margin: 0 2px;
+                border-radius: 50%;
+                cursor: pointer;
+                @include flex-center;
+                i {
+                  font-size: 14px;
+                }
+                &:hover {
+                  background-color: $alpha-bg;
+                }
+              }
+
+              .heart {
+              }
+              .more {
+              }
+            }
+          }
+        }
+      }
+    }
   }
   .player-controls {
     position: fixed;
