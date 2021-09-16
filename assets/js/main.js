@@ -259,7 +259,7 @@ const carouselHandle = function (dataType = 0) {
         prevBtn: function () {
             prevBtn.onclick = () => {
                 if (countTimes < saveCountTimes) {
-                    if (surplus != 0 && countTimes === 0) {
+                    if (surplus != 0 && countTimes === saveCountTimes - 1) {
                         currentIndex -= surplus;
                     } else {
                         currentIndex -= itemCount;
