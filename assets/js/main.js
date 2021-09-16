@@ -252,6 +252,7 @@ const carouselHandle = function (dataType = 0) {
                     }
                     this.showSlide();
                     countTimes -= 1;
+                    console.log(currentIndex);
                     this.checkDisable();
                 }
             }
@@ -259,12 +260,13 @@ const carouselHandle = function (dataType = 0) {
         prevBtn: function () {
             prevBtn.onclick = () => {
                 if (countTimes < saveCountTimes) {
-                    if (surplus != 0 && countTimes === saveCountTimes - 1) {
+                    if (surplus != 0 && countTimes === 0) {
                         currentIndex -= surplus;
                     } else {
                         currentIndex -= itemCount;
                     }
                     this.showSlide();
+                    console.log(currentIndex);
                     countTimes += 1;
                     this.checkDisable();
                 }
