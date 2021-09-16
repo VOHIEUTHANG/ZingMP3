@@ -65,7 +65,7 @@ const galleryHandle = (function () {
     const gallery = $('.gallery');
     const galleryItem = $('.gallery-item');
     let itemsCount = gallery.offsetWidth / galleryItem.offsetWidth;
-    itemsCount = itemsCount.toFixed(0);
+    itemsCount = Number(itemsCount.toFixed(0));
 
     const galleryContainer = $('.gallery-container');
     const galleryItems = $$('.gallery-item');
@@ -195,7 +195,7 @@ const carouselHandle = function (dataType = 0) {
 
     const itemsCount = carouselItems.length;
     let itemCount = carouselList.offsetWidth / carouselItem.offsetWidth;
-    itemCount = itemCount.toFixed(0);
+    itemCount = Number(itemCount.toFixed(0));
 
 
     const transformUnit = -100 / itemCount;

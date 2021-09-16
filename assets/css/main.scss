@@ -342,7 +342,7 @@ body {
         .zm-btn-back,
         .zm-btn-forward {
           &.disable i {
-            opacity: 0.4 !important;
+            opacity: 0.2 !important;
           }
           &.disable {
             cursor: default;
@@ -949,7 +949,6 @@ body {
                     .frames {
                       position: relative;
                       border-radius: 4px;
-                      overflow: hidden;
                       svg {
                         position: absolute;
                         top: 68%;
@@ -974,6 +973,8 @@ body {
                       }
                     }
                     .zm-card-img {
+                      overflow: hidden;
+                      border-radius: 4px;
                       img {
                         transition: transform 0.3s linear;
                         width: 100%;
@@ -1007,10 +1008,50 @@ body {
                         background-color: transparent;
                         @include hover-opacity;
                       }
+                      .heart::after,
+                      .more::after {
+                        content: "Thêm vào thư viện";
+                        @include abs-center(left);
+                        bottom: calc(100% + 10px);
+                        white-space: nowrap;
+                        background-color: #333;
+                        font-size: 11px;
+                        color: #ccc;
+                        padding: 2px 4px;
+                        user-select: none;
+                        @include hover-visibility();
+                        transition: opacity 0.2s linear;
+                        border-radius: 4px;
+                        z-index: 2;
+                      }
+                      .more::after {
+                        content: "Khác";
+                        padding: 2px 8px;
+                      }
+                      .heart::before,
+                      .more::before {
+                        content: "";
+                        @include abs-center(left);
+                        bottom: calc(100% + 4px);
+                        background-color: #333;
+                        width: 15px;
+                        height: 6px;
+                        clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+                        z-index: 2;
+                        @include hover-visibility();
+                        user-select: none;
+                        transition: opacity 0.2s linear;
+                      }
                       .heart,
                       .more {
+                        position: relative;
                         &:hover {
                           background-color: rgba(255, 255, 255, 0.4);
+                          &::before,
+                          &::after {
+                            visibility: visible;
+                            opacity: 1;
+                          }
                         }
                       }
                     }

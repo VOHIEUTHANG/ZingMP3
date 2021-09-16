@@ -450,7 +450,7 @@ body {
 
 #app .zm-header .level .level-left .zm-btn-back.disable i,
 #app .zm-header .level .level-left .zm-btn-forward.disable i {
-  opacity: 0.4 !important;
+  opacity: 0.2 !important;
 }
 
 #app .zm-header .level .level-left .zm-btn-back.disable,
@@ -1263,7 +1263,6 @@ body {
 #app .zm-main .main-container .playlist-section .container .zm-carousel-wrapper .zm-carousel .zm-carousel-list .zm-carousel-item .zm-card .frames {
   position: relative;
   border-radius: 4px;
-  overflow: hidden;
 }
 
 #app .zm-main .main-container .playlist-section .container .zm-carousel-wrapper .zm-carousel .zm-carousel-list .zm-carousel-item .zm-card .frames svg {
@@ -1289,6 +1288,11 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+#app .zm-main .main-container .playlist-section .container .zm-carousel-wrapper .zm-carousel .zm-carousel-list .zm-carousel-item .main-link .zm-card-img {
+  overflow: hidden;
+  border-radius: 4px;
 }
 
 #app .zm-main .main-container .playlist-section .container .zm-carousel-wrapper .zm-carousel .zm-carousel-list .zm-carousel-item .main-link .zm-card-img img {
@@ -1352,9 +1356,75 @@ body {
   opacity: 0.8;
 }
 
+#app .zm-main .main-container .playlist-section .container .zm-carousel-wrapper .zm-carousel .zm-carousel-list .zm-carousel-item .main-link .zm-card-hover-detail .heart::after,
+#app .zm-main .main-container .playlist-section .container .zm-carousel-wrapper .zm-carousel .zm-carousel-list .zm-carousel-item .main-link .zm-card-hover-detail .more::after {
+  content: "Thêm vào thư viện";
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  bottom: calc(100% + 10px);
+  white-space: nowrap;
+  background-color: #333;
+  font-size: 11px;
+  color: #ccc;
+  padding: 2px 4px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: opacity 0.2s linear;
+  transition: opacity 0.2s linear;
+  border-radius: 4px;
+  z-index: 2;
+}
+
+#app .zm-main .main-container .playlist-section .container .zm-carousel-wrapper .zm-carousel .zm-carousel-list .zm-carousel-item .main-link .zm-card-hover-detail .more::after {
+  content: "Khác";
+  padding: 2px 8px;
+}
+
+#app .zm-main .main-container .playlist-section .container .zm-carousel-wrapper .zm-carousel .zm-carousel-list .zm-carousel-item .main-link .zm-card-hover-detail .heart::before,
+#app .zm-main .main-container .playlist-section .container .zm-carousel-wrapper .zm-carousel .zm-carousel-list .zm-carousel-item .main-link .zm-card-hover-detail .more::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  bottom: calc(100% + 4px);
+  background-color: #333;
+  width: 15px;
+  height: 6px;
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+          clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+  z-index: 2;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-transition: opacity 0.2s linear;
+  transition: opacity 0.2s linear;
+}
+
+#app .zm-main .main-container .playlist-section .container .zm-carousel-wrapper .zm-carousel .zm-carousel-list .zm-carousel-item .main-link .zm-card-hover-detail .heart,
+#app .zm-main .main-container .playlist-section .container .zm-carousel-wrapper .zm-carousel .zm-carousel-list .zm-carousel-item .main-link .zm-card-hover-detail .more {
+  position: relative;
+}
+
 #app .zm-main .main-container .playlist-section .container .zm-carousel-wrapper .zm-carousel .zm-carousel-list .zm-carousel-item .main-link .zm-card-hover-detail .heart:hover,
 #app .zm-main .main-container .playlist-section .container .zm-carousel-wrapper .zm-carousel .zm-carousel-list .zm-carousel-item .main-link .zm-card-hover-detail .more:hover {
   background-color: rgba(255, 255, 255, 0.4);
+}
+
+#app .zm-main .main-container .playlist-section .container .zm-carousel-wrapper .zm-carousel .zm-carousel-list .zm-carousel-item .main-link .zm-card-hover-detail .heart:hover::before, #app .zm-main .main-container .playlist-section .container .zm-carousel-wrapper .zm-carousel .zm-carousel-list .zm-carousel-item .main-link .zm-card-hover-detail .heart:hover::after,
+#app .zm-main .main-container .playlist-section .container .zm-carousel-wrapper .zm-carousel .zm-carousel-list .zm-carousel-item .main-link .zm-card-hover-detail .more:hover::before,
+#app .zm-main .main-container .playlist-section .container .zm-carousel-wrapper .zm-carousel .zm-carousel-list .zm-carousel-item .main-link .zm-card-hover-detail .more:hover::after {
+  visibility: visible;
+  opacity: 1;
 }
 
 #app .zm-main .main-container .playlist-section .container .zm-carousel-wrapper .zm-carousel .zm-carousel-list .zm-carousel-item .playlist-wrapper .zm-card .zm-card-content {
