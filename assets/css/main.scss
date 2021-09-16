@@ -887,6 +887,12 @@ body {
         }
       }
       .playlist-section {
+        &.no-more-and-heart {
+          .more,
+          .heart {
+            display: none !important;
+          }
+        }
         margin-top: 30px;
         .container {
           width: 100%;
@@ -1008,6 +1014,7 @@ body {
                         background-color: transparent;
                         @include hover-opacity;
                       }
+
                       .heart::after,
                       .more::after {
                         content: "Thêm vào thư viện";

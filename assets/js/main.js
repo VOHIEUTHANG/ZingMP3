@@ -282,5 +282,6 @@ const carouselHandle = function (dataType = 0) {
 };
 carouselHandle(0).run();
 carouselHandle(1).run();
+carouselHandle(4).run();
 // END CAROUSEL
 // ------------------------------------------------------------------

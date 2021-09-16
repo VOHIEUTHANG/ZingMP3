@@ -1171,6 +1171,11 @@ body {
   margin-top: 30px;
 }
 
+#app .zm-main .main-container .playlist-section.no-more-and-heart .more,
+#app .zm-main .main-container .playlist-section.no-more-and-heart .heart {
+  display: none !important;
+}
+
 #app .zm-main .main-container .playlist-section .container {
   width: 100%;
   position: relative;
