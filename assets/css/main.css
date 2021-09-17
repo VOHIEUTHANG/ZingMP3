@@ -1649,14 +1649,34 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-#app .player-queue .player-body .list-songs .song-item {
-  width: 100%;
+#app .player-queue .player-body .list-songs .song-item.active .media {
+  background-color: var(--purple-primary) !important;
+}
+
+#app .player-queue .player-body .list-songs .song-item.active .active-icon {
+  display: block !important;
+}
+
+#app .player-queue .player-body .list-songs .song-item.active .play-icon {
+  display: none !important;
+}
+
+#app .player-queue .player-body .list-songs .song-item.active img {
+  -webkit-filter: brightness(40%);
+          filter: brightness(40%);
+}
+
+#app .player-queue .player-body .list-songs .song-item.active .next-song {
+  display: block;
 }
 
 #app .player-queue .player-body .list-songs .song-item .media {
-  background-color: var(--purple-primary);
   padding: 8px;
   border-radius: 4px;
   display: -webkit-box;
@@ -1665,6 +1685,25 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+#app .player-queue .player-body .list-songs .song-item .media:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+#app .player-queue .player-body .list-songs .song-item .media:hover .media-left .song-thumb .icon-wrapper .play-icon {
+  display: block;
+}
+
+#app .player-queue .player-body .list-songs .song-item .media:hover img {
+  -webkit-filter: brightness(40%);
+          filter: brightness(40%);
+}
+
+#app .player-queue .player-body .list-songs .song-item .media:hover .media-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 #app .player-queue .player-body .list-songs .song-item .media .media-left {
@@ -1682,6 +1721,7 @@ body {
   margin-right: 10px;
   -ms-flex-negative: 0;
       flex-shrink: 0;
+  cursor: pointer;
   position: relative;
 }
 
@@ -1713,8 +1753,8 @@ body {
 #app .player-queue .player-body .list-songs .song-item .media .media-left .song-thumb .icon-wrapper .active-icon {
   position: absolute;
   display: block;
-  width: 22px;
-  height: 22px;
+  width: 18px;
+  height: 18px;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
@@ -1722,9 +1762,24 @@ body {
   background-image: url("https://zmp3-static.zadn.vn/skins/zmp3-v6.1/images/icons/icon-playing.gif");
   background-size: cover;
   background-repeat: no-repeat;
+  z-index: 10;
+  display: none;
+}
+
+#app .player-queue .player-body .list-songs .song-item .media .media-left .song-thumb .icon-wrapper .play-icon {
+  z-index: 5;
+  display: none;
+}
+
+#app .player-queue .player-body .list-songs .song-item .media .media-left .card-info {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 #app .player-queue .player-body .list-songs .song-item .media .media-left .card-info .song-name {
+  text-transform: capitalize;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -1732,6 +1787,11 @@ body {
   font-weight: 500;
   font-size: 14px;
   color: white;
+}
+
+#app .player-queue .player-body .list-songs .song-item .media .media-left .card-info .song-singer .singer-name:hover {
+  color: var(--link-text-hover);
+  text-decoration: underline;
 }
 
 #app .player-queue .player-body .list-songs .song-item .media .media-right {
@@ -1747,6 +1807,7 @@ body {
   margin-left: 10px;
   width: 60px;
   height: 26px;
+  display: none;
 }
 
 #app .player-queue .player-body .list-songs .song-item .media .media-right .icon {
@@ -1774,6 +1835,89 @@ body {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
+#app .player-queue .player-body .list-songs .song-item .media .media-right .icon:hover .hover-detail {
+  visibility: visible;
+  opacity: 1;
+}
+
+#app .player-queue .player-body .list-songs .song-item .media .media-right .heart {
+  position: relative;
+}
+
+#app .player-queue .player-body .list-songs .song-item .media .media-right .heart .hover-detail {
+  display: none;
+}
+
+#app .player-queue .player-body .list-songs .song-item .media .media-right .heart .hover-detail.active {
+  display: block;
+}
+
+#app .player-queue .player-body .list-songs .song-item .media .media-right .more {
+  position: relative;
+}
+
+#app .player-queue .player-body .list-songs .song-item .media .media-right .hover-detail {
+  position: absolute;
+  top: -26px;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  white-space: nowrap;
+  padding: 2px 8px;
+  background-color: #333;
+  font-size: 11px;
+  border-radius: 4px;
+  -webkit-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+  visibility: hidden;
+  opacity: 0;
+}
+
+#app .player-queue .player-body .list-songs .song-item .media .media-right .hover-detail::after {
+  content: "";
+  display: block;
+  top: 100%;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 14px;
+  height: 5px;
+  background-color: #333;
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+          clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+}
+
+#app .player-queue .player-body .list-songs .song-item .next-song {
+  display: none;
+  padding: 15px 8px 5px;
+  width: 100%;
+  height: 62px;
+  font-size: 14px;
+}
+
+#app .player-queue .player-body .list-songs .song-item .next-song .title {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--text-primary);
+}
+
+#app .player-queue .player-body .list-songs .song-item .next-song .sub-title {
+  color: #a0a0a0;
+}
+
+#app .player-queue .player-body .list-songs .song-item .next-song .sub-title a {
+  margin-left: 5px;
+  max-width: 295px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-transform: capitalize;
+  font-size: inherit;
+  font-weight: 500;
+  color: var(--link-text-hover);
+}
+
 #app .player-controls {
   position: fixed;
   bottom: 0;
@@ -1781,7 +1925,7 @@ body {
   right: 0;
   width: 100vw;
   background-color: var(--background-controller);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   height: 90px;
-  border: 1px solid aquamarine;
 }
 /*# sourceMappingURL=main.css.map */
