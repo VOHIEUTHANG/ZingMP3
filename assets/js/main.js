@@ -293,19 +293,29 @@ const themeHandle = (function(){
     const themeList = $$('.card-item');
     const htmlNode = $(':root[theme]');
     const themeModalOverlay = $('.theme-modal-overlay');
-    themeList.forEach(function(item,index){
-        const applyButton = item.querySelector('.card-btn-apply'); 
-        applyButton.onclick = () =>{
-            htmlNode.setAttribute('theme',item.dataset.theme);
-            themeModalOverlay.style.display = "none";
-        }
-    })
+    const applyButtons = $$('.card-background'); 
     return {
-        click: () => {
-
+        clearActive: ()=>{
+            applyButtons.forEach(function(item,index){
+                if(item.classList.contains('active')){
+                    item.classList.remove('active');
+                }
+            });
+        },
+        main(){
+            const _this = this;
+            themeList.forEach(function(item,index){
+                const applyButton = item.querySelector('.card-background');
+                applyButton.onclick = () =>{
+                    _this.clearActive();
+                    htmlNode.setAttribute('theme',item.dataset.theme);
+                    themeModalOverlay.style.display = "none";
+                    applyButton.classList.add('active');
+                }
+            });
         },
         run(){
-            this.click();
+            this.main();
         }
     };
 })();
