@@ -57,42 +57,44 @@ body {
   color: var(--text-primary);
 }
 //==================== Theme Color ====================
-:root {
-  --background-main: #170f23;
-  --background-sidebar: #231b2e;
-  --background-controller: #120c1c;
+:root{
+  --background-main: transparent;
+  --background-sidebar: transparent;
+  --background-controller:  transparent;
+  --background-queue:  transparent;
+  --background-header:  transparent;
+
+  --background-primary:rgba(0,0,0,0.6);
+  --theme-primary: rgb(14, 112, 112);
+
+  --navigation-text: #dadada;
   --text-primary: #fff;
   --search-text: #eee;
-  --primary-bg: #432275;
   --link-text-hover: #c662ef;
-  --navigation-text: #dadada;
-  --tab-active-bg: hsla(0, 0%, 100%, 0.3);
   --text-item-hover: #fff;
-  --purple-primary: #7200a1;
-  --thumbnail-player: hsla(0, 0%, 100%, 0.8);
   --player-text: #fff;
+
+  --tab-active-bg: hsla(0, 0%, 100%, 0.3);
+  --thumbnail-player: hsla(0, 0%, 100%, 0.8);
+
   --progressbar-bg: hsla(0, 0%, 100%, 0.3);
   --progressbar-active: #fff;
-
-  --layout-bg: #170f23;
-  --sidebar-popup-bg: #30283d;
-  --alpha-layout-bg: rgba(41, 21, 71, 0.8);
-  --queue-player-popup-bg: #120822;
-  --blur-queue-bg: rgba(30, 21, 47, 0.9019607843137255);
-  --chart-bg-img-alpha: rgba(32, 19, 53, 0.9);
 }
 
-:root[data-theme="blue"] {
-  --background-main: #1d375a;
+:root[data-theme="car1"] {
+  --background-app:  url('https://images.wallpaperscraft.com/image/single/bmw_headlights_lights_137326_1920x1080.jpg');
 }
-//============================================================
-// Skeleton Loading
-// .skeleton-loading {
-//   animation: skeleton 1s cubic-bezier(0.075, 0.82, 0.165, 1) infinite alternate;
-// }
-// @keyframes skeleton {
+:root[data-theme="car2"] {
+  --background-app:  url('https://images.wallpaperscraft.com/image/single/bmw_headlights_car_124112_1920x1080.jpg');
+}
+:root[data-theme="car3"] {
+  --background-app:  url('https://images.wallpaperscraft.com/image/single/nissan_gtr_nissan_sportscar_139668_1920x1080.jpg');
+}
+:root[data-theme="car4"] {
+  --background-app:  url('https://images.wallpaperscraft.com/image/single/shelby_mustang_ford_mustang_ford_125085_1920x1080.jpg');
+}
 
-// }
+
 //============================================================
 
 #root {
@@ -105,7 +107,10 @@ body {
   width: 100%;
   height: 100%;
   display: flex;
-  background-color: var(--background-main);
+  background-image: var(--background-app);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
   .zm-sidebar {
     position: relative;
     width: $sidebar-width;
@@ -113,6 +118,7 @@ body {
     padding: 70px 0 54px 0;
     // height: calc(100vh - #{$controller-height});
     background-color: var(--background-sidebar);
+    box-shadow: 4px 0 10px 0 rgba(0, 0, 0, 0.1);
     //SIDEBAR
     //============================================================
     .zm-sidebar-wrapper {
@@ -152,7 +158,7 @@ body {
         transition: background-color 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
         &.is-active,
         &:hover {
-          border-left: 3px solid var(--purple-primary);
+          border-left: 3px solid var(--theme-primary);
           background-color: $alpha-bg;
           & .navbar-link {
             color: white !important;
@@ -182,7 +188,7 @@ body {
           display: block;
           padding: 7px 25px;
           min-height: 38px;
-          color: $navigation-text;
+          color: var(--navigation-text);
           font-size: 13px;
           font-weight: 700;
           @include flex-center(flex-start, center);
@@ -252,7 +258,7 @@ body {
           padding: 0 28px 8px 28px;
           line-height: 26px;
           text-transform: uppercase;
-          color: $color-white;
+          color: #fff;
           font-size: 12px;
           font-weight: 700;
           @include flex-center(space-between, center);
@@ -337,7 +343,8 @@ body {
     height: $header-height;
     min-width: 600px;
     padding: 0 30px;
-    background-color: var(--background-main);
+    background: var(--background-header);
+    box-shadow: 4px 0px 20px 0 rgba(0,0,0,0.3); 
     z-index: 99;
     @include flex-center;
     .level {
@@ -436,7 +443,8 @@ body {
                 max-height: 100%;
                 height: 50vh;
                 min-height: 596px;
-                background-color: var(--primary-bg);
+                background: var(--background-primary);
+                box-shadow: 0 0 100px 10px rgba(255,255,255,0.2);
                 border-radius: 8px;
                 @include abs-center;
                 //set color css
@@ -446,6 +454,7 @@ body {
                 color: var(--text-primary);
                 overflow: hidden;
                 text-overflow: ellipsis;
+             
                 .theme-content {
                   cursor: default;
                   .theme-close-btn {
@@ -458,7 +467,7 @@ body {
                     transition: color 0.1s linear;
                     cursor: pointer;
                     &:hover {
-                      color: $red-close;
+                      color:rgb(235, 100, 100);
                     }
                     @include hover-opacity(0.9);
                     @include flex-center;
@@ -482,6 +491,11 @@ body {
                     min-height: 500px;
                     padding: 0 30px;
                     overflow-y: scroll;
+                    &::-webkit-scrollbar {
+                      display: none;
+                    }
+                      -ms-overflow-style: none;
+                      scrollbar-width: none; 
                     .title {
                       font-size: 18px;
                       margin-bottom: 10px;
@@ -534,9 +548,6 @@ body {
                               img {
                                 filter: grayscale(0%);
                               }
-                              & .check-icon {
-                                display: block;
-                              }
                               &:hover {
                                 .card-btn {
                                   display: none;
@@ -558,8 +569,8 @@ body {
                               @include hover-visibility();
                               transition: all 0.2s linear;
                               &.is-active {
-                                background-color: var(--purple-primary);
-                                border-color: var(--purple-primary);
+                                background-color: var(--theme-primary);
+                                border-color: var(--theme-primary);
                               }
                               &:hover {
                                 @include hover-opacity(0.8);
@@ -578,7 +589,7 @@ body {
                               right: 10px;
                               background-color: white;
                               border-radius: 50%;
-                              color: var(--purple-primary);
+                              color: var(--theme-primary);
                               font-size: 18px;
                               display: none;
                             }
@@ -668,8 +679,9 @@ body {
               width: 240px;
               right: 0;
               top: calc(100% + 10px);
-              background-color: var(--primary-bg);
+              background-color: var(--background-primary);
               border-radius: 8px;
+              box-shadow: 0 0 40px 10px rgba(255,255,255,0.1);
               &:hover + .setting-instruction {
                 opacity: 0;
               }
@@ -691,7 +703,7 @@ body {
                     right: 100%;
                     min-width: 260px;
                     padding: 10px 0;
-                    background-color: var(--primary-bg);
+                    background-color: var(--background-primary);
                     border-radius: 6px;
                     box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.2);
                     visibility: hidden;
@@ -742,7 +754,7 @@ body {
                 }
                 .menu-set-link {
                   @include flex-center(flex-start, center);
-                  color: $navigation-text;
+                  color: var(--navigation-text);
                   padding: 12px 20px 12px 17px;
                   transition: background-color 0.1s linear;
                   span {
@@ -786,9 +798,12 @@ body {
   //MAIN PAGE
   //============================================================
   .zm-mainpage {
+    position: absolute;
+    top: $header-height;
+    bottom: $controller-height;
+    left: $sidebar-width;
+    right: $queue-width;
     background: var(--background-main);
-    @include height-calculator;
-    margin-right: $queue-width - 17px;
     flex-grow: 1;
     overflow: hidden;
   }
@@ -797,10 +812,18 @@ body {
     max-height: 100%;
     width: 100%;
     overflow: hidden scroll;
-    padding: $main-padding;
+    padding: 0 4vw;
+    //HIDE SCROLL BAR 
+    -ms-overflow-style: none;
+    scrollbar-width: none; 
+    &::-webkit-scrollbar{
+      display:none;
+    }
     .main-container {
-      margin-top: $header-height + 20px;
+
+      margin-top:20px;
       min-height: 100vh;
+      overflow: hidden;
       .gallery {
         &:hover .gallery-btn {
           visibility: visible;
@@ -852,7 +875,7 @@ body {
           background-color: rgba(255, 255, 255, 0.4);
           z-index: 10;
           box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.2);
-          color: var(--primary-bg);
+          color: var(--background-primary);
           border: 1px solid white;
           transition: all 0.2s linear;
           &.disable {
@@ -1006,7 +1029,7 @@ body {
                       background-color: rgba(0, 0, 0, 0.5);
                       @include flex-center(space-evenly, center);
                       z-index: 10;
-                      color: $color-white;
+                      color: #fff;
                       font-size: 18px;
                       display: none;
                       .icon {
@@ -1170,7 +1193,7 @@ body {
     right: 0;
     bottom: $controller-height;
     width: $queue-width;
-    background-color: var(--background-main);
+    background: var(--background-queue);
     color: var(--navigation-text);
     font-weight: 500;
     font-size: 12px;
@@ -1219,7 +1242,7 @@ body {
             background-color: $alpha-bg;
             cursor: pointer;
             &.clock {
-              background: var(--purple-primary);
+              background: var(--theme-primary);
             }
             i {
               font-size: 16px;
@@ -1241,7 +1264,7 @@ body {
         .song-item {
           &.active {
             .media {
-              background-color: var(--purple-primary) !important;
+              background-color: var(--theme-primary) !important;
             }
             .active-icon {
               display: block !important;

@@ -61,31 +61,39 @@ body {
 }
 
 :root {
-  --background-main: #170f23;
-  --background-sidebar: #231b2e;
-  --background-controller: #120c1c;
+  --background-main: transparent;
+  --background-sidebar: transparent;
+  --background-controller:  transparent;
+  --background-queue:  transparent;
+  --background-header:  transparent;
+  --background-primary:rgba(0,0,0,0.6);
+  --theme-primary: rgb(14, 112, 112);
+  --navigation-text: #dadada;
   --text-primary: #fff;
   --search-text: #eee;
-  --primary-bg: #432275;
   --link-text-hover: #c662ef;
-  --navigation-text: #dadada;
-  --tab-active-bg: hsla(0, 0%, 100%, 0.3);
   --text-item-hover: #fff;
-  --purple-primary: #7200a1;
-  --thumbnail-player: hsla(0, 0%, 100%, 0.8);
   --player-text: #fff;
+  --tab-active-bg: hsla(0, 0%, 100%, 0.3);
+  --thumbnail-player: hsla(0, 0%, 100%, 0.8);
   --progressbar-bg: hsla(0, 0%, 100%, 0.3);
   --progressbar-active: #fff;
-  --layout-bg: #170f23;
-  --sidebar-popup-bg: #30283d;
-  --alpha-layout-bg: rgba(41, 21, 71, 0.8);
-  --queue-player-popup-bg: #120822;
-  --blur-queue-bg: rgba(30, 21, 47, 0.9019607843137255);
-  --chart-bg-img-alpha: rgba(32, 19, 53, 0.9);
 }
 
-:root[data-theme="blue"] {
-  --background-main: #1d375a;
+:root[data-theme="car1"] {
+  --background-app:  url('https://images.wallpaperscraft.com/image/single/bmw_headlights_lights_137326_1920x1080.jpg');
+}
+
+:root[data-theme="car2"] {
+  --background-app:  url('https://images.wallpaperscraft.com/image/single/bmw_headlights_car_124112_1920x1080.jpg');
+}
+
+:root[data-theme="car3"] {
+  --background-app:  url('https://images.wallpaperscraft.com/image/single/nissan_gtr_nissan_sportscar_139668_1920x1080.jpg');
+}
+
+:root[data-theme="car4"] {
+  --background-app:  url('https://images.wallpaperscraft.com/image/single/shelby_mustang_ford_mustang_ford_125085_1920x1080.jpg');
 }
 
 #root {
@@ -101,7 +109,10 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background-color: var(--background-main);
+  background-image: var(--background-app);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
 }
 
 #app .zm-sidebar {
@@ -110,6 +121,8 @@ body {
   height: calc(100vh - 90px);
   padding: 70px 0 54px 0;
   background-color: var(--background-sidebar);
+  -webkit-box-shadow: 4px 0 10px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 4px 0 10px 0 rgba(0, 0, 0, 0.1);
 }
 
 #app .zm-sidebar .zm-sidebar-wrapper .zm-branch {
@@ -162,7 +175,7 @@ body {
 }
 
 #app .zm-sidebar .zm-sidebar-wrapper .navbar-item.is-active, #app .zm-sidebar .zm-sidebar-wrapper .navbar-item:hover {
-  border-left: 3px solid var(--purple-primary);
+  border-left: 3px solid var(--theme-primary);
   background-color: rgba(255, 255, 255, 0.1);
 }
 
@@ -197,7 +210,7 @@ body {
   display: block;
   padding: 7px 25px;
   min-height: 38px;
-  color: #dadada;
+  color: var(--navigation-text);
   font-size: 13px;
   font-weight: 700;
   display: -webkit-box;
@@ -302,7 +315,7 @@ body {
   padding: 0 28px 8px 28px;
   line-height: 26px;
   text-transform: uppercase;
-  color: white;
+  color: #fff;
   font-size: 12px;
   font-weight: 700;
   display: -webkit-box;
@@ -420,7 +433,9 @@ body {
   height: 70px;
   min-width: 600px;
   padding: 0 30px;
-  background-color: var(--background-main);
+  background: var(--background-header);
+  -webkit-box-shadow: 4px 0px 20px 0 rgba(0, 0, 0, 0.3);
+          box-shadow: 4px 0px 20px 0 rgba(0, 0, 0, 0.3);
   z-index: 99;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -577,7 +592,9 @@ body {
   max-height: 100%;
   height: 50vh;
   min-height: 596px;
-  background-color: var(--primary-bg);
+  background: var(--background-primary);
+  -webkit-box-shadow: 0 0 100px 10px rgba(255, 255, 255, 0.2);
+          box-shadow: 0 0 100px 10px rgba(255, 255, 255, 0.2);
   border-radius: 8px;
   position: absolute;
   top: 50%;
@@ -646,6 +663,12 @@ body {
   min-height: 500px;
   padding: 0 30px;
   overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+#app .zm-header .level .level-right .setting-item:first-child .theme-modal-overlay .theme-modal .theme-content .main-content::-webkit-scrollbar {
+  display: none;
 }
 
 #app .zm-header .level .level-right .setting-item:first-child .theme-modal-overlay .theme-modal .theme-content .main-content .title {
@@ -723,10 +746,6 @@ body {
           filter: grayscale(0%);
 }
 
-#app .zm-header .level .level-right .setting-item:first-child .theme-modal-overlay .theme-modal .theme-content .main-content .container .card-list .card-item .card-background.is-active .check-icon {
-  display: block;
-}
-
 #app .zm-header .level .level-right .setting-item:first-child .theme-modal-overlay .theme-modal .theme-content .main-content .container .card-list .card-item .card-background.is-active:hover .card-btn {
   display: none;
 }
@@ -753,8 +772,8 @@ body {
 }
 
 #app .zm-header .level .level-right .setting-item:first-child .theme-modal-overlay .theme-modal .theme-content .main-content .container .card-list .card-item .card-background .card-btn.is-active {
-  background-color: var(--purple-primary);
-  border-color: var(--purple-primary);
+  background-color: var(--theme-primary);
+  border-color: var(--theme-primary);
 }
 
 #app .zm-header .level .level-right .setting-item:first-child .theme-modal-overlay .theme-modal .theme-content .main-content .container .card-list .card-item .card-background .card-btn:hover:hover {
@@ -775,7 +794,7 @@ body {
   right: 10px;
   background-color: white;
   border-radius: 50%;
-  color: var(--purple-primary);
+  color: var(--theme-primary);
   font-size: 18px;
   display: none;
 }
@@ -886,8 +905,10 @@ body {
   width: 240px;
   right: 0;
   top: calc(100% + 10px);
-  background-color: var(--primary-bg);
+  background-color: var(--background-primary);
   border-radius: 8px;
+  -webkit-box-shadow: 0 0 40px 10px rgba(255, 255, 255, 0.1);
+          box-shadow: 0 0 40px 10px rgba(255, 255, 255, 0.1);
 }
 
 #app .zm-header .level .level-right .setting-item .zm-setting .zm-setting-menu:hover + .setting-instruction {
@@ -913,7 +934,7 @@ body {
   right: 100%;
   min-width: 260px;
   padding: 10px 0;
-  background-color: var(--primary-bg);
+  background-color: var(--background-primary);
   border-radius: 6px;
   -webkit-box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.2);
           box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.2);
@@ -984,7 +1005,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  color: #dadada;
+  color: var(--navigation-text);
   padding: 12px 20px 12px 17px;
   -webkit-transition: background-color 0.1s linear;
   transition: background-color 0.1s linear;
@@ -1026,9 +1047,12 @@ body {
 }
 
 #app .zm-mainpage {
+  position: absolute;
+  top: 70px;
+  bottom: 90px;
+  left: 240px;
+  right: 320px;
   background: var(--background-main);
-  height: calc(100vh - 90px);
-  margin-right: 303px;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
@@ -1041,11 +1065,18 @@ body {
   width: 100%;
   overflow: hidden scroll;
   padding: 0 4vw;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+#app .zm-main::-webkit-scrollbar {
+  display: none;
 }
 
 #app .zm-main .main-container {
-  margin-top: 90px;
+  margin-top: 20px;
   min-height: 100vh;
+  overflow: hidden;
 }
 
 #app .zm-main .main-container .gallery {
@@ -1124,7 +1155,7 @@ body {
   z-index: 10;
   -webkit-box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.2);
           box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.2);
-  color: var(--primary-bg);
+  color: var(--background-primary);
   border: 1px solid white;
   -webkit-transition: all 0.2s linear;
   transition: all 0.2s linear;
@@ -1337,7 +1368,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   z-index: 10;
-  color: white;
+  color: #fff;
   font-size: 18px;
   display: none;
 }
@@ -1543,7 +1574,7 @@ body {
   right: 0;
   bottom: 90px;
   width: 320px;
-  background-color: var(--background-main);
+  background: var(--background-queue);
   color: var(--navigation-text);
   font-weight: 500;
   font-size: 12px;
@@ -1633,7 +1664,7 @@ body {
 }
 
 #app .player-queue .player-queue-header .tabs-bar .level-right .level-item.clock {
-  background: var(--purple-primary);
+  background: var(--theme-primary);
 }
 
 #app .player-queue .player-queue-header .tabs-bar .level-right .level-item i {
@@ -1661,7 +1692,7 @@ body {
 }
 
 #app .player-queue .player-body .list-songs .song-item.active .media {
-  background-color: var(--purple-primary) !important;
+  background-color: var(--theme-primary) !important;
 }
 
 #app .player-queue .player-body .list-songs .song-item.active .active-icon {
