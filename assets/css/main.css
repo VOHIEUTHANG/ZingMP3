@@ -58,6 +58,7 @@ body {
   font-size: 14px;
   font-weight: 400;
   color: var(--text-primary);
+  background-color: black;
 }
 
 :root {
