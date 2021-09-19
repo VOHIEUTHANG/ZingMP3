@@ -285,3 +285,31 @@ carouselHandle(1).run();
 carouselHandle(4).run();
 // END CAROUSEL
 // ------------------------------------------------------------------
+
+// START THEME 
+// ------------------------------------------------------------------
+
+const themeHandle = (function(){
+    const themeList = $$('.card-item');
+    const htmlNode = $(':root[theme]');
+    const themeModalOverlay = $('.theme-modal-overlay');
+    themeList.forEach(function(item,index){
+        const applyButton = item.querySelector('.card-btn-apply'); 
+        applyButton.onclick = () =>{
+            htmlNode.setAttribute('theme',item.dataset.theme);
+            themeModalOverlay.style.display = "none";
+        }
+    })
+    return {
+        click: () => {
+
+        },
+        run(){
+            this.click();
+        }
+    };
+})();
+themeHandle.run();
+
+// END THEME
+// ------------------------------------------------------------------

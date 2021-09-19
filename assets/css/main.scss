@@ -80,19 +80,61 @@ body {
   --progressbar-bg: hsla(0, 0%, 100%, 0.3);
   --progressbar-active: #fff;
 }
-
-:root[data-theme="car1"] {
+//CITY 
+//============================================================
+:root[theme="car1"] {
   --background-app:  url('https://images.wallpaperscraft.com/image/single/bmw_headlights_lights_137326_1920x1080.jpg');
 }
-:root[data-theme="car2"] {
+:root[theme="car2"] {
   --background-app:  url('https://images.wallpaperscraft.com/image/single/bmw_headlights_car_124112_1920x1080.jpg');
 }
-:root[data-theme="car3"] {
+:root[theme="car3"] {
   --background-app:  url('https://images.wallpaperscraft.com/image/single/nissan_gtr_nissan_sportscar_139668_1920x1080.jpg');
 }
-:root[data-theme="car4"] {
+:root[theme="car4"] {
   --background-app:  url('https://images.wallpaperscraft.com/image/single/shelby_mustang_ford_mustang_ford_125085_1920x1080.jpg');
 }
+//ABSTRACT 
+//============================================================
+:root[theme="abstract1"] {
+  --background-app:  url('https://images.wallpaperscraft.com/image/single/abstraction_sharp_figure_101902_1920x1080.jpg');
+}
+:root[theme="abstract2"] {
+  --background-app:  url('https://images.wallpaperscraft.com/image/single/triangle_bright_colorful_background_63450_1920x1080.jpg');
+}
+:root[theme="abstract3"] {
+  --background-app:  url('https://images.wallpaperscraft.com/image/single/triangle_lines_dark_background_51871_1920x1080.jpg');
+}
+//DARK 
+//============================================================
+:root[theme="dark1"] {
+  --background-app:  url('https://images.wallpaperscraft.com/image/single/leaves_line_neon_139772_1920x1080.jpg');
+}
+:root[theme="dark2"] {
+  --background-app:  url('https://images.wallpaperscraft.com/image/single/daisy_field_flower_dark_background_125105_1920x1080.jpg');
+}
+:root[theme="dark3"] {
+  --background-app:  url('https://images.wallpaperscraft.com/image/single/silhouette_glow_circle_143302_1920x1080.jpg');
+}
+:root[theme="dark4"] {
+  --background-app:  url('https://images.wallpaperscraft.com/image/single/silhouette_glow_portal_142677_1920x1080.jpg');
+}
+//CITY
+//============================================================
+:root[theme="city1"] {
+  --background-app:  url('https://images.wallpaperscraft.com/image/single/hong_kong_china_skyscrapers_night_city_city_lights_119347_1920x1080.jpg');
+}
+:root[theme="city2"] {
+  --background-app:  url('https://images.wallpaperscraft.com/image/single/trolley_stop_city_evening_lighting_119292_1920x1080.jpg');
+}
+:root[theme="city3"] {
+  --background-app:  url('https://images.wallpaperscraft.com/image/single/night_city_city_lights_overview_129026_1920x1080.jpg');
+}
+:root[theme="city4"] {
+  --background-app:  url('https://images.wallpaperscraft.com/image/single/street_night_city_neon_187651_1920x1080.jpg');
+}
+
+
 
 
 //============================================================
@@ -118,7 +160,7 @@ body {
     padding: 70px 0 54px 0;
     // height: calc(100vh - #{$controller-height});
     background-color: var(--background-sidebar);
-    box-shadow: 4px 0 10px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 4px 0 10px 0 rgba(0, 0, 0, 0.05);
     //SIDEBAR
     //============================================================
     .zm-sidebar-wrapper {
@@ -344,7 +386,6 @@ body {
     min-width: 600px;
     padding: 0 30px;
     background: var(--background-header);
-    box-shadow: 4px 0px 20px 0 rgba(0,0,0,0.3); 
     z-index: 99;
     @include flex-center;
     .level {
@@ -555,7 +596,8 @@ body {
                               }
                             }
                             .card-btn {
-                              @include abs-center(left);
+                              @include abs-center(center);
+                              @include  hover-visibility();
                               white-space: nowrap;
                               text-transform: uppercase;
                               width: 100px;
@@ -566,32 +608,14 @@ body {
                               border: 1px solid hsla(0, 0%, 100%, 0.5);
                               border-radius: 20px;
                               padding: 5px 0;
-                              @include hover-visibility();
                               transition: all 0.2s linear;
                               &.is-active {
                                 background-color: var(--theme-primary);
                                 border-color: var(--theme-primary);
                               }
                               &:hover {
-                                @include hover-opacity(0.8);
+                                @include hover-opacity(0.9);
                               }
-                            }
-
-                            .card-btn-preview {
-                              bottom: 15%;
-                            }
-                            .card-btn-apply {
-                              top: 15%;
-                            }
-                            .check-icon {
-                              position: absolute;
-                              bottom: 10px;
-                              right: 10px;
-                              background-color: white;
-                              border-radius: 50%;
-                              color: var(--theme-primary);
-                              font-size: 18px;
-                              display: none;
                             }
                           }
                         }
