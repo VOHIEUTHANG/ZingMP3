@@ -1099,7 +1099,6 @@ body {
                       }
                     }
                   }
-
                   .playlist-wrapper {
                     .zm-card {
                       .zm-card-content {
@@ -1203,7 +1202,7 @@ body {
     font-size: 12px;
     border-left: 1px solid $border-primary;
     transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
-
+    overflow:hidden;
     .player-queue-header {
       position: relative;
       z-index: 100;
@@ -1262,23 +1261,31 @@ body {
     .player-body {
       padding: 0 8px 15px;
       width: 100%;
-      min-height: 100%;
+      height: 100%;
+      
+      overflow: hidden scroll;
+      &::-webkit-scrollbar{
+        display:none;
+      }
+      -ms-overflow-style: none;
+      scrollbar-width: none; 
       .list-songs {
         display: flex;
         flex-direction: column;
+        
         .song-item {
           &.active {
             .media {
               background-color: var(--theme-primary) !important;
             }
             .active-icon {
-              display: block !important;
-            }
-            .play-icon {
               display: none !important;
             }
+            .play-icon {
+              display: block !important;
+            }
             img {
-              filter: brightness(40%);
+              filter: brightness(80%);
             }
             .next-song {
               display: block;
@@ -1290,8 +1297,11 @@ body {
               .media-left .song-thumb .icon-wrapper .play-icon {
                 display: block;
               }
+              .singer-name{
+                max-width: 160px !important;
+              }
               img {
-                filter: brightness(40%);
+                filter: brightness(60%);
               }
               .media-right {
                 display: flex;
@@ -1358,6 +1368,11 @@ body {
                 }
                 .song-singer {
                   .singer-name {
+                    display:inline-block;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    max-width: 100%;
+                    text-overflow: ellipsis;
                     &:hover {
                       color: var(--link-text-hover);
                       text-decoration: underline;
@@ -1464,7 +1479,7 @@ body {
   }
   .player-controls {
     padding: 0 20px;
-    position: fixed;
+    position: absolute;
     @include flex-center(flex-start, center);
     bottom: 0;
     left: 0;
@@ -1797,6 +1812,10 @@ body {
       .navbar-link{
         padding: 0 !important;
         justify-content:center !important;
+        img{
+          width:30px ;
+          height:30px;
+        }
       }
       .navbar-item{
         padding: 6px 0;
