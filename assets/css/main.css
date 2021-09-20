@@ -59,6 +59,7 @@ body {
   font-weight: 400;
   color: var(--text-primary);
   background-color: black;
+  overflow: hidden;
 }
 
 :root {
@@ -171,7 +172,6 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  overflow: hidden;
 }
 
 #app .zm-sidebar {
