@@ -181,6 +181,8 @@ body {
   background-color: var(--background-sidebar);
   -webkit-box-shadow: 4px 0 10px 0 rgba(0, 0, 0, 0.05);
           box-shadow: 4px 0 10px 0 rgba(0, 0, 0, 0.05);
+  -webkit-transition: all 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: all 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 #app .zm-sidebar .zm-sidebar-wrapper .zm-branch {
@@ -1050,6 +1052,8 @@ body {
       -ms-flex-positive: 1;
           flex-grow: 1;
   overflow: hidden;
+  -webkit-transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 #app .zm-main {
@@ -1087,7 +1091,6 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: calc(18vw - 117px);
   -webkit-transition: all 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
   transition: all 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
@@ -1305,8 +1308,10 @@ body {
 
 #app .zm-main .main-container .playlist-section .container .zm-carousel-wrapper .zm-carousel .zm-carousel-list .zm-carousel-item .zm-card .frames svg {
   position: absolute;
-  top: 68%;
-  right: 4%;
+  width: 4vw;
+  height: 4vw;
+  top: 70%;
+  right: 2%;
   z-index: 20;
 }
 
@@ -1572,6 +1577,8 @@ body {
   font-weight: 500;
   font-size: 12px;
   border-left: 1px solid rgba(255, 255, 255, 0.1);
+  -webkit-transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 #app .player-queue .player-queue-header {
@@ -2413,5 +2420,101 @@ body {
 
 #app .player-controls .player-control-right > div .volumne-wrapper .duration-volumne #volume-range:hover {
   height: 5px;
+}
+
+@media screen and (max-width: 1640px) {
+  .player-queue {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  .zm-mainpage {
+    right: 0 !important;
+  }
+  .zm-header {
+    right: 0 !important;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .zm-sidebar {
+    width: 70px !important;
+  }
+  .zm-sidebar .zm-add-playlist {
+    display: none !important;
+  }
+  .zm-sidebar .zm-branch {
+    padding: 0 !important;
+  }
+  .zm-sidebar .zm-branch .zm-branch-logo {
+    background-image: url("https://zjs.zadn.vn/zmp3-desktop/releases/v1.3.14/static/media/icon_zing_mp3_60.f6b51045.svg") !important;
+  }
+  .zm-sidebar .zm-banner {
+    display: none !important;
+  }
+  .zm-sidebar .zm-navbar-menu {
+    margin-bottom: 15px;
+  }
+  .zm-sidebar .zm-navbar-title {
+    display: none;
+  }
+  .zm-sidebar .navbar-link {
+    padding: 0 !important;
+    -webkit-box-pack: center !important;
+        -ms-flex-pack: center !important;
+            justify-content: center !important;
+  }
+  .zm-sidebar .navbar-item {
+    padding: 6px 0;
+  }
+  .zm-sidebar .zm-navbar-icon {
+    margin: 0 !important;
+    font-size: 26px !important;
+  }
+  .zm-sidebar .zm-navbar-header {
+    display: none !important;
+  }
+  .zm-sidebar .zm-navbar-divider {
+    background-color: white !important;
+    -webkit-clip-path: inset(0 14px) !important;
+            clip-path: inset(0 14px) !important;
+  }
+  .zm-sidebar .zm-navbar-img {
+    margin: 0 !important;
+  }
+  .zm-mainpage {
+    left: 70px !important;
+  }
+  .zm-header {
+    left: 70px !important;
+  }
+  .zm-carousel-item {
+    width: calc(100% / 4) !important;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .zm-carousel-item {
+    width: calc(100% / 3) !important;
+  }
+  .gallery-item {
+    width: calc(100% / 2) !important;
+  }
+  .media-content {
+    display: none !important;
+  }
+  .item.mv {
+    display: none !important;
+  }
+  .item.sing {
+    display: none !important;
+  }
+  .player-control-right {
+    width: auto !important;
+    margin-left: 20px;
+  }
+  .player-control-left {
+    width: auto !important;
+    margin-right: 20px;
+  }
 }
 /*# sourceMappingURL=main.css.map */

@@ -172,6 +172,7 @@ body {
     // height: calc(100vh - #{$controller-height});
     background-color: var(--background-sidebar);
     box-shadow: 4px 0 10px 0 rgba(0, 0, 0, 0.05);
+    transition: all 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
     //SIDEBAR
     //============================================================
     .zm-sidebar-wrapper {
@@ -807,6 +808,7 @@ body {
     background: var(--background-main);
     flex-grow: 1;
     overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
   }
   .zm-main {
     height: 100%;
@@ -836,7 +838,7 @@ body {
         .gallery-container {
           // transform: translateX(-100%);
           display: flex;
-          height: calc(18vw - 117px);
+          // height: calc(18vw - 117px);
           transition: all 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
           .gallery-item {
             flex-grow: 0;
@@ -990,8 +992,10 @@ body {
                       border-radius: 4px;
                       svg {
                         position: absolute;
-                        top: 68%;
-                        right: 4%;
+                        width:4vw;
+                        height:4vw;
+                        top: 70%;
+                        right: 2%;
                         z-index: 20;
                       }
                     }
@@ -1199,6 +1203,7 @@ body {
     font-weight: 500;
     font-size: 12px;
     border-left: 1px solid $border-primary;
+    transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
 
     .player-queue-header {
       position: relative;
@@ -1752,3 +1757,102 @@ body {
     }
   }
 }
+
+
+//RESPONSIVE
+
+@media screen and (max-width: 1640px ){
+  .player-queue{
+    transform: translateX(100%);
+  }
+  .zm-mainpage{
+    right:0 !important;
+  }
+  .zm-header{
+    right: 0 !important;
+  }
+  
+}
+
+@media screen and (max-width: 1100px){
+    .zm-sidebar{
+      width: $sidebar-width-responsive !important;
+      .zm-add-playlist{
+        display:none !important; 
+      }
+      .zm-branch{
+        padding: 0 !important;
+        .zm-branch-logo{
+          background-image: url('https://zjs.zadn.vn/zmp3-desktop/releases/v1.3.14/static/media/icon_zing_mp3_60.f6b51045.svg') !important;
+        }
+      }
+      .zm-banner{
+        display:none !important; 
+      }
+      .zm-navbar-menu{
+        margin-bottom: 15px;
+      }
+      .zm-navbar-title{
+        display:none;
+      }
+      .navbar-link{
+        padding: 0 !important;
+        justify-content:center !important;
+      }
+      .navbar-item{
+        padding: 6px 0;
+      }
+      .zm-navbar-icon{
+        margin: 0 !important;
+        font-size: 26px !important;
+      }
+      .zm-navbar-header{
+        display:none !important;
+      }
+     .zm-navbar-divider{
+       background-color: white !important;
+       clip-path: inset(0 14px) !important;
+     }
+     .zm-navbar-img{
+       margin: 0 !important;
+     }
+    
+    }
+    .zm-mainpage{
+      left:$sidebar-width-responsive !important;
+    }
+    .zm-header{
+      left:$sidebar-width-responsive !important;
+    }
+    .zm-carousel-item{
+      width: calc(100% / 4) !important;
+    }
+}
+
+@media screen and (max-width: 960px ){
+  .zm-carousel-item{
+    width: calc(100% / 3) !important;
+  }
+  .gallery-item{
+    width: calc(100% / 2) !important;
+  }
+  .media-content{
+    display:none !important;
+  }
+  .item.mv{
+    display:none !important;
+  }
+  .item.sing{
+    display:none !important;
+  }
+  .player-control-right{
+    width: auto !important ;
+    margin-left: 20px;
+
+  }
+  .player-control-left{
+    width: auto !important;
+    margin-right: 20px;
+  }
+}
+  
