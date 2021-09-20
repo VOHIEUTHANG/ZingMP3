@@ -788,8 +788,6 @@ body {
 }
 
 #app .zm-header .level .level-right .setting-item:first-child .theme-modal-overlay .theme-modal .theme-content .main-content .container .card-list .card-item .card-background:hover img {
-  -webkit-filter: grayscale(50%);
-          filter: grayscale(50%);
   -webkit-transform: scale(110%);
           transform: scale(110%);
 }
@@ -1308,8 +1306,8 @@ body {
 
 #app .zm-main .main-container .playlist-section .container .zm-carousel-wrapper .zm-carousel .zm-carousel-list .zm-carousel-item .zm-card .frames svg {
   position: absolute;
-  width: 4vw;
-  height: 4vw;
+  width: 46px;
+  height: 46px;
   top: 70%;
   right: 2%;
   z-index: 20;

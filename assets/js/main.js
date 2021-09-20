@@ -69,8 +69,16 @@ const galleryHandle = (function () {
 
     const galleryContainer = $('.gallery-container');
     const galleryItems = $$('.gallery-item');
-    const galleryCount = galleryItems.length;
-    const transformUnit = -100 / itemsCount;
+    let galleryCount = galleryItems.length;
+    let transformUnit = -100 / itemsCount;
+
+    setInterval(function(){
+        if((gallery.offsetWidth / galleryItem.offsetWidth).toFixed(0) != itemsCount){
+        itemsCount = gallery.offsetWidth / galleryItem.offsetWidth;
+        itemsCount = Number(itemsCount.toFixed(0));
+        transformUnit = -100 / itemsCount;
+    }
+    },500);
 
     let intervalID;
     let currentIndex = 0;
@@ -197,8 +205,8 @@ const carouselHandle = function (dataType = 0) {
     let itemCount = carouselList.offsetWidth / carouselItem.offsetWidth;
     itemCount = Number(itemCount.toFixed(0));
 
-
     const transformUnit = -100 / itemCount;
+
     let currentIndex = 0;
 
     prevBtn.classList.add('disable');
@@ -211,6 +219,21 @@ const carouselHandle = function (dataType = 0) {
     }
     const saveCountTimes = countTimes;
 
+    // setInterval(function(){
+    //     if((carouselList.offsetWidth / carouselItem.offsetWidth).toFixed(0) != itemCount){
+    //         itemCount = carouselList.offsetWidth / carouselItem.offsetWidth;
+    //         itemCount = Number(itemCount.toFixed(0));
+    //         transformUnit = -100 / itemCount;
+            
+    //          countTimes = Math.floor(itemsCount / itemCount);
+    //          surplus = itemsCount % itemCount;
+    //         if (surplus === 0) {
+    //             countTimes -= 1;
+    //         }
+    //         saveCountTimes = countTimes;
+    //         console.log(1);
+    //     }
+    // },500);
 
     return {
         showSlide: function () {

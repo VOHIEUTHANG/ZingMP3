@@ -592,7 +592,6 @@ body {
                               transition: transform 0.2s linear;
                             }
                             &:hover img {
-                              filter: grayscale(50%);
                               transform: scale(110%);
                             }
                           }
@@ -992,8 +991,8 @@ body {
                       border-radius: 4px;
                       svg {
                         position: absolute;
-                        width:4vw;
-                        height:4vw;
+                        width:46px;
+                        height:46px;
                         top: 70%;
                         right: 2%;
                         z-index: 20;
