@@ -1320,6 +1320,9 @@ body {
               .singer-name{
                 max-width: 160px !important;
               }
+              .song-name{
+                max-width: 170px !important;
+              }
               img {
                 filter: brightness(60%);
               }
@@ -1377,14 +1380,19 @@ body {
               .card-info {
                 user-select: none;
                 .song-name {
+                  max-width:100%;
+                  font-family: 'Lobster', cursive;
+                  letter-spacing: 1px;
                   text-transform: capitalize;
                   overflow: hidden;
                   white-space: nowrap;
                   text-overflow: ellipsis;
                   line-height: 1.3;
                   font-weight: 500;
-                  font-size: 14px;
+                  font-size: 17px;
                   color: white;
+                  text-shadow: -2px 0 0 violet,2px 0 0 purple, 0 -2px dodgerblue, 0 2px rgb(30, 179, 166);
+                //   animation: textAnimate 0.5s cubic-bezier(0.075, 0.82, 0.165, 1)  infinite;
                 }
                 .song-singer {
                   .singer-name {
