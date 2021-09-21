@@ -1310,7 +1310,16 @@ body {
             .next-song {
               display: block;
             }
+            &.is-playing{
+              .active-icon {
+                display: block !important;
+              }
+              .play-icon {
+                display: none !important;
+              }
+            }
           }
+       
           .media {
             &:hover {
               background-color: $alpha-bg;
@@ -1360,8 +1369,8 @@ body {
                   .active-icon {
                     position: absolute;
                     display: block;
-                    width: 18px;
-                    height: 18px;
+                    width: 20px;
+                    height: 20px;
                     top: 50%;
                     left: 50%;
                     transform: translate(-50%, -50%);

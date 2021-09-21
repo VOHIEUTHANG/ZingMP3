@@ -335,13 +335,23 @@ themeHandle.run();
 const mainHandle = (function(){
     const listSong = $('.list-songs');
     const leftControl = $('.player-control-left');
+    const audio = $('.audio');
+
+    const playBtn = $('.play.main-item');
+    const nextBtn = $('.forward.main-item');
+    const prevBtn = $('.backward.main-item');
+    const repeatBtn = $('.repeat.main-item');
+    const shuffleBtn = $('.random.main-item');
+
+
+
     return {
         currentIndex: 0,
         songs: [
             {
               name: "Tình Đơn Phương",
               singer: "Nguyên ft. KOO x Freak D",
-              path: "./assets/Musics/ChillMusic/TinhDonPhuong.mp3",
+              path: "./assets/musics/TinhDonPhuong.mp3",
               image:
                 "https://halotravel.vn/wp-content/uploads/2020/10/cap-hay-ve-tinh-yeu-don-phuong.jpg",
               new: true,
@@ -349,7 +359,7 @@ const mainHandle = (function(){
             {
               name: "Người Lạ Thoáng Qua",
               singer: "Đinh Tùng Huy x Vux",
-              path: "./assets/Musics/ChillMusic/NguoiLaThoangQua.mp3",
+              path: "./assets/musics/NguoiLaThoangQua.mp3",
               image:
                 "https://i.ytimg.com/vi/s-eNhNIwwIs/maxresdefault.jpg",
               new: true,
@@ -357,14 +367,14 @@ const mainHandle = (function(){
             {
               name: "Thương Thầm",
               singer: "NB3 Hoài Bảo x Freak D",
-              path: "./assets/Musics/ChillMusic/ThuongTham.mp3",
+              path: "./assets/musics/ThuongTham.mp3",
               image:
                 "https://i.scdn.co/image/ab67616d0000b27379bbf430f1811a35f687874f",
             },
             {
               name: "Thê Lương",
               singer: "Phúc Chinh",
-              path: "./assets/Musics/ChillMusic/TheLuong.mp3",
+              path: "./assets/musics/TheLuong.mp3",
               image:
                 "https://chuyenvui.com/wp-content/uploads/2021/06/loi-bai-hat-the-luong-2.jpg",
       
@@ -372,14 +382,14 @@ const mainHandle = (function(){
             {
               name: "Sài Gòn Nay Mưa",
               singer: "JSOL ft. Hoàng Duyên",
-              path: "./assets/Musics/ChillMusic/SaiGonNayMua.mp3",
+              path: "./assets/musics/SaiGonNayMua.mp3",
               image:
                 "https://i.ytimg.com/vi/WbVbcOYJFJk/mqdefault.jpg",
             },
             {
               name: "Rồi Tới Luôn",
               singer: "Nal",
-              path: "./assets/Musics/ChillMusic/RoiToiLuon.mp3",
+              path: "./assets/musics/RoiToiLuon.mp3",
               image:
                 "https://info-imgs.vgcloud.vn/2020/06/26/13/an-tuong-bo-anh-chill-duoi-anh-hoang-hon-phong-cach-hongkong-5.jpg",
               hot: true,
@@ -387,34 +397,34 @@ const mainHandle = (function(){
             {
               name: "Họa Mây",
               singer: "X2X",
-              path: "./assets/Musics/ChillMusic/HoaMay.mp3",
+              path: "./assets/musics/HoaMay.mp3",
               image: "https://photo-resize-zmp3.zadn.vn/w320_r1x1_jpeg/cover/0/b/0/4/0b047a80b0cbc0690afa34177f81b3f6.jpg",
               hot: true,
             },
             {
               name: "Từ Chối Nhẹ Nhàng Thôi",
               singer: "Phúc Du x Bích Phương",
-              path: "./assets/Musics/ChillMusic/TuChoiNheNhangThoi.mp3",
+              path: "./assets/musics/TuChoiNheNhangThoi.mp3",
               image: "https://billboardvn.vn/wp-content/uploads/2020/06/Voting-2MV.jpg",
               hot: true,
             },
             {
               name: "Thật Là Đáng Buồn",
               singer: "Doãn Hiếu x Phạm Nguyên Ngọc",
-              path: "./assets/Musics/ChillMusic/ThatLaDangBuon.mp3",
+              path: "./assets/musics/ThatLaDangBuon.mp3",
               image: "https://photo-resize-zmp3.zadn.vn/w240_r1x1_jpeg/cover/1/9/9/6/1996507ca69734dd0bc8564e8a657800.jpg",
             },
             {
               name: "yêu Là Cưới",
               singer: "Phát Hồ X2X",
-              path: "./assets/Musics/ChillMusic/YeuLaCuoi.mp3",
+              path: "./assets/musics/YeuLaCuoi.mp3",
               image: "https://i.ytimg.com/vi/J9ChQu2zYEY/maxresdefault.jpg",
               new: true,
             },
             {
               name: "3107-3",
               singer: "W/n x Nâu x Duongg",
-              path: "./assets/Musics/ChillMusic/3107-3.mp3",
+              path: "./assets/musics/3107-3.mp3",
               image:
                 "https://data.chiasenhac.com/data/cover/145/144390.jpg",
               new: true,
@@ -422,7 +432,7 @@ const mainHandle = (function(){
             {
               name: "Hơn Cả Mây Trời",
               singer: "Việt x Hawys",
-              path: "./assets/Musics/ChillMusic/HonCaMayTroi.mp3",
+              path: "./assets/musics/HonCaMayTroi.mp3",
               image:
                 "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqtnv3B0d4WU1tYf3zXCNePTrwcNFKm-wVYw&usqp=CAU",
             },
@@ -430,41 +440,41 @@ const mainHandle = (function(){
             {
               name: "Ghé Qua",
               singer: "Dick x Tofu x PC",
-              path: "./assets/Musics/ChillMusic/GheQua.mp3",
+              path: "./assets/musics/GheQua.mp3",
               image:
                 "https://i.ytimg.com/vi/wNH2zUpr_k4/maxresdefault.jpg",
             },
             {
               name: "Lỗi Tại Anh",
               singer: "Alex Lam x Freak D",
-              path: "./assets/Musics/ChillMusic/LoiTaiAnh.mp3",
+              path: "./assets/musics/LoiTaiAnh.mp3",
               image:
                 "https://lyricvn.com/wp-content/uploads/2021/07/8451c24e944f5054e5b8090f254080e0.jpg",
             },
             {
               name: "Đoạn Tuyệt Nàng Đi",
               singer: "Phát Huy T4 x Dino",
-              path: "./assets/Musics/ChillMusic/DoatTuyetNangDi.mp3",
+              path: "./assets/musics/DoatTuyetNangDi.mp3",
               image: "https://i.ytimg.com/vi/Vo7N4uSaJV8/maxresdefault.jpg",
             },
             {
               name: "Cưới Thôi",
               singer: "Masiu x Masew",
-              path: "./assets/Musics/ChillMusic/CuoiThoi.mp3",
+              path: "./assets/musics/CuoiThoi.mp3",
               image: "https://i1.sndcdn.com/artworks-WI5MsTNygIpswgJa-lABTlA-t500x500.jpg",
               new: true,
             },
             {
               name: "Cưới Thôi Vocal Nữ",
               singer: "Masiu x Masew X B Ray x TAP ",
-              path: "./assets/Musics/ChillMusic/CuoiThoiVocalNu.mp3",
+              path: "./assets/musics/CuoiThoiVocalNu.mp3",
               image: "https://data.chiasenhac.com/data/cover/147/146172.jpg",
               new: true,
             },
             {
               name: "Thích Em Hơi Nhiều",
               singer: " Wren Evans x Freak D",
-              path: "./assets/Musics/ChillMusic/ThichEmHoiNhieu.mp3",
+              path: "./assets/musics/ThichEmHoiNhieu.mp3",
               image: "https://i.ytimg.com/vi/faSVTByG0LQ/maxresdefault.jpg?v=60de85cc",
               new: true,
             },
@@ -472,19 +482,19 @@ const mainHandle = (function(){
             {
               name: "Muốn Nói Với Em",
               singer: "TTeam x BlackBi (Truong Nguyen Lofi mix)",
-              path: "./assets/Musics/ChillMusic/MuonNoiVoiEm.mp3",
+              path: "./assets/musics/MuonNoiVoiEm.mp3",
               image: "https://i.ytimg.com/vi/eg29qwPW4V8/maxresdefault.jpg",
             },
             {
               name: "Anh Thề Đấy",
               singer: "Thanh Hưng x Dino",
-              path: "./assets/Musics/ChillMusic/AnhTheDay.mp3",
+              path: "./assets/musics/AnhTheDay.mp3",
               image: "https://avatar-ex-swe.nixcdn.com/song/2021/05/28/a/5/3/8/1622187655260_640.jpg",
             },
             {
               name: "Dù Cho Mai Về Sau",
               singer: "Bùi Trường Linh x FREAK D",
-              path: "./assets/Musics/ChillMusic/DuChoMaiVeSau.mp3",
+              path: "./assets/musics/DuChoMaiVeSau.mp3",
               image: "https://i.scdn.co/image/ab67616d0000b273d08e312c1749467b13f34608",
               hot: true,
             },
@@ -492,93 +502,93 @@ const mainHandle = (function(){
             {
               name: "Chẳng Thể Tìm Được Em",
               singer: "PhucXp ft. Freak D",
-              path: "./assets/Musics/ChillMusic/ChangTheTimDuocEm.mp3",
+              path: "./assets/musics/ChangTheTimDuocEm.mp3",
               image:
                 "https://photo-resize-zmp3.zadn.vn/w320_r1x1_jpeg/cover/6/a/b/8/6ab8deee3953592dc9a4cfcb81bfb1b8.jpg",
             },
             {
               name: "Nàng Thơ",
               singer: "Hoàng Dũng x Freak D",
-              path: "./assets/Musics/ChillMusic/NangTho.mp3",
+              path: "./assets/musics/NangTho.mp3",
               image:
                 "https://i.ytimg.com/vi/Zzn9-ATB9aU/maxresdefault.jpg",
             },
             {
               name: "Chỉ Là Muốn Nói",
               singer: "Khải",
-              path: "./assets/Musics/ChillMusic/ChiLaMuonNoi.mp3",
+              path: "./assets/musics/ChiLaMuonNoi.mp3",
               image: "https://i.ytimg.com/vi/LFpKuYb04h0/maxresdefault.jpg",
             },
             {
               name: "Em Bỏ Thuốc Chưa",
               singer: "Bích Phương x Freak D",
-              path: "./assets/Musics/ChillMusic/EmBoThuocChua.mp3",
+              path: "./assets/musics/EmBoThuocChua.mp3",
               image:
                 "https://bloganchoi.com/wp-content/uploads/2020/05/bich-phuong.jpg",
             },
             {
               name: "Giờ Em Đâu",
               singer: "DATKAA x Prod. QT BEATZ ",
-              path: "./assets/Musics/ChillMusic/GioEmODau.mp3",
+              path: "./assets/musics/GioEmODau.mp3",
               image:
                 "https://photo-resize-zmp3.zadn.vn/w320_r1x1_jpeg/cover/1/2/5/c/125cdc5d9d35bf1e1b664feb124055c0.jpg",
             },
             {
               name: "Hạ Còn Vương Nắng",
               singer: "DATKAA x KIDO x Prod. QT BEATZ",
-              path: "./assets/Musics/ChillMusic/HaConVuonNang.mp3",
+              path: "./assets/musics/HaConVuonNang.mp3",
               image:
                 "https://photo-resize-zmp3.zadn.vn/w320_r1x1_jpeg/cover/6/8/4/e/684e70dd4cabcd49a65f076096c1f820.jpg",
             },
             {
               name: "Hẹn Em Kiếp Sau",
               singer: "Lã. x Duy Phúc x TiB",
-              path: "./assets/Musics/ChillMusic/HenEmKiepSau.mp3",
+              path: "./assets/musics/HenEmKiepSau.mp3",
               image:
                 "https://photo-resize-zmp3.zadn.vn/w320_r1x1_jpeg/cover/c/a/5/c/ca5c05e1e0e068e8d505216ed0794a6e.jpg",
             },
             {
               name: "Hong Kong 1",
               singer: "Nguyễn Trọng Tài x San Ji x Double X",
-              path: "./assets/Musics/ChillMusic/HongKongI.mp3",
+              path: "./assets/musics/HongKongI.mp3",
               image:
                 "https://avatar-ex-swe.nixcdn.com/playlist/2018/10/10/5/b/a/2/1539155622062_500.jpg",
             },
             {
               name: "Tháng Năm",
               singer: " Soobin x Freak D",
-              path: "./assets/Musics/ChillMusic/ThangNam.mp3",
+              path: "./assets/musics/ThangNam.mp3",
               image: "https://i.ytimg.com/vi/sG9JhIRuTkA/maxresdefault.jpg",
             },
             {
               name: "Chuyện Rằng",
               singer: "Thịnh Suy x Freak D",
-              path: "./assets/Musics/ChillMusic/Chuyen Rang.mp3",
+              path: "./assets/musics/Chuyen Rang.mp3",
               image: "https://i.scdn.co/image/ab67616d0000b2734be34a1e036c97d22b5392d5",
             },
             {
               name: "Nợ Ai Đó Lời Xin Lỗi",
               singer: "Bozitt x Freak D",
-              path: "./assets/Musics/ChillMusic/No Ai Do Loi Xin Loi.mp3",
+              path: "./assets/musics/No Ai Do Loi Xin Loi.mp3",
               image:
                 "https://i1.sndcdn.com/artworks-cgg23tTwEz2VnTMX-rxOrJA-t500x500.jpg",
             },
             {
               name: "Dại Khờ",
               singer: "NB3 Hoài Bảo x Freak D",
-              path: "./assets/Musics/ChillMusic/Dại Khờ (Lofi Ver.) - NB3 Hoài Bảo x Freak D.mp3",
+              path: "./assets/musics/Dại Khờ (Lofi Ver.) - NB3 Hoài Bảo x Freak D.mp3",
               image: "https://i.ytimg.com/vi/bUNwFuMfEFs/maxresdefault.jpg"
             },
             {
               name: "Thức Giấc",
               singer: "Da LAB x Ryan",
-              path: "./assets/Musics/ChillMusic/ThucGiac.mp3",
+              path: "./assets/musics/ThucGiac.mp3",
               image: "https://i.ytimg.com/vi/R3trO4a49go/maxresdefault.jpg",
             },
             {
               name: "Tình Đầu",
               singer: "Tăng Duy Tân",
-              path: "./assets/Musics/ChillMusic/TInhDau.mp3",
+              path: "./assets/musics/TInhDau.mp3",
               image:
                 "https://photo-resize-zmp3.zadn.vn/w240_r1x1_jpeg/cover/0/a/d/1/0ad18644161b1bbe41bc1ca0471600ba.jpg",
               hot: true,
@@ -586,20 +596,20 @@ const mainHandle = (function(){
             {
               name: "Tình Đẹp Đến Mấy Cũng Tàn",
               singer: "Như Việt Ft Đình Dũng x Vux",
-              path: "./assets/Musics/ChillMusic/TinhDauDepDenMayCungTan.mp3",
+              path: "./assets/musics/TinhDauDepDenMayCungTan.mp3",
               image:
                 "https://thuthuat.taimienphi.vn/cf/Images/tt/2019/12/16/loi-bai-hat-tinh-dep-den-may-cung-tan.jpg",
             },
             {
               name: "Mãi Mãi Không Phải Anh",
               singer: "Thanh Bìnhk",
-              path: "./assets/Musics/ChillMusic/MaiMaiKhongPhaiAnh.mp3",
+              path: "./assets/musics/MaiMaiKhongPhaiAnh.mp3",
               image: "https://i.ytimg.com/vi/q5Kw-Yw0_E8/maxresdefault.jpg",
             },
             {
               name: "Hôm Nay Em Cưới Rồi",
               singer: "Khải Đăng x Freak D",
-              path: "./assets/Musics/ChillMusic/HomNayEmCuoiRoi.mp3",
+              path: "./assets/musics/HomNayEmCuoiRoi.mp3",
               image: "https://i.ytimg.com/vi/NuWAl7-Vkwk/maxresdefault.jpg",
             },
       
@@ -675,10 +685,28 @@ const mainHandle = (function(){
 
        </div>
          `;
+         audio.src=`${this.songs[this.currentIndex].path}`;
+        },
+        mainHandle (){
+          //PLAY BTN HANDLE 
+          //===================================
+          const songActive = $('.song-item.active');
+
+          playBtn.onclick=function(e){
+            this.classList.toggle('is-playing');
+            songActive.classList.toggle('is-playing');
+            if(this.classList.contains('is-playing')){
+              audio.play();
+            }else{
+              audio.pause();
+            }
+          };
+          
         },
         run(){
             this.renderSong();
             this.loadCurrentSong();
+            this.mainHandle();
         }
     }
 })();

@@ -1754,6 +1754,14 @@ body {
   display: block;
 }
 
+#app .player-queue .player-body .list-songs .song-item.active.is-playing .active-icon {
+  display: block !important;
+}
+
+#app .player-queue .player-body .list-songs .song-item.active.is-playing .play-icon {
+  display: none !important;
+}
+
 #app .player-queue .player-body .list-songs .song-item .media {
   padding: 8px;
   border-radius: 4px;
@@ -1839,8 +1847,8 @@ body {
 #app .player-queue .player-body .list-songs .song-item .media .media-left .song-thumb .icon-wrapper .active-icon {
   position: absolute;
   display: block;
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
