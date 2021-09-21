@@ -334,6 +334,7 @@ themeHandle.run();
 // START MAIN ----------------------------------------------------------------
 const mainHandle = (function(){
     const listSong = $('.list-songs');
+    const leftControl = $('.player-control-left');
     return {
         currentIndex: 0,
         songs: [
@@ -648,8 +649,36 @@ const mainHandle = (function(){
             },"");
             listSong.innerHTML = data;
         },
+        loadCurrentSong(){
+         leftControl.innerHTML = `
+         <a href="" class="media-thumbnail">
+         <div class="thumbnail">
+           <img src="${this.songs[this.currentIndex].image}" alt="">
+         </div>
+       </a>
+       <div class="media-content">
+         <a href="" class="song-name">${this.songs[this.currentIndex].name}</a>
+         <h5 class="song-singer">
+           <a href="">${this.songs[this.currentIndex].singer}</a>
+         </h5>
+       </div>
+       <div class="media-more">
+         <div class="icon heart">
+           <span class="add-to-library hover-detail active">Thêm Vào Thư Viện</span>
+           <span class="remove-from-library hover-detail">Xóa khỏi Thư Viện</span>
+           <i class="far fa-heart"></i>
+         </div>
+         <div class="icon more">
+           <span class="hover-detail">Khác</span>
+           <i class="fas fa-ellipsis-h"></i>
+         </div>
+
+       </div>
+         `;
+        },
         run(){
             this.renderSong();
+            this.loadCurrentSong();
         }
     }
 })();
