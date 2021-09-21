@@ -65,10 +65,10 @@ body {
 :root {
   --background-main: transparent;
   --background-sidebar: transparent;
-  --background-controller:  transparent;
-  --background-queue:  transparent;
-  --background-header:  transparent;
-  --background-primary:rgba(0,0,0,0.6);
+  --background-controller: transparent;
+  --background-queue: transparent;
+  --background-header: transparent;
+  --background-primary: rgba(0, 0, 0, 0.6);
   --theme-primary: rgb(14, 112, 112);
   --navigation-text: #dadada;
   --text-primary: #fff;
@@ -83,76 +83,76 @@ body {
 }
 
 :root[theme="car1"] {
-  --background-app:  url('https://images.wallpaperscraft.com/image/single/bmw_headlights_lights_137326_1920x1080.jpg');
-  --theme-primary: #80C4D9;
+  --background-app: url("https://images.wallpaperscraft.com/image/single/bmw_headlights_lights_137326_1920x1080.jpg");
+  --theme-primary: #80c4d9;
 }
 
 :root[theme="car2"] {
-  --background-app:  url('https://images.wallpaperscraft.com/image/single/bmw_headlights_car_124112_1920x1080.jpg');
-  --theme-primary: #FEFDDF;
+  --background-app: url("https://images.wallpaperscraft.com/image/single/bmw_headlights_car_124112_1920x1080.jpg");
+  --theme-primary: #fefddf;
 }
 
 :root[theme="car3"] {
-  --background-app:  url('https://images.wallpaperscraft.com/image/single/nissan_gtr_nissan_sportscar_139668_1920x1080.jpg');
-  --theme-primary: #CAE0ED;
+  --background-app: url("https://images.wallpaperscraft.com/image/single/nissan_gtr_nissan_sportscar_139668_1920x1080.jpg");
+  --theme-primary: #cae0ed;
 }
 
 :root[theme="car4"] {
-  --background-app:  url('https://images.wallpaperscraft.com/image/single/shelby_mustang_ford_mustang_ford_125085_1920x1080.jpg');
-  --theme-primary: #819FDB;
+  --background-app: url("https://images.wallpaperscraft.com/image/single/shelby_mustang_ford_mustang_ford_125085_1920x1080.jpg");
+  --theme-primary: #819fdb;
 }
 
 :root[theme="abstract1"] {
-  --background-app:  url('https://images.wallpaperscraft.com/image/single/abstraction_sharp_figure_101902_1920x1080.jpg');
+  --background-app: url("https://images.wallpaperscraft.com/image/single/abstraction_sharp_figure_101902_1920x1080.jpg");
 }
 
 :root[theme="abstract2"] {
-  --background-app:  url('https://images.wallpaperscraft.com/image/single/triangle_bright_colorful_background_63450_1920x1080.jpg');
-  --theme-primary:#D3375E;
+  --background-app: url("https://images.wallpaperscraft.com/image/single/triangle_bright_colorful_background_63450_1920x1080.jpg");
+  --theme-primary: #d3375e;
 }
 
 :root[theme="abstract3"] {
-  --background-app:  url('https://images.wallpaperscraft.com/image/single/triangle_lines_dark_background_51871_1920x1080.jpg');
-  --theme-primary: #0C1149;
+  --background-app: url("https://images.wallpaperscraft.com/image/single/triangle_lines_dark_background_51871_1920x1080.jpg");
+  --theme-primary: #0c1149;
 }
 
 :root[theme="dark1"] {
-  --background-app:  url('https://images.wallpaperscraft.com/image/single/leaves_line_neon_139772_1920x1080.jpg');
+  --background-app: url("https://images.wallpaperscraft.com/image/single/leaves_line_neon_139772_1920x1080.jpg");
 }
 
 :root[theme="dark2"] {
-  --background-app:  url('https://images.wallpaperscraft.com/image/single/daisy_field_flower_dark_background_125105_1920x1080.jpg');
+  --background-app: url("https://images.wallpaperscraft.com/image/single/daisy_field_flower_dark_background_125105_1920x1080.jpg");
   --theme-primary: #ccc;
 }
 
 :root[theme="dark3"] {
-  --background-app:  url('https://images.wallpaperscraft.com/image/single/silhouette_glow_circle_143302_1920x1080.jpg');
-  --theme-primary: #FF792D;
+  --background-app: url("https://images.wallpaperscraft.com/image/single/silhouette_glow_circle_143302_1920x1080.jpg");
+  --theme-primary: #ff792d;
 }
 
 :root[theme="dark4"] {
-  --background-app:  url('https://images.wallpaperscraft.com/image/single/silhouette_glow_portal_142677_1920x1080.jpg');
-  --theme-primary: #FA6757;
+  --background-app: url("https://images.wallpaperscraft.com/image/single/silhouette_glow_portal_142677_1920x1080.jpg");
+  --theme-primary: #fa6757;
 }
 
 :root[theme="city1"] {
-  --background-app:  url('https://images.wallpaperscraft.com/image/single/hong_kong_china_skyscrapers_night_city_city_lights_119347_1920x1080.jpg');
+  --background-app: url("https://images.wallpaperscraft.com/image/single/hong_kong_china_skyscrapers_night_city_city_lights_119347_1920x1080.jpg");
   --theme-primary: #403263;
 }
 
 :root[theme="city2"] {
-  --background-app:  url('https://images.wallpaperscraft.com/image/single/trolley_stop_city_evening_lighting_119292_1920x1080.jpg');
-  --theme-primary: #1DD8D1;
+  --background-app: url("https://images.wallpaperscraft.com/image/single/trolley_stop_city_evening_lighting_119292_1920x1080.jpg");
+  --theme-primary: #1dd8d1;
 }
 
 :root[theme="city3"] {
-  --background-app:  url('https://images.wallpaperscraft.com/image/single/night_city_city_lights_overview_129026_1920x1080.jpg');
-  --theme-primary: #C9D3F6;
+  --background-app: url("https://images.wallpaperscraft.com/image/single/night_city_city_lights_overview_129026_1920x1080.jpg");
+  --theme-primary: #c9d3f6;
 }
 
 :root[theme="city4"] {
-  --background-app:  url('https://images.wallpaperscraft.com/image/single/street_night_city_neon_187651_1920x1080.jpg');
-  --theme-primary: #383A75;
+  --background-app: url("https://images.wallpaperscraft.com/image/single/street_night_city_neon_187651_1920x1080.jpg");
+  --theme-primary: #383a75;
 }
 
 #root {
@@ -1731,6 +1731,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  margin-bottom: 80px;
 }
 
 #app .player-queue .player-body .list-songs .song-item.active .media {
@@ -1748,10 +1749,6 @@ body {
 #app .player-queue .player-body .list-songs .song-item.active img {
   -webkit-filter: brightness(80%);
           filter: brightness(80%);
-}
-
-#app .player-queue .player-body .list-songs .song-item.active .next-song {
-  display: block;
 }
 
 #app .player-queue .player-body .list-songs .song-item.active.is-playing .active-icon {
@@ -1874,7 +1871,7 @@ body {
 
 #app .player-queue .player-body .list-songs .song-item .media .media-left .card-info .song-name {
   max-width: 100%;
-  font-family: 'Lobster', cursive;
+  font-family: "Lobster", cursive;
   letter-spacing: 1px;
   text-transform: capitalize;
   overflow: hidden;
@@ -1995,39 +1992,6 @@ body {
           clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
 }
 
-#app .player-queue .player-body .list-songs .song-item .next-song {
-  display: none;
-  padding: 15px 8px 5px;
-  width: 100%;
-  height: 62px;
-  font-size: 14px;
-}
-
-#app .player-queue .player-body .list-songs .song-item .next-song .title {
-  font-weight: 700;
-  font-size: 14px;
-  color: var(--text-primary);
-}
-
-#app .player-queue .player-body .list-songs .song-item .next-song .sub-title {
-  color: #a0a0a0;
-}
-
-#app .player-queue .player-body .list-songs .song-item .next-song .sub-title a {
-  margin-left: 5px;
-  max-width: 295px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  text-transform: capitalize;
-  font-size: inherit;
-  font-weight: 500;
-  color: var(--link-text-hover);
-}
-
-#app .player-queue .player-body .list-songs .song-item:last-child .next-song {
-  display: none !important;
-}
-
 #app .player-controls {
   padding: 0 20px;
   position: absolute;
@@ -2077,11 +2041,40 @@ body {
 }
 
 #app .player-controls .player-control-left .media-thumbnail .thumbnail {
-  width: 64px;
-  height: 64px;
-  overflow: hidden;
+  position: relative;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
-  border: 2px solid var(--thumbnail-player);
+  background: linear-gradient(45deg, #ac49da 20%, #eaff74, #5fbfff);
+}
+
+#app .player-controls .player-control-left .media-thumbnail .thumbnail::after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #ae00ff 20%, #eaff74, #5fbfff);
+  -webkit-filter: blur(20px);
+          filter: blur(20px);
+  z-index: 1;
+}
+
+#app .player-controls .player-control-left .media-thumbnail .thumbnail img {
+  position: absolute;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: 100;
 }
 
 #app .player-controls .player-control-left .media-content {

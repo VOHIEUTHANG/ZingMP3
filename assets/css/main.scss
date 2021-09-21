@@ -56,17 +56,17 @@ body {
   font-weight: 400;
   color: var(--text-primary);
   background-color: black;
-  overflow:hidden;
+  overflow: hidden;
 }
 //==================== Theme Color ====================
-:root{
+:root {
   --background-main: transparent;
   --background-sidebar: transparent;
-  --background-controller:  transparent;
-  --background-queue:  transparent;
-  --background-header:  transparent;
+  --background-controller: transparent;
+  --background-queue: transparent;
+  --background-header: transparent;
 
-  --background-primary:rgba(0,0,0,0.6);
+  --background-primary: rgba(0, 0, 0, 0.6);
   --theme-primary: rgb(14, 112, 112);
 
   --navigation-text: #dadada;
@@ -82,71 +82,71 @@ body {
   --progressbar-bg: hsla(0, 0%, 100%, 0.3);
   --progressbar-active: #fff;
 }
-//CITY 
+//CITY
 //============================================================
 :root[theme="car1"] {
-  --background-app:  url('https://images.wallpaperscraft.com/image/single/bmw_headlights_lights_137326_1920x1080.jpg');
-  --theme-primary: #80C4D9;
+  --background-app: url("https://images.wallpaperscraft.com/image/single/bmw_headlights_lights_137326_1920x1080.jpg");
+  --theme-primary: #80c4d9;
 }
 :root[theme="car2"] {
-  --background-app:  url('https://images.wallpaperscraft.com/image/single/bmw_headlights_car_124112_1920x1080.jpg');
-  --theme-primary: #FEFDDF;
+  --background-app: url("https://images.wallpaperscraft.com/image/single/bmw_headlights_car_124112_1920x1080.jpg");
+  --theme-primary: #fefddf;
 }
 :root[theme="car3"] {
-  --background-app:  url('https://images.wallpaperscraft.com/image/single/nissan_gtr_nissan_sportscar_139668_1920x1080.jpg');
-  --theme-primary: #CAE0ED;
+  --background-app: url("https://images.wallpaperscraft.com/image/single/nissan_gtr_nissan_sportscar_139668_1920x1080.jpg");
+  --theme-primary: #cae0ed;
 }
 :root[theme="car4"] {
-  --background-app:  url('https://images.wallpaperscraft.com/image/single/shelby_mustang_ford_mustang_ford_125085_1920x1080.jpg');
-  --theme-primary: #819FDB;
+  --background-app: url("https://images.wallpaperscraft.com/image/single/shelby_mustang_ford_mustang_ford_125085_1920x1080.jpg");
+  --theme-primary: #819fdb;
 }
-//ABSTRACT 
+//ABSTRACT
 //============================================================
 :root[theme="abstract1"] {
-  --background-app:  url('https://images.wallpaperscraft.com/image/single/abstraction_sharp_figure_101902_1920x1080.jpg');
+  --background-app: url("https://images.wallpaperscraft.com/image/single/abstraction_sharp_figure_101902_1920x1080.jpg");
 }
 :root[theme="abstract2"] {
-  --background-app:  url('https://images.wallpaperscraft.com/image/single/triangle_bright_colorful_background_63450_1920x1080.jpg');
-  --theme-primary:#D3375E;
+  --background-app: url("https://images.wallpaperscraft.com/image/single/triangle_bright_colorful_background_63450_1920x1080.jpg");
+  --theme-primary: #d3375e;
 }
 :root[theme="abstract3"] {
-  --background-app:  url('https://images.wallpaperscraft.com/image/single/triangle_lines_dark_background_51871_1920x1080.jpg');
-  --theme-primary: #0C1149;
+  --background-app: url("https://images.wallpaperscraft.com/image/single/triangle_lines_dark_background_51871_1920x1080.jpg");
+  --theme-primary: #0c1149;
 }
-//DARK 
+//DARK
 //============================================================
 :root[theme="dark1"] {
-  --background-app:  url('https://images.wallpaperscraft.com/image/single/leaves_line_neon_139772_1920x1080.jpg');
+  --background-app: url("https://images.wallpaperscraft.com/image/single/leaves_line_neon_139772_1920x1080.jpg");
 }
 :root[theme="dark2"] {
-  --background-app:  url('https://images.wallpaperscraft.com/image/single/daisy_field_flower_dark_background_125105_1920x1080.jpg');
+  --background-app: url("https://images.wallpaperscraft.com/image/single/daisy_field_flower_dark_background_125105_1920x1080.jpg");
   --theme-primary: #ccc;
 }
 :root[theme="dark3"] {
-  --background-app:  url('https://images.wallpaperscraft.com/image/single/silhouette_glow_circle_143302_1920x1080.jpg');
-  --theme-primary: #FF792D;
+  --background-app: url("https://images.wallpaperscraft.com/image/single/silhouette_glow_circle_143302_1920x1080.jpg");
+  --theme-primary: #ff792d;
 }
 :root[theme="dark4"] {
-  --background-app:  url('https://images.wallpaperscraft.com/image/single/silhouette_glow_portal_142677_1920x1080.jpg');
-  --theme-primary: #FA6757;
+  --background-app: url("https://images.wallpaperscraft.com/image/single/silhouette_glow_portal_142677_1920x1080.jpg");
+  --theme-primary: #fa6757;
 }
 //CITY
 //============================================================
 :root[theme="city1"] {
-  --background-app:  url('https://images.wallpaperscraft.com/image/single/hong_kong_china_skyscrapers_night_city_city_lights_119347_1920x1080.jpg');
+  --background-app: url("https://images.wallpaperscraft.com/image/single/hong_kong_china_skyscrapers_night_city_city_lights_119347_1920x1080.jpg");
   --theme-primary: #403263;
 }
 :root[theme="city2"] {
-  --background-app:  url('https://images.wallpaperscraft.com/image/single/trolley_stop_city_evening_lighting_119292_1920x1080.jpg');
-  --theme-primary: #1DD8D1;
+  --background-app: url("https://images.wallpaperscraft.com/image/single/trolley_stop_city_evening_lighting_119292_1920x1080.jpg");
+  --theme-primary: #1dd8d1;
 }
 :root[theme="city3"] {
-  --background-app:  url('https://images.wallpaperscraft.com/image/single/night_city_city_lights_overview_129026_1920x1080.jpg');
-  --theme-primary: #C9D3F6;
+  --background-app: url("https://images.wallpaperscraft.com/image/single/night_city_city_lights_overview_129026_1920x1080.jpg");
+  --theme-primary: #c9d3f6;
 }
 :root[theme="city4"] {
-  --background-app:  url('https://images.wallpaperscraft.com/image/single/street_night_city_neon_187651_1920x1080.jpg');
-  --theme-primary: #383A75;
+  --background-app: url("https://images.wallpaperscraft.com/image/single/street_night_city_neon_187651_1920x1080.jpg");
+  --theme-primary: #383a75;
 }
 
 //============================================================
@@ -174,13 +174,13 @@ body {
     background-color: var(--background-sidebar);
     box-shadow: 4px 0 10px 0 rgba(0, 0, 0, 0.05);
     transition: all 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
-  
+
     //SIDEBAR
     //============================================================
     .zm-sidebar-wrapper {
-      width:100%; 
-      height:100%;
-      display:flex;
+      width: 100%;
+      height: 100%;
+      display: flex;
       flex-direction: column;
       justify-content: flex-start;
       .zm-branch {
@@ -268,14 +268,14 @@ body {
           white-space: nowrap;
         }
       }
-      .sub-nav-wrapper{
+      .sub-nav-wrapper {
         flex: 1 1;
-        position:relative;
-        width:100%;
-        height:100%;
+        position: relative;
+        width: 100%;
+        height: 100%;
         overflow: hidden scroll;
-        &::-webkit-scrollbar{
-          display:none;
+        &::-webkit-scrollbar {
+          display: none;
         }
         scrollbar-width: none;
       }
@@ -517,7 +517,7 @@ body {
                 height: 50vh;
                 min-height: 596px;
                 background: var(--background-primary);
-                box-shadow: 0 0 100px 10px rgba(255,255,255,0.2);
+                box-shadow: 0 0 100px 10px rgba(255, 255, 255, 0.2);
                 border-radius: 8px;
                 @include abs-center;
                 //set color css
@@ -527,7 +527,7 @@ body {
                 color: var(--text-primary);
                 overflow: hidden;
                 text-overflow: ellipsis;
-             
+
                 .theme-content {
                   cursor: default;
                   .theme-close-btn {
@@ -540,7 +540,7 @@ body {
                     transition: color 0.1s linear;
                     cursor: pointer;
                     &:hover {
-                      color:rgb(235, 100, 100);
+                      color: rgb(235, 100, 100);
                     }
                     @include hover-opacity(0.9);
                     @include flex-center;
@@ -567,8 +567,8 @@ body {
                     &::-webkit-scrollbar {
                       display: none;
                     }
-                      -ms-overflow-style: none;
-                      scrollbar-width: none; 
+                    -ms-overflow-style: none;
+                    scrollbar-width: none;
                     .title {
                       font-size: 18px;
                       margin-bottom: 10px;
@@ -602,8 +602,8 @@ body {
                             height: 82px;
                             overflow: hidden;
                             border-radius: 6px;
-                            &.active{
-                              border:1px solid aquamarine;
+                            &.active {
+                              border: 1px solid aquamarine;
                             }
                             img {
                               width: 100%;
@@ -702,7 +702,7 @@ body {
               top: calc(100% + 10px);
               background-color: var(--background-primary);
               border-radius: 8px;
-              box-shadow: 0 0 40px 10px rgba(255,255,255,0.1);
+              box-shadow: 0 0 40px 10px rgba(255, 255, 255, 0.1);
               &:hover + .setting-instruction {
                 opacity: 0;
               }
@@ -835,15 +835,14 @@ body {
     width: 100%;
     overflow: hidden scroll;
     padding: 0 4vw;
-    //HIDE SCROLL BAR 
+    //HIDE SCROLL BAR
     -ms-overflow-style: none;
-    scrollbar-width: none; 
-    &::-webkit-scrollbar{
-      display:none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
     }
     .main-container {
-
-      margin-top:20px;
+      margin-top: 20px;
       min-height: 100vh;
       overflow: hidden;
       .gallery {
@@ -1011,8 +1010,8 @@ body {
                       border-radius: 4px;
                       svg {
                         position: absolute;
-                        width:46px;
-                        height:46px;
+                        width: 46px;
+                        height: 46px;
                         top: 70%;
                         right: 2%;
                         z-index: 20;
@@ -1222,7 +1221,7 @@ body {
     font-size: 12px;
     border-left: 1px solid $border-primary;
     transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
-    overflow:hidden;
+    overflow: hidden;
     .player-queue-header {
       position: relative;
       z-index: 100;
@@ -1282,17 +1281,17 @@ body {
       padding: 0 8px 15px;
       width: 100%;
       height: 100%;
-      
+
       overflow: hidden scroll;
-      &::-webkit-scrollbar{
-        display:none;
+      &::-webkit-scrollbar {
+        display: none;
       }
       -ms-overflow-style: none;
-      scrollbar-width: none; 
+      scrollbar-width: none;
       .list-songs {
         display: flex;
         flex-direction: column;
-        
+        margin-bottom: 80px;
         .song-item {
           &.active {
             .media {
@@ -1307,10 +1306,7 @@ body {
             img {
               filter: brightness(80%);
             }
-            .next-song {
-              display: block;
-            }
-            &.is-playing{
+            &.is-playing {
               .active-icon {
                 display: block !important;
               }
@@ -1319,17 +1315,17 @@ body {
               }
             }
           }
-       
+
           .media {
             &:hover {
               background-color: $alpha-bg;
               .media-left .song-thumb .icon-wrapper .play-icon {
                 display: block;
               }
-              .singer-name{
+              .singer-name {
                 max-width: 160px !important;
               }
-              .song-name{
+              .song-name {
                 max-width: 170px !important;
               }
               img {
@@ -1389,8 +1385,8 @@ body {
               .card-info {
                 user-select: none;
                 .song-name {
-                  max-width:100%;
-                  font-family: 'Lobster', cursive;
+                  max-width: 100%;
+                  font-family: "Lobster", cursive;
                   letter-spacing: 1px;
                   text-transform: capitalize;
                   overflow: hidden;
@@ -1400,12 +1396,13 @@ body {
                   font-weight: 500;
                   font-size: 17px;
                   color: white;
-                  text-shadow: -2px 0 0 violet,2px 0 0 purple, 0 -2px dodgerblue, 0 2px rgb(30, 179, 166);
-                //   animation: textAnimate 0.5s cubic-bezier(0.075, 0.82, 0.165, 1)  infinite;
+                  text-shadow: -2px 0 0 violet, 2px 0 0 purple,
+                    0 -2px dodgerblue, 0 2px rgb(30, 179, 166);
+                  //   animation: textAnimate 0.5s cubic-bezier(0.075, 0.82, 0.165, 1)  infinite;
                 }
                 .song-singer {
                   .singer-name {
-                    display:inline-block;
+                    display: inline-block;
                     white-space: nowrap;
                     overflow: hidden;
                     max-width: 100%;
@@ -1479,37 +1476,6 @@ body {
               }
             }
           }
-
-          .next-song {
-            display: none;
-            padding: 15px 8px 5px;
-            width: 100%;
-            height: 62px;
-            font-size: 14px;
-            .title {
-              font-weight: 700;
-              font-size: 14px;
-              color: var(--text-primary);
-            }
-            .sub-title {
-              color: #a0a0a0;
-              a {
-                margin-left: 5px;
-                max-width: 295px;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                text-transform: capitalize;
-                font-size: inherit;
-                font-weight: 500;
-                color: var(--link-text-hover);
-              }
-            }
-          }
-          &:last-child {
-            .next-song {
-              display: none !important;
-            }
-          }
         }
       }
     }
@@ -1537,11 +1503,42 @@ body {
         margin-right: 10px;
         flex: 0 0 auto;
         .thumbnail {
-          width: 64px;
-          height: 64px;
-          overflow: hidden;
+          position: relative;
+          width: 70px;
+          height: 70px;
           border-radius: 50%;
-          border: 2px solid var(--thumbnail-player);
+          background: linear-gradient(
+            45deg,
+            rgb(172, 73, 218) 20%,
+            rgb(234, 255, 116),
+            rgb(95, 191, 255)
+          );
+          &::after {
+            content: "";
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            left: 0px;
+            border-radius: 50%;
+            background: linear-gradient(
+              45deg,
+              rgb(174, 0, 255) 20%,
+              rgb(234, 255, 116),
+              rgb(95, 191, 255)
+            );
+            filter: blur(20px);
+            z-index: 1;
+          }
+          img {
+            position: absolute;
+            @include abs-center;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            z-index: 100;
+          }
         }
       }
       .media-content {
@@ -1673,15 +1670,15 @@ body {
         .time.right {
           margin-left: 10px;
         }
-        .progressbar::-webkit-slider-thumb{
+        .progressbar::-webkit-slider-thumb {
           -webkit-appearance: none;
           width: 14px;
           height: 14px;
           background-color: var(--progressbar-active);
           border-radius: 50%;
         }
-        .progressbar::-moz-range-thumb{
-          box-sizing:border-box;
+        .progressbar::-moz-range-thumb {
+          box-sizing: border-box;
           width: 14px;
           height: 14px;
           background-color: var(--progressbar-active);
@@ -1696,8 +1693,8 @@ body {
           height: 4px;
           background: var(--progressbar-bg);
           border-radius: 20px;
-          &:hover{
-            height:6px; 
+          &:hover {
+            height: 6px;
           }
         }
       }
@@ -1761,45 +1758,44 @@ body {
             height: auto;
             @include flex-center;
             &:hover {
-              #volume-range::-webkit-slider-thumb{
+              #volume-range::-webkit-slider-thumb {
                 background-color: var(--progressbar-active);
               }
-              #volume-range::-moz-range-thumb{
+              #volume-range::-moz-range-thumb {
                 background-color: var(--progressbar-active);
-                
               }
             }
-            #volume-range::-webkit-slider-thumb{
+            #volume-range::-webkit-slider-thumb {
               -webkit-appearance: none;
-              width: 12px; 
-              height:12px;
+              width: 12px;
+              height: 12px;
               background: transparent;
               border-radius: 50%;
             }
-            #volume-range::-moz-range-thumb{
+            #volume-range::-moz-range-thumb {
               box-sizing: border-box;
-              width: 12px; 
-              height:12px;
+              width: 12px;
+              height: 12px;
               background: transparent;
               border-radius: 50%;
-              border:2px solid transparent;
+              border: 2px solid transparent;
             }
 
-            #volume-range{
+            #volume-range {
               -webkit-appearance: none;
               width: 70px;
               height: 3px;
               cursor: pointer;
               border-radius: 20px;
-              background: linear-gradient(to right,
-              var(--progressbar-active) 0%, 
-              var(--progressbar-active) 0%, 
-              var(--progressbar-bg) 0%, 
-              var(--progressbar-bg) 100%, 
+              background: linear-gradient(
+                to right,
+                var(--progressbar-active) 0%,
+                var(--progressbar-active) 0%,
+                var(--progressbar-bg) 0%,
+                var(--progressbar-bg) 100%
               );
-              &:hover{
+              &:hover {
                 height: 5px;
-              
               }
             }
           }
@@ -1809,105 +1805,100 @@ body {
   }
 }
 
-
 //RESPONSIVE
 
-@media screen and (max-width: 1640px ){
-  .player-queue{
+@media screen and (max-width: 1640px) {
+  .player-queue {
     transform: translateX(100%);
   }
-  .zm-mainpage{
-    right:0 !important;
-  }
-  .zm-header{
+  .zm-mainpage {
     right: 0 !important;
   }
-  
+  .zm-header {
+    right: 0 !important;
+  }
 }
 
-@media screen and (max-width: 1100px){
-    .zm-sidebar{
-      width: $sidebar-width-responsive !important;
-      .zm-add-playlist{
-        display:none !important; 
-      }
-      .zm-branch{
-        padding: 0 !important;
-        .zm-branch-logo{
-          background-image: url('https://zjs.zadn.vn/zmp3-desktop/releases/v1.3.14/static/media/icon_zing_mp3_60.f6b51045.svg') !important;
-        }
-      }
-      .zm-banner{
-        display:none !important; 
-      }
-      .zm-navbar-menu{
-        margin-bottom: 15px;
-      }
-      .zm-navbar-title{
-        display:none;
-      }
-      .navbar-link{
-        padding: 0 !important;
-        justify-content:center !important;
-        img{
-          width:30px ;
-          height:30px;
-        }
-      }
-      .navbar-item{
-        padding: 6px 0;
-      }
-      .zm-navbar-icon{
-        margin: 0 !important;
-        font-size: 26px !important;
-      }
-      .zm-navbar-header{
-        display:none !important;
-      }
-     .zm-navbar-divider{
-       background-color: white !important;
-       clip-path: inset(0 14px) !important;
-     }
-     .zm-navbar-img{
-       margin: 0 !important;
-     }
-    
+@media screen and (max-width: 1100px) {
+  .zm-sidebar {
+    width: $sidebar-width-responsive !important;
+    .zm-add-playlist {
+      display: none !important;
     }
-    .zm-mainpage{
-      left:$sidebar-width-responsive !important;
+    .zm-branch {
+      padding: 0 !important;
+      .zm-branch-logo {
+        background-image: url("https://zjs.zadn.vn/zmp3-desktop/releases/v1.3.14/static/media/icon_zing_mp3_60.f6b51045.svg") !important;
+      }
     }
-    .zm-header{
-      left:$sidebar-width-responsive !important;
+    .zm-banner {
+      display: none !important;
     }
-    .zm-carousel-item{
-      width: calc(100% / 4) !important;
+    .zm-navbar-menu {
+      margin-bottom: 15px;
     }
+    .zm-navbar-title {
+      display: none;
+    }
+    .navbar-link {
+      padding: 0 !important;
+      justify-content: center !important;
+      img {
+        width: 30px;
+        height: 30px;
+      }
+    }
+    .navbar-item {
+      padding: 6px 0;
+    }
+    .zm-navbar-icon {
+      margin: 0 !important;
+      font-size: 26px !important;
+    }
+    .zm-navbar-header {
+      display: none !important;
+    }
+    .zm-navbar-divider {
+      background-color: white !important;
+      clip-path: inset(0 14px) !important;
+    }
+    .zm-navbar-img {
+      margin: 0 !important;
+    }
+  }
+  .zm-mainpage {
+    left: $sidebar-width-responsive !important;
+  }
+  .zm-header {
+    left: $sidebar-width-responsive !important;
+  }
+  .zm-carousel-item {
+    width: calc(100% / 4) !important;
+  }
 }
 
-@media screen and (max-width: 960px ){
-  .zm-carousel-item{
+@media screen and (max-width: 960px) {
+  .zm-carousel-item {
     width: calc(100% / 3) !important;
   }
-  .gallery-item{
+  .gallery-item {
     width: calc(100% / 2) !important;
   }
-  .media-content{
-    display:none !important;
+  .media-content {
+    display: none !important;
   }
-  .item.mv{
-    display:none !important;
+  .item.mv {
+    display: none !important;
   }
-  .item.sing{
-    display:none !important;
+  .item.sing {
+    display: none !important;
   }
-  .player-control-right{
+  .player-control-right {
     width: auto !important ;
     margin-left: 20px;
-
   }
-  .player-control-left{
+  .player-control-left {
     width: auto !important;
     margin-right: 20px;
   }
 }
-  
