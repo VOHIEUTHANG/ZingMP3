@@ -631,7 +631,7 @@ const mainHandle = (function () {
                      <div class="card-info">
                        <h4 class="song-name">${item.name}</h4>
                        <h5 class="song-singer">
-                         <a href="" class="singer-name">${item.singer}</a>
+                         <a href="#" class="singer-name">${item.singer}</a>
                        </h5>
                      </div>
                  </div>
@@ -740,11 +740,15 @@ const mainHandle = (function () {
       listSong.onclick = (e) => {
         const songThumb = e.target.closest('.song-thumb');
         if (songThumb) {
-          const songItem = songThumb.closest('.song-item:not(.active)');
+          const songItem = songThumb.closest('.song-item');
           if (songItem) {
-            this.currentIndex = songItem.dataset.index;
-            this.loadCurrentSong();
-            playHandle();
+            if (!songItem.classList.contains('active')) {
+              this.currentIndex = songItem.dataset.index;
+              this.loadCurrentSong();
+              playHandle();
+            } else {
+              playBtn.click();
+            }
           }
         }
 
