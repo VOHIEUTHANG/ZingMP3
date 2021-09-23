@@ -331,6 +331,23 @@ themeHandle.run();
 // ------------------------------------------------------------------
 
 // START MAIN ----------------------------------------------------------------
+function convertSecondsToMinutes(seconds) {
+  seconds = Math.round(seconds);
+  let second = seconds % 60;
+  let minute = Math.floor(seconds / 60);
+  if (second.toString().length === 1) {
+    second = `0${second}`;
+  } else {
+    second = `${second}`;
+  }
+  if (minute.toString().length === 1) {
+    minute = `0${minute}`;
+  } else {
+    minute = `${minute}`;
+  }
+  return `${minute}:${second}`;
+}
+
 const mainHandle = (function () {
   const listSong = $('.list-songs');
   const leftControl = $('.player-control-left');
@@ -341,7 +358,12 @@ const mainHandle = (function () {
   const prevBtn = $('.backward.main-item');
   const repeatBtn = $('.repeat.main-item');
   const shuffleBtn = $('.random.main-item');
+  const mainProgress = $('.progressbar');
 
+  const timeRight = $('.time.right');
+  const timeLeft = $('.time.left');
+
+  const maxValue = Number(mainProgress.max);
   return {
     currentIndex: 0,
     songs: [
@@ -691,6 +713,8 @@ const mainHandle = (function () {
       //PLAY BTN HANDLE 
       //===================================
       const cdThumb = $('.thumbnail');
+      //reset main progressbar value 
+      mainProgress.value = 0;
 
       playBtn.onclick = function (e) {
         this.classList.toggle('is-playing');
@@ -734,6 +758,35 @@ const mainHandle = (function () {
         playHandle();
       }
 
+
+      function subUpdate() {
+        if (audio.duration) {
+          let percentTime = (audio.currentTime / audio.duration) * 100;
+          percentTime = Number(percentTime.toFixed(3));
+          mainProgress.style.background = `linear-gradient(
+              to right,
+              white 0%,
+              white ${percentTime}%,
+              var(--progressbar-bg) ${percentTime}%,
+               var(--progressbar-bg) 100%
+            )`;
+          timeLeft.innerText = convertSecondsToMinutes(audio.currentTime);
+          timeRight.innerText = convertSecondsToMinutes(audio.duration);
+        }
+      }
+
+      function mainUpdate() {
+        if (audio.duration) {
+          let percentTime = (audio.currentTime / audio.duration) * 100;
+          percentTime = Number(percentTime.toFixed(3));
+          mainProgress.value = percentTime / 100 * maxValue;
+        }
+      }
+
+      audio.addEventListener("timeupdate", mainUpdate);
+      audio.addEventListener("timeupdate", subUpdate);
+
+
       //Song in queue click handle 
       const songs = $$('.song-item');
       const songActive = $('.song-item.active');
@@ -751,8 +804,9 @@ const mainHandle = (function () {
             }
           }
         }
-
       };
+
+      //Progress bar handler
 
       //CD animation
       const cdAnimate = cdThumb.animate([{ transform: "rotate(360deg)" }], {
@@ -760,8 +814,6 @@ const mainHandle = (function () {
         iterations: Infinity,
       });
       cdAnimate.pause();
-
-
 
       //Key presss handle 
       //===================================

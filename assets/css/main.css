@@ -2087,6 +2087,9 @@ body {
 #app .player-controls .player-control-left .media-content .song-name {
   font-weight: 500;
   letter-spacing: 0.5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 #app .player-controls .player-control-left .media-content .song-singer {
