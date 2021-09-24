@@ -1,6 +1,12 @@
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
+const loading = $('.loader-background');
+
+window.onload = function () {
+  loading.style.transform = 'translateY(100%)';
+}
+
 // START HEADER 
 const headerController = (function () {
   const app = $('#app');
@@ -331,6 +337,7 @@ themeHandle.run();
 // ------------------------------------------------------------------
 
 // START MAIN ----------------------------------------------------------------
+
 function convertSecondsToMinutes(seconds) {
   seconds = Math.round(seconds);
   let second = seconds % 60;
@@ -348,6 +355,28 @@ function convertSecondsToMinutes(seconds) {
   return `${minute}:${second}`;
 }
 
+// RamDom Song
+function randomNumber(start, end) {
+  if (Number.isInteger(start) && Number.isInteger(end)) {
+    return Math.floor(Math.random() * (end + 1 - start)) + start;
+  }
+  return -1;
+}
+
+function runRandom(currentNumber, start, end) {
+  let random = randomNumber(start, end);
+  let i = 0;
+  if (random !== -1) {
+    while (random == currentNumber) {
+      random = randomNumber(start, end);
+      i++;
+      if (i === 100) return -1;
+    }
+    return random;
+  }
+  return -1;
+}
+
 const mainHandle = (function () {
   const listSong = $('.list-songs');
   const leftControl = $('.player-control-left');
@@ -359,6 +388,12 @@ const mainHandle = (function () {
   const repeatBtn = $('.repeat.main-item');
   const shuffleBtn = $('.random.main-item');
   const mainProgress = $('.progressbar');
+  const volumneIcon = $('.volumne-icon');
+  const volumneIconLow = $('.volumne-icon > i.low');
+  const volumneIconMute = $('.volumne-icon > i.mute');
+  const volumneIconHigh = $('.volumne-icon > i.high');
+
+  const audioProgress = $('#volume-range');
 
   const timeRight = $('.time.right');
   const timeLeft = $('.time.left');
@@ -757,8 +792,44 @@ const mainHandle = (function () {
         this.prevSong();
         playHandle();
       }
+      //PLAY AGAIN HANDLER
+      repeatBtn.onclick = () => {
+        repeatBtn.classList.toggle('active');
+        if (repeatBtn.classList.contains('active')) {
+          audio.onended = () => {
+            audio.play();
+          };
+        } else {
+          audio.onended = () => {
+            nextBtn.click();
+          };
+        }
 
+        if (shuffleBtn.classList.contains('active')) {
+          shuffleBtn.classList.remove('active');
+        }
+      }
 
+      shuffleBtn.onclick = () => {
+        shuffleBtn.classList.toggle('active');
+        if (shuffleBtn.classList.contains('active')) {
+          audio.onended = () => {
+            this.currentIndex = runRandom(this.currentIndex, 0, this.length());
+            this.loadCurrentSong();
+            playHandle();
+          };
+        } else {
+          audio.onended = () => {
+            nextBtn.click();
+          };
+        }
+        if (repeatBtn.classList.contains('active')) {
+          repeatBtn.classList.remove('active');
+        }
+      }
+
+      //Playing song handler
+      //===================================
       function subUpdate() {
         if (audio.duration) {
           let percentTime = (audio.currentTime / audio.duration) * 100;
@@ -786,6 +857,61 @@ const mainHandle = (function () {
       audio.addEventListener("timeupdate", mainUpdate);
       audio.addEventListener("timeupdate", subUpdate);
 
+      mainProgress.oninput = function () {
+        // audio.removeEventListener('timeupdate', mainUpdate);
+        const percentTime = Math.round(mainProgress.value / maxValue * 100);
+        mainProgress.style.background = `linear-gradient(
+              to right,
+              white 0%,
+              white ${percentTime}%,
+              var(--progressbar-bg) ${percentTime}%,
+               var(--progressbar-bg) 100%
+            )`;
+        audio.currentTime = Math.round(percentTime / 100 * audio.duration);
+      }
+
+      //===================================
+      //Audio progress handler 
+      audio.volume = 0.7;
+      audioProgress.value = Math.round(audio.volume * 100);
+      audioProgress.style.background = `linear-gradient(
+              to right,
+              white 0%,
+              white ${audioProgress.value}%,
+              var(--progressbar-bg) ${audioProgress.value}%,
+               var(--progressbar-bg) 100%
+            )`;
+
+      if (audioProgress.value == 0) {
+        volumneIconMute.style.display = 'block';
+      } else if (audioProgress.value < 70) {
+        volumneIconLow.style.display = 'block';
+      } else {
+        volumneIconHigh.style.display = 'block';
+      }
+
+      audioProgress.oninput = function () {
+        audioProgress.style.background = `linear-gradient(
+              to right,
+              white 0%,
+              white ${audioProgress.value}%,
+              var(--progressbar-bg) ${audioProgress.value}%,
+               var(--progressbar-bg) 100%
+            )`;
+        audio.volume = audioProgress.value / 100;
+
+        volumneIconLow.style.display = "none";
+        volumneIconMute.style.display = "none";
+        volumneIconHigh.style.display = "none";
+        console.log(audioProgress.value);
+        if (audioProgress.value == 0) {
+          volumneIconMute.style.display = 'block';
+        } else if (audioProgress.value < 50) {
+          volumneIconLow.style.display = 'block';
+        } else {
+          volumneIconHigh.style.display = 'block';
+        }
+      }
 
       //Song in queue click handle 
       const songs = $$('.song-item');

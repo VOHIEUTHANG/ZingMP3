@@ -155,6 +155,28 @@ body {
   --theme-primary: #383a75;
 }
 
+@-webkit-keyframes lds-ring {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes lds-ring {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
 #root {
   height: 100%;
   position: relative;
@@ -162,6 +184,7 @@ body {
 }
 
 #app {
+  position: relative;
   font-family: "Inter", sans-serif;
   width: 100%;
   height: 100%;
@@ -172,6 +195,64 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
+}
+
+#app .loader-background {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#app .loader-background .lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+#app .loader-background .lds-ring div {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  margin: 8px;
+  border: 8px solid #fff;
+  border-radius: 50%;
+  -webkit-animation: lds-ring 1.2s ease-in-out infinite;
+          animation: lds-ring 1.2s ease-in-out infinite;
+  border-color: #fff transparent transparent transparent;
+}
+
+#app .loader-background .lds-ring div:nth-child(1) {
+  -webkit-animation-delay: -0.45s;
+          animation-delay: -0.45s;
+}
+
+#app .loader-background .lds-ring div:nth-child(2) {
+  -webkit-animation-delay: -0.3s;
+          animation-delay: -0.3s;
+}
+
+#app .loader-background .lds-ring div:nth-child(3) {
+  -webkit-animation-delay: -0.15s;
+          animation-delay: -0.15s;
 }
 
 #app .zm-sidebar {
@@ -2238,6 +2319,11 @@ body {
   font-size: 16px;
 }
 
+#app .player-controls .player-control-center .main-controller-section .main-item.repeat.active, #app .player-controls .player-control-center .main-controller-section .main-item.random.active {
+  border: 1px solid white;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
 #app .player-controls .player-control-center .main-controller-section .play.main-item {
   width: 40px;
   height: 40px;
@@ -2421,10 +2507,6 @@ body {
 
 #app .player-controls .player-control-right > div .volumne-wrapper .volumne-icon:hover {
   background: rgba(255, 255, 255, 0.1);
-}
-
-#app .player-controls .player-control-right > div .volumne-wrapper .volumne-icon > .low {
-  display: block;
 }
 
 #app .player-controls .player-control-right > div .volumne-wrapper .volumne-icon > i {

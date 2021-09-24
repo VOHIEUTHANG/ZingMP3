@@ -149,6 +149,15 @@ body {
   --theme-primary: #383a75;
 }
 
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 //============================================================
 
 #root {
@@ -157,6 +166,45 @@ body {
   color: white;
 }
 #app {
+  position: relative;
+  .loader-background {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+    @include flex-center;
+    .lds-ring {
+      display: inline-block;
+      position: relative;
+      width: 100px;
+      height: 100px;
+    }
+    .lds-ring div {
+      box-sizing: border-box;
+      display: block;
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      margin: 8px;
+      border: 8px solid #fff;
+      border-radius: 50%;
+      animation: lds-ring 1.2s ease-in-out infinite;
+      border-color: #fff transparent transparent transparent;
+    }
+    .lds-ring div:nth-child(1) {
+      animation-delay: -0.45s;
+    }
+    .lds-ring div:nth-child(2) {
+      animation-delay: -0.3s;
+    }
+    .lds-ring div:nth-child(3) {
+      animation-delay: -0.15s;
+    }
+  }
   font-family: $font-stack;
   width: 100%;
   height: 100%;
@@ -1633,6 +1681,11 @@ body {
           i {
             font-size: 16px;
           }
+          &.repeat.active,
+          &.random.active {
+            border: 1px solid white;
+            background-color: $alpha-bg;
+          }
         }
         .play.main-item {
           &.is-playing {
@@ -1746,9 +1799,6 @@ body {
             cursor: pointer;
             &:hover {
               background: $alpha-bg;
-            }
-            & > .low {
-              display: block;
             }
             & > i {
               font-size: 18px;
