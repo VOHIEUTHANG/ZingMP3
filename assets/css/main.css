@@ -2675,7 +2675,7 @@ body {
     display: none !important;
   }
   .zm-navbar-library {
-    display: none;
+    display: none !important;
   }
   .zm-header {
     min-width: 0 !important;
@@ -2701,6 +2701,12 @@ body {
   }
   .list-songs {
     margin-bottom: 0 !important;
+  }
+  .navbar-item {
+    padding: 0 !important;
+  }
+  .zm-sidebar .zm-navbar-icon {
+    font-size: 20px !important;
   }
 }
 /*# sourceMappingURL=main.css.map */
