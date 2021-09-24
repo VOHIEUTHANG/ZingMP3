@@ -1860,7 +1860,7 @@ body {
 
 //RESPONSIVE
 
-@media screen and (max-width: 1640px) {
+@media screen and (max-width: 1460px) {
   .player-queue {
     transform: translateX(100%);
   }
@@ -1953,5 +1953,35 @@ body {
   .player-control-left {
     width: auto !important;
     margin-right: 20px;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .zm-mainpage {
+    display: none !important;
+  }
+  .zm-header {
+    min-width: 0 !important;
+    padding: 0 20px !important;
+  }
+  .level-left {
+    display: none !important;
+  }
+  .player-control-left {
+    display: none !important;
+  }
+  .player-control-right {
+    display: none !important;
+  }
+  .player-queue {
+    transform: translateX(0);
+    margin-top: 70px;
+    width: 300px !important;
+    .player-queue-header {
+      display: none !important;
+    }
+  }
+  .list-songs {
+    margin-bottom: 0 !important;
   }
 }

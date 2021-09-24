@@ -865,7 +865,7 @@ const mainHandle = (function () {
               white 0%,
               white ${percentTime}%,
               var(--progressbar-bg) ${percentTime}%,
-               var(--progressbar-bg) 100%
+              var(--progressbar-bg) 100%
             )`;
         audio.currentTime = Math.round(percentTime / 100 * audio.duration);
       }
@@ -879,7 +879,7 @@ const mainHandle = (function () {
               white 0%,
               white ${audioProgress.value}%,
               var(--progressbar-bg) ${audioProgress.value}%,
-               var(--progressbar-bg) 100%
+              var(--progressbar-bg) 100%
             )`;
 
       if (audioProgress.value == 0) {
