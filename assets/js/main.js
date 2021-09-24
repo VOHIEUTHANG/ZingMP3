@@ -896,7 +896,7 @@ const mainHandle = (function () {
               white 0%,
               white ${audioProgress.value}%,
               var(--progressbar-bg) ${audioProgress.value}%,
-               var(--progressbar-bg) 100%
+              var(--progressbar-bg) 100%
             )`;
         audio.volume = audioProgress.value / 100;
 
