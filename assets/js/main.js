@@ -414,10 +414,10 @@ const mainHandle = (function () {
     currentIndex: 0,
     songs: [
       {
-        name: "Cưới Thôi Ver 2",
-        singer: "Masiu x Masew X B Ray x TAP ",
-        path: "./assets/musics/CuoiThoiVocalNu.mp3",
-        image: "https://data.chiasenhac.com/data/cover/147/146172.jpg",
+        name: "Muốn Nói Với Em",
+        singer: "TTeam x BlackBi (Truong Nguyen Lofi mix)",
+        path: "./assets/musics/MuonNoiVoiEm.mp3",
+        image: "https://i.ytimg.com/vi/eg29qwPW4V8/maxresdefault.jpg",
       },
       {
         name: "Tình Đơn Phương",
@@ -464,6 +464,12 @@ const mainHandle = (function () {
         image:
           "https://info-imgs.vgcloud.vn/2020/06/26/13/an-tuong-bo-anh-chill-duoi-anh-hoang-hon-phong-cach-hongkong-5.jpg",
         hot: true,
+      },
+      {
+        name: "Cưới Thôi Ver 2",
+        singer: "Masiu x Masew X B Ray x TAP ",
+        path: "./assets/musics/CuoiThoiVocalNu.mp3",
+        image: "https://data.chiasenhac.com/data/cover/147/146172.jpg",
       },
       {
         name: "Họa Mây",
@@ -543,12 +549,7 @@ const mainHandle = (function () {
         new: true,
       },
 
-      {
-        name: "Muốn Nói Với Em",
-        singer: "TTeam x BlackBi (Truong Nguyen Lofi mix)",
-        path: "./assets/musics/MuonNoiVoiEm.mp3",
-        image: "https://i.ytimg.com/vi/eg29qwPW4V8/maxresdefault.jpg",
-      },
+
       {
         name: "Anh Thề Đấy",
         singer: "Thanh Hưng x Dino",
