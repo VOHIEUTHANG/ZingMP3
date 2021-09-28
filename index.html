@@ -29,6 +29,7 @@
   <body> 
     <div id="root">
       <div id="app">
+        <div id="particles-js"></div>
         <div class="loader-background">
           <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
         </div>
@@ -384,19 +385,10 @@
                   </div>
                 </li>
                 <li class="setting-item">
-                  <div class="setting-instruction">Tải lên</div>
-                  <input
-                    type="file"
-                    name=""
-                    id="upload-file"
-                    style="display: none"
-                  />
-                  <label
-                    for="upload-file"
-                    class="zm-upload-song zm-setting-wrapper"
-                  >
-                    <i class="zm-upload-icon fas fa-upload"></i>
-                  </label>
+                  <div class="setting-instruction">Tuyết rơi</div>
+                   <div class="zm-profile-snow active">
+                     <i class="far fa-snowflake"></i>
+                   </div>
                 </li>
                 <li class="setting-item">
                   <div class="zm-setting zm-setting-wrapper">
@@ -2302,7 +2294,8 @@
         </div>
       </div>
     </div>
-
-    <script type="module" src="./assets/js/main.js"></script>
+    <script src="./assets/js/particles.min.js"></script>
+    <script src="./assets/js/app.js"></script>
+    <script type="" src="./assets/js/main.js"></script>
   </body>
 </html>

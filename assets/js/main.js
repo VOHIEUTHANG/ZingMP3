@@ -18,6 +18,9 @@ const headerController = (function () {
   // SETTING 
   const settingBtn = $('.zm-setting');
   const settingModal = $('.zm-setting-menu');
+  const settingSnow = $('.zm-profile-snow');
+  const particle = $('#particles-js');
+
 
   return {
     themeSection: function () {
@@ -50,6 +53,14 @@ const headerController = (function () {
 
       settingModal.onclick = function (e) {
         e.stopPropagation();
+      }
+      settingSnow.onclick = function (e) {
+        this.classList.toggle('active');
+        if (this.classList.contains('active')) {
+          particle.style.display = 'block';
+        } else {
+          particle.style.display = 'none';
+        }
       }
     },
     run: function () {

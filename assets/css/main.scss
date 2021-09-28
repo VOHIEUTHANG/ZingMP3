@@ -167,6 +167,16 @@ body {
 }
 #app {
   position: relative;
+
+  #particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    user-select: none;
+    pointer-events: none;
+    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
   .loader-background {
     position: absolute;
     top: 0;
@@ -547,6 +557,18 @@ body {
           cursor: pointer;
           position: relative;
           margin-right: 10px;
+          .zm-profile-snow {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            &.active {
+              background-color: rgba(37, 135, 233, 0.4);
+              border: 1px solid aqua;
+            }
+          }
 
           &:first-child {
             .theme-modal-overlay {
