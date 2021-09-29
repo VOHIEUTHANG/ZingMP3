@@ -1985,7 +1985,7 @@ body {
 }
 
 #app .player-queue .player-body .list-songs .song-item .media .media-left .card-info .song-name {
-  max-width: 100%;
+  max-width: 230px;
   font-family: "Lobster", cursive;
   letter-spacing: 1px;
   text-transform: capitalize;

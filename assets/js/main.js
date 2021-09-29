@@ -414,6 +414,12 @@ const mainHandle = (function () {
     currentIndex: 0,
     songs: [
       {
+        name: "Lý Do Nào Để Quay Lại Với Nhau",
+        singer: "Par SG x New$oulZ",
+        path: "./assets/musics/LyDoNaoDeQuayLaiVoiNhau.mp3",
+        image: "https://i1.sndcdn.com/artworks-000566367992-pmljgr-t500x500.jpg",
+      },
+      {
         name: "Muốn Nói Với Em",
         singer: "TTeam x BlackBi (Truong Nguyen Lofi mix)",
         path: "./assets/musics/MuonNoiVoiEm.mp3",
