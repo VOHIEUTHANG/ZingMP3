@@ -414,6 +414,12 @@ const mainHandle = (function () {
     currentIndex: 0,
     songs: [
       {
+        name: "Ta Cứ Đi Cùng Nhau",
+        singer: "Đen x Linh Cáo",
+        path: "./assets/musics/TaCuDiCungNhau.mp3",
+        image: "https://avatar-ex-swe.nixcdn.com/song/2020/10/05/b/a/b/3/1601880462967_640.jpg",
+      },
+      {
         name: "Lý Do Nào Để Quay Lại Với Nhau",
         singer: "Par SG x New$oulZ",
         path: "./assets/musics/LyDoNaoDeQuayLaiVoiNhau.mp3",
